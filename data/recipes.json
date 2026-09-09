@@ -1,0 +1,109 @@
+[
+  {
+    "id": "recipe-1",
+    "title": "Spicy Coastal Fish Curry",
+    "category": "Fish Curry",
+    "difficulty": "Easy",
+    "prepTime": "15 mins",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "mainIngredient": "King Red Snapper or Sea Bass",
+    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80",
+    "description": "Authentic coconut and tamarind infused coastal fish curry with freshly ground aromatic spices.",
+    "ingredients": [
+      "500g fresh fish steaks (Red Snapper or Sea Bass)",
+      "1 cup grated fresh coconut or coconut milk",
+      "2 medium onions, finely sliced",
+      "2 fresh red chillies & 1 tbsp turmeric powder",
+      "1 tbsp tamarind extract",
+      "Fresh curry leaves & mustard seeds for tempering"
+    ],
+    "steps": [
+      "Wash and pat dry the fish steaks. Season with salt and turmeric powder.",
+      "Heat mustard oil in a pan, sauté mustard seeds and curry leaves until fragrant.",
+      "Add sliced onions and saute until golden brown.",
+      "Blend coconut with chillies and spices to form a smooth paste and add to the pan.",
+      "Pour 1.5 cups water and tamarind extract; bring curry base to a gentle boil.",
+      "Slide in fish steaks and simmer covered for 10-12 minutes until tender. Serve hot with steamed rice."
+    ]
+  },
+  {
+    "id": "recipe-2",
+    "title": "Garlic Butter Pan-Seared Salmon",
+    "category": "Grilled Seafood",
+    "difficulty": "Easy",
+    "prepTime": "10 mins",
+    "cookTime": "12 mins",
+    "servings": 2,
+    "mainIngredient": "Wild Salmon Fillet",
+    "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
+    "description": "Crispy skin Atlantic salmon pan-seared to perfection in rich garlic, lemon, and fresh dill butter.",
+    "ingredients": [
+      "2 skin-on salmon fillets (approx 200g each)",
+      "3 tbsp unsalted butter",
+      "4 cloves garlic, minced",
+      "1 fresh lemon (juiced and zested)",
+      "Fresh dill & black pepper to taste"
+    ],
+    "steps": [
+      "Pat salmon skin thoroughly dry with paper towels; season skin with sea salt.",
+      "Heat skillet over medium-high heat with olive oil until shimmering.",
+      "Place salmon skin-side down and press firmly for 5 seconds.",
+      "Sear for 5 minutes until skin is golden brown and crispy.",
+      "Flip salmon, add butter, minced garlic, and lemon juice to pan.",
+      "Baste salmon with foaming garlic butter for 3-4 minutes. Garnish with chopped dill."
+    ]
+  },
+  {
+    "id": "recipe-3",
+    "title": "Crispy Golden Fried Calamari & Prawns",
+    "category": "Fried Fish",
+    "difficulty": "Medium",
+    "prepTime": "20 mins",
+    "cookTime": "10 mins",
+    "servings": 3,
+    "mainIngredient": "Jumbo Tiger Prawns & Squid",
+    "image": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80",
+    "description": "Light, airy seasoned batter coating succulent jumbo prawns and calamari rings with spicy mayo dip.",
+    "ingredients": [
+      "300g peeled prawns & 200g squid rings",
+      "1 cup cornstarch & 1/2 cup all-purpose flour",
+      "1 tsp smoked paprika & garlic powder",
+      "Oil for deep frying",
+      "Lemon wedges for serving"
+    ],
+    "steps": [
+      "Pat seafood completely dry.",
+      "Whisk flour, cornstarch, paprika, salt, and garlic powder together.",
+      "Toss prawns and calamari in dry batter mix until evenly coated.",
+      "Deep fry in hot oil (180°C/350°F) in small batches for 2-3 minutes until golden crispy.",
+      "Drain on paper towel and serve immediately with spicy tartar sauce."
+    ]
+  },
+  {
+    "id": "recipe-4",
+    "title": "Signature Singapore Chili Crab",
+    "category": "Crab Recipes",
+    "difficulty": "Hard",
+    "prepTime": "25 mins",
+    "cookTime": "20 mins",
+    "servings": 4,
+    "mainIngredient": "Blue Mud Crab",
+    "image": "https://images.unsplash.com/photo-1559737194-4375b47a9e08?auto=format&fit=crop&w=800&q=80",
+    "description": "Iconic sweet, savory, and spicy thick egg-ribbon chili sauce over cracked mud crabs.",
+    "ingredients": [
+      "2 large mud crabs, cleaned and halved",
+      "4 tbsp sweet chili sauce & 2 tbsp tomato paste",
+      "3 tbsp sambal paste & minced ginger/garlic",
+      "2 whisked eggs",
+      "Steamed mantou buns for serving"
+    ],
+    "steps": [
+      "Stir fry ginger, garlic, and sambal paste in a wok until oil separates.",
+      "Add mud crab pieces and toss coat evenly.",
+      "Pour in chicken stock, chili sauce, tomato paste, and simmer covered for 10 minutes.",
+      "Remove cover, swirl in beaten eggs slowly to create velvety sauce ribbons.",
+      "Garnish with cilantro and serve with hot fried mantou buns."
+    ]
+  }
+]

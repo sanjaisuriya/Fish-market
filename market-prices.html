@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Today's Live Fish Market Prices - Updated daily at 6:30 AM. Check current rates per kg for salmon, tuna, prawns, mud crabs, lobsters, and carp.">
+  <title>Daily Market Prices | OceanFresh Market</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <span><i class="fas fa-truck-fast me-1 text-teal"></i> Daily Catch Delivery: <strong>6:00 AM - 9:00 PM</strong></span>
+        <span class="d-none d-md-inline">|</span>
+        <span class="d-none d-md-inline"><i class="fas fa-phone me-1"></i> Helpline: <a href="tel:+18005553474">+1 (800) 555-FISH</a></span>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-outline-light border-0 theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="fas fa-moon me-1"></i> <span class="d-none d-md-inline">Dark Mode</span>
+        </button>
+        <button class="btn btn-sm btn-outline-light border-0 rtl-toggle-btn" aria-label="Toggle RTL Mode">
+          <i class="fas fa-globe me-1"></i> <span class="d-none d-md-inline">RTL Layout</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMarketPricesCollapse" aria-controls="navbarMarketPricesCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMarketPricesCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item py-2" href="index.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1 opacity-25"></li>
+              <li>
+                <a class="dropdown-item py-2" href="home-2.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span>Cart</span>
+          </a>
+          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+            <i class="bi bi-person-circle"></i>
+            <span>Login / Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <!-- 1. Cart -->
+          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+            <i class="bi bi-cart3"></i> <span>Cart</span>
+          </a>
+          
+          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+          <div class="d-flex gap-2">
+            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+              <span class="theme-text">Dark</span>
+            </button>
+            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+              <span class="rtl-text">RTL</span>
+            </button>
+          </div>
+
+          <!-- 4. Login / Register -->
+          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Banner -->
+  <div class="bg-primary text-white py-5" style="background: linear-gradient(135deg, #0f4c81, #0b192c);">
+    <div class="container text-center py-2">
+      <span class="badge bg-teal mb-2 px-3 py-2"><i class="fas fa-sync-alt me-1"></i> Updated Today at 6:30 AM</span>
+      <h1 class="fw-bold text-white mb-2">Today's Seafood Market Prices</h1>
+      <p class="text-light opacity-90 max-w-xl mx-auto">Transparent, dock-reflective daily market rates per kilogram. No hidden fees or arbitrary markups.</p>
+    </div>
+  </div>
+
+  <!-- Advisory Alert -->
+  <div class="container mt-4">
+    <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center gap-3 mb-0" role="alert">
+      <i class="fas fa-exclamation-triangle fa-2x text-warning"></i>
+      <div>
+        <strong>Notice to Customers:</strong> "Prices may vary depending on daily catch volume and harbor market availability. All prices listed are per kilogram unless specified."
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <!-- Search & Filter Controls -->
+  <section class="py-4">
+    <div class="container">
+      <div class="row g-3 align-items-center mb-4">
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text bg-white dark:bg-slate-800"><i class="fas fa-search text-muted"></i></span>
+            <input type="text" id="priceSearchInput" class="form-control" placeholder="Search item in today's price sheet...">
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="pricing.html" class="btn btn-outline-custom">
+            <i class="fas fa-boxes me-1"></i> View Wholesale & Bulk Ordering Rates
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Price Sheet Table -->
+      <div class="table-responsive">
+        <table class="price-table" id="marketPriceTable">
+          <thead>
+            <tr>
+              <th>Seafood Product Name</th>
+              <th>Category</th>
+              <th>Unit</th>
+              <th>Today's Rate</th>
+              <th>Trend vs Yesterday</th>
+              <th>Stock Status</th>
+              <th>Last Updated</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="priceTableBody">
+            <!-- Loaded via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Enquiry Modal -->
+  <div class="modal fade" id="enquiryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold"><i class="fas fa-paper-plane text-secondary me-2"></i> Submit Product Enquiry</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label class="form-label font-semibold">Interested Seafood Product</label>
+              <input type="text" id="enquiryProductName" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+              <label class="form-label font-semibold">Your Full Name</label>
+              <input type="text" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label font-semibold">Phone Number</label>
+                <input type="tel" class="form-control" placeholder="+1 555-0192" required>
+              </div>
+              <div class="col-6">
+                <label class="form-label font-semibold">Quantity (kg)</label>
+                <input type="number" min="1" class="form-control" value="1" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary-custom w-100 justify-content-center">Submit Price Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a>
+            <a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme-toggle.js"></script>
+  <script src="assets/js/rtl-toggle.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form-validation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tbody = document.getElementById('priceTableBody');
+      const searchInput = document.getElementById('priceSearchInput');
+      let pricesData = [];
+
+      fetch('data/market-prices.json')
+        .then(res => res.json())
+        .then(data => {
+          pricesData = data;
+          renderPrices();
+        });
+
+      function renderPrices() {
+        let filtered = [...pricesData];
+        if (searchInput && searchInput.value.trim() !== '') {
+          const q = searchInput.value.toLowerCase();
+          filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+        }
+
+        tbody.innerHTML = filtered.map(p => {
+          let trendIcon = '<i class="fas fa-minus trend-stable"></i> Stable';
+          if (p.trend === 'up') trendIcon = `<i class="fas fa-arrow-up trend-up"></i> ${p.prevPrice}`;
+          if (p.trend === 'down') trendIcon = `<i class="fas fa-arrow-down trend-down"></i> ${p.prevPrice}`;
+
+          return `
+            <tr>
+              <td class="fw-bold">${p.name}</td>
+              <td><span class="badge bg-secondary-subtle text-secondary border">${p.category}</span></td>
+              <td>${p.unit}</td>
+              <td class="fw-bold text-primary fs-5">${p.price}</td>
+              <td>${trendIcon}</td>
+              <td><span class="badge bg-success-subtle text-success border border-success-subtle">${p.availability}</span></td>
+              <td class="text-muted text-xs">${p.lastUpdated}</td>
+              <td>
+                <button onclick="openEnquiryModal('${p.name}')" class="btn btn-sm btn-primary-custom">
+                  Enquire
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      if (searchInput) searchInput.addEventListener('input', renderPrices);
+    });
+  </script>
+</body>
+</html>

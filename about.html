@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Fish Market</title>
+  <meta name="description" content="Discover our journey, dockside sourcing standards, dedicated fishmongers, and commitment to sustainable fishing and customer trust.">
+  <meta name="keywords" content="about seafood market, sustainable fishing, master fishmongers, seafood quality inspection">
+
+  <!-- Favicon (Data URI SVG ensures instant display on Chrome Tab) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAboutCollapse" aria-controls="navbarAboutCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarAboutCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item py-2" href="index.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1 opacity-25"></li>
+              <li>
+                <a class="dropdown-item py-2" href="home-2.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span>Cart</span>
+          </a>
+          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+            <i class="bi bi-person-circle"></i>
+            <span>Login / Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <!-- 1. Cart -->
+          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+            <i class="bi bi-cart3"></i> <span>Cart</span>
+          </a>
+          
+          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+          <div class="d-flex gap-2">
+            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+              <span class="theme-text">Dark</span>
+            </button>
+            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+              <span class="rtl-text">RTL</span>
+            </button>
+          </div>
+
+          <!-- 4. Login / Register -->
+          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner & Breadcrumb -->
+  <section class="page-banner page-banner-about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-9 text-start">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Our Story & Heritage</span>
+          <h1 class="page-banner-title mb-2">About Fish Market</h1>
+          <p class="page-banner-desc ms-0 mb-3 text-start">Discover our heritage, sustainable cold-chain handling, and daily morning fresh harbor catch.</p>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-custom justify-content-start mb-0">
+              <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
+              <li><i class="bi bi-chevron-right small text-muted"></i></li>
+              <li class="active">About Us</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Our Story Section
+       ========================================== -->
+  <section class="py-5 bg-main" id="our-story">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="section-subtitle">Pioneering Cold-Chain Freshness</span>
+          <h2 class="section-title mb-3">Our Story: From Harbor Dock to Culinary Excellence</h2>
+          <p class="text-muted mb-3">
+            Founded in 2012 by a 3rd generation coastal fisherman, Fish Market was born with a single mission: to eliminate stale supermarket fish and bring the pure, unadulterated sweetness of the morning ocean directly to seafood lovers.
+          </p>
+          <p class="text-muted mb-4">
+            We operate right on Harbor Bay Pier 44, greeting local registered artisanal boats at 5:00 AM every morning. By cutting out brokers and multi-day storage yards, our catch goes from coastal nets through medical-grade RO purification straight to your pan in under 3 hours.
+          </p>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 bg-card rounded-3 border">
+                <h3 class="fw-bold text-primary mb-1">14+ Years</h3>
+                <small class="text-muted">Artisanal Maritime Experience</small>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-card rounded-3 border">
+                <h3 class="fw-bold text-primary mb-1">100% Free</h3>
+                <small class="text-muted">Of Chemical Preservatives</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/fisherman_harbor_sunrise_1788776805226.jpg" alt="Local Fisherman with Fresh Morning Catch in Ice Crate at Harbor Dock" class="rounded-4 shadow-xl w-100 object-fit-cover" style="min-height: 420px;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=1000&q=80';">
+            <div class="image-float-badge p-3 bg-card border rounded-3 position-absolute bottom-0 start-0 m-3 shadow-lg d-flex align-items-center gap-3">
+              <i class="bi bi-shield-fill-check text-success display-6"></i>
+              <div>
+                <strong class="d-block text-secondary">ISO 22000 Certified</strong>
+                <small class="text-muted">Food Safety & Hygiene Protocol</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Our Mission & Core Values
+       ========================================== -->
+  <section class="py-5 bg-alt" id="sourcing">
+    <div class="container py-4">
+      <div class="mission-box p-4 p-md-5 rounded-4 text-white text-center mb-5">
+        <span class="badge mission-badge fw-bold text-uppercase px-3 py-2 mb-3">Our Guiding Mission</span>
+        <h3 class="fw-bold mission-quote mb-3" style="max-width: 820px; margin: 0 auto; line-height: 1.45;">
+          "To deliver fresh, high-quality seafood while maintaining responsible sourcing, environmental sustainability, and unwavering customer trust."
+        </h3>
+        <p class="mission-subtitle m-0">Ethically harvested, meticulously cut, and cold-delivered daily.</p>
+      </div>
+
+      <div class="section-header text-center">
+        <span class="section-subtitle">The Pillars of Our Craft</span>
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-desc">What sets Fish Market apart is our uncompromising adherence to 6 foundational standards.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card h-100">
+            <div class="feature-icon-box"><i class="bi bi-snow"></i></div>
+            <h5 class="fw-bold mb-2">1. Freshness</h5>
+            <p class="text-muted mb-0">Harvested daily. Kept strictly on pure food-grade ice with zero chemical additives or artificial glazes.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card h-100">
+            <div class="feature-icon-box"><i class="bi bi-patch-check"></i></div>
+            <h5 class="fw-bold mb-2">2. Uncompromising Quality</h5>
+            <p class="text-muted mb-0">Hand-selected grade-A fish with bright convex eyes, deep red gills, and resilient spring-back flesh.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card h-100">
+            <div class="feature-icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+            <h5 class="fw-bold mb-2">3. Absolute Transparency</h5>
+            <p class="text-muted mb-0">Full origin traceability for every catch, including landing dock location, vessel name, and date.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card h-100">
+            <div class="feature-icon-box"><i class="bi bi-recycle"></i></div>
+            <h5 class="fw-bold mb-2">4. Ocean Sustainability</h5>
+            <p class="text-muted mb-0">We strictly avoid juvenile fish, observe spawning bans, and partner exclusively with non-destructive fisheries.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card h-100">
+            <div class="feature-icon-box"><i class="bi bi-heart-pulse"></i></div>
+            <h5 class="fw-bold mb-2">5. Customer Satisfaction</h5>
+            <p class="text-muted mb-0">Custom knife filleting to your exact culinary specifications backed by our dedicated freshness assurance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card h-100">
+            <div class="feature-icon-box"><i class="bi bi-shield-check"></i></div>
+            <h5 class="fw-bold mb-2">6. Cold-Chain Integrity</h5>
+            <p class="text-muted mb-0">Continuous chilled handling and insulated cold packaging from harbor dock landing to your doorstep.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Our Seafood Journey Timeline
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Traceability & Handling</span>
+        <h2 class="section-title">Our Seafood Journey</h2>
+        <p class="section-desc">Follow your seafood’s journey from the harbor to your kitchen.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg">
+          <div class="p-4 bg-card rounded-4 border text-center h-100">
+            <div class="step-number">1</div>
+            <h5 class="fw-bold mb-2">1. Sourcing</h5>
+            <p class="text-muted small mb-0">Early morning hook-and-line harvest by registered coastal boat captains.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="p-4 bg-card rounded-4 border text-center h-100">
+            <div class="step-number">2</div>
+            <h5 class="fw-bold mb-2">2. Inspection</h5>
+            <p class="text-muted small mb-0">Organoleptic 3-point freshness check and temperature verification on the pier.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="p-4 bg-card rounded-4 border text-center h-100">
+            <div class="step-number">3</div>
+            <h5 class="fw-bold mb-2">3. Cleaning</h5>
+            <p class="text-muted small mb-0">RO water descaling, gutting, and precision knife cutting in sterile cleanrooms.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="p-4 bg-card rounded-4 border text-center h-100">
+            <div class="step-number">4</div>
+            <h5 class="fw-bold mb-2">4. Packaging</h5>
+            <p class="text-muted small mb-0">Oxygen-barrier vacuum seal and placement into thermal insulated ice trays.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="p-4 bg-card rounded-4 border text-center h-100">
+            <div class="step-number">5</div>
+            <h5 class="fw-bold mb-2">5. Delivery</h5>
+            <p class="text-muted small mb-0">Temperature-controlled express fleet dispatch right to your doorstep.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Our Leadership Team
+       ========================================== -->
+  <section class="py-5 bg-alt">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Meet Our Seafood Specialists</span>
+        <h2 class="section-title">Our Expert Team</h2>
+        <p class="section-desc">Passionate maritime specialists dedicated to maintaining the purest seafood standards.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card rounded-4 border overflow-hidden bg-card text-center h-100 shadow-sm transition-hover">
+            <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/team_arthur_fisherman_1788779383802.jpg" alt="Arthur Sterling - Founder & Master Fisherman" class="w-100 object-fit-cover" style="aspect-ratio: 1/1;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80';">
+            <div class="card-body p-3">
+              <h5 class="fw-bold text-secondary mb-1">Arthur Sterling</h5>
+              <span class="badge bg-primary-subtle text-primary mb-2">Founder & Master Fisherman</span>
+              <p class="text-muted small mb-0">30+ years of deep sea navigation and harbor boat management.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card rounded-4 border overflow-hidden bg-card text-center h-100 shadow-sm transition-hover">
+            <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/team_maya_quality_1788779521094.jpg" alt="Dr. Maya Patel - Quality & Hygiene Manager" class="w-100 object-fit-cover" style="aspect-ratio: 1/1;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80';">
+            <div class="card-body p-3">
+              <h5 class="fw-bold text-secondary mb-1">Dr. Maya Patel</h5>
+              <span class="badge bg-success bg-opacity-10 text-success mb-2">Quality & Hygiene Manager</span>
+              <p class="text-muted small mb-0">Marine biochemist ensuring 100% adherence to food safety standards.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card rounded-4 border overflow-hidden bg-card text-center h-100 shadow-sm transition-hover">
+            <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/team_liam_procurement_1788779545315.jpg" alt="Liam Vance - Procurement Manager" class="w-100 object-fit-cover" style="aspect-ratio: 1/1;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80';">
+            <div class="card-body p-3">
+              <h5 class="fw-bold text-secondary mb-1">Liam Vance</h5>
+              <span class="badge bg-primary-subtle text-primary mb-2">Procurement Manager</span>
+              <p class="text-muted small mb-0">Direct liaison with coastal fishing co-ops and sustainable docks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card rounded-4 border overflow-hidden bg-card text-center h-100 shadow-sm transition-hover">
+            <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/team_victor_coldchain_1788779586173.jpg" alt="Victor Chen - Cold-Chain Delivery Manager" class="w-100 object-fit-cover" style="aspect-ratio: 1/1;" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80';">
+            <div class="card-body p-3">
+              <h5 class="fw-bold text-secondary mb-1">Victor Chen</h5>
+              <span class="badge bg-primary-subtle text-primary mb-2">Cold-Chain Delivery Manager</span>
+              <p class="text-muted small mb-0">Oversees our fleet of temperature-monitored refrigerated delivery vans.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a>
+            <a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Documentation & Customization Guide | Fish Market</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+</head>
+<body class="bg-main">
+
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="../index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span> Docs</span>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="toggle-btn theme-toggle-btn">
+          <i class="bi bi-moon-stars-fill"></i>
+          <span class="theme-text">Dark</span>
+        </button>
+        <a href="../index.html" class="btn btn-sm btn-ocean"><i class="bi bi-house-door"></i> View Website</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-banner py-4">
+    <div class="container text-center">
+      <h1 class="page-banner-title">Documentation & Developer Guide</h1>
+      <p class="text-white-50 m-0">Commercial HTML5 / Bootstrap 5 / TailwindCSS Seafood & Fish Market Template</p>
+    </div>
+  </section>
+
+  <div class="container py-5">
+    <div class="row g-5">
+      
+      <!-- Docs Sidebar -->
+      <div class="col-lg-3">
+        <div class="card p-3 rounded-4 border bg-card sticky-top" style="top: 90px;">
+          <h6 class="fw-bold text-secondary mb-3">Documentation Index</h6>
+          <nav class="nav flex-column small">
+            <a class="nav-link px-2 py-1 text-secondary" href="#overview">1. Overview & Tech Stack</a>
+            <a class="nav-link px-2 py-1 text-secondary" href="#structure">2. File & Directory Structure</a>
+            <a class="nav-link px-2 py-1 text-secondary" href="#colors">3. Customizing Colors & Fonts</a>
+            <a class="nav-link px-2 py-1 text-secondary" href="#products-data">4. Adding / Editing Products</a>
+            <a class="nav-link px-2 py-1 text-secondary" href="#recipes-data">5. Adding / Editing Recipes</a>
+            <a class="nav-link px-2 py-1 text-secondary" href="#dark-rtl">6. Dark Mode & RTL Support</a>
+            <a class="nav-link px-2 py-1 text-secondary" href="#forms">7. Form Validation & Toasts</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Docs Body -->
+      <div class="col-lg-9">
+        
+        <!-- Section 1 -->
+        <section id="overview" class="mb-5 pb-4 border-bottom">
+          <h3 class="fw-bold text-secondary mb-3">1. Overview & Tech Stack</h3>
+          <p class="text-muted">
+            <strong>Fish Market</strong> is a modern, responsive, ThemeForest-ready HTML5 template created for fresh seafood businesses, harbor markets, fishmongers, and online delivery startups.
+          </p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6 col-md-3">
+              <div class="p-3 bg-card border rounded-3 text-center">
+                <i class="bi bi-filetype-html text-primary fs-3"></i>
+                <div class="fw-bold mt-1">HTML5 Semantic</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="p-3 bg-card border rounded-3 text-center">
+                <i class="bi bi-bootstrap text-primary fs-3"></i>
+                <div class="fw-bold mt-1">Bootstrap 5.3.3</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="p-3 bg-card border rounded-3 text-center">
+                <i class="bi bi-filetype-js text-primary fs-3"></i>
+                <div class="fw-bold mt-1">Vanilla ES6+ JS</div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="p-3 bg-card border rounded-3 text-center">
+                <i class="bi bi-moon-stars text-primary fs-3"></i>
+                <div class="fw-bold mt-1">Dark Mode & RTL</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="structure" class="mb-5 pb-4 border-bottom">
+          <h3 class="fw-bold text-secondary mb-3">2. File & Directory Structure</h3>
+          <pre class="bg-dark text-light p-4 rounded-4 small"><code>seafood-fresh-fish-market/
+├── index.html               # Home 1 - General Seafood Landing
+├── home-2.html              # Home 2 - Fresh Seafood Market Focus
+├── about.html               # About Us, Story, Mission, Timeline
+├── products.html            # Products Catalog with JS Filtering
+├── product-details.html     # Product Deep Dive with Cuts & FAQs
+├── services.html            # 8 Core Seafood Market Services
+├── cleaning-delivery.html   # Cleaning Process & Cold-chain Delivery
+├── recipes.html             # Recipe Catalog with Filters
+├── recipe-details.html      # Recipe Detail with Checklist & Print
+├── blog.html                # Seafood Knowledge Journal
+├── blog-details.html        # Single Blog Post with Sidebar
+├── pricing.html             # Curated Seafood Boxes & Matrix
+├── contact.html             # Contact & Live Order Enquiry Form
+├── login.html               # Customer Login Portal
+├── register.html            # Customer Registration Portal
+├── 404.html                 # Seafood Themed 404 Page
+├── coming-soon.html         # Launch Countdown Timer Page
+├── maintenance.html         # Scheduled Maintenance Notice
+├── assets/
+│   ├── css/                 # style.css, dark-mode.css, rtl.css, responsive.css
+│   └── js/                  # main.js, theme.js, rtl.js, products.js, recipes.js, blog.js, forms.js, validation.js
+├── components/              # Reusable component HTML snippets
+└── docs/                    # documentation.html & customization-guide.md</code></pre>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="colors" class="mb-5 pb-4 border-bottom">
+          <h3 class="fw-bold text-secondary mb-3">3. Customizing Colors & Fonts</h3>
+          <p class="text-muted">All brand colors are organized as CSS custom properties in <code>assets/css/style.css</code>:</p>
+          <pre class="bg-dark text-light p-3 rounded-4 small"><code>:root {
+  --color-primary: #0284c7;        /* Sky Ocean Blue */
+  --color-primary-dark: #0369a1;   /* Deep Blue */
+  --color-secondary: #0f172a;      /* Deep Navy */
+  --color-coral: #f97316;          /* Fresh Salmon Coral */
+  --color-seafoam: #10b981;        /* Seaweed Fresh Green */
+}</code></pre>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="products-data" class="mb-5 pb-4 border-bottom">
+          <h3 class="fw-bold text-secondary mb-3">4. Adding / Editing Products</h3>
+          <p class="text-muted">Edit the array in <code>assets/js/products.js</code> to add products instantly without altering HTML markup:</p>
+          <pre class="bg-dark text-light p-3 rounded-4 small"><code>{
+  id: 'prod-salmon',
+  name: 'Norwegian Atlantic Salmon',
+  category: 'fish',
+  categoryLabel: 'Fresh Fish',
+  price: 34.50,
+  rating: 4.9,
+  reviews: 128,
+  badge: 'Fresh Catch',
+  origin: 'Cold Fjords of Norway',
+  image: 'https://images.unsplash.com/...',
+  desc: 'Rich in heart-healthy Omega-3 fatty acids...',
+  cuts: ['Whole Cleaned', 'Fillet', 'Steak Cut'],
+  available: true
+}</code></pre>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="recipes-data" class="mb-5 pb-4 border-bottom">
+          <h3 class="fw-bold text-secondary mb-3">5. Adding / Editing Recipes</h3>
+          <p class="text-muted">Edit the array in <code>assets/js/recipes.js</code>:</p>
+          <pre class="bg-dark text-light p-3 rounded-4 small"><code>{
+  id: 'recipe-grilled-salmon',
+  title: 'Herb & Lemon Garlic Grilled Salmon',
+  category: 'grilled',
+  difficulty: 'Easy',
+  prepTime: '15 mins',
+  cookTime: '12 mins',
+  servings: '4 Servings',
+  image: 'https://images.unsplash.com/...',
+  desc: 'Succulent Atlantic salmon fillets infused with fresh rosemary...'
+}</code></pre>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="dark-rtl" class="mb-5 pb-4 border-bottom">
+          <h3 class="fw-bold text-secondary mb-3">6. Dark Mode & RTL Support</h3>
+          <p class="text-muted">
+            The template comes with built-in theme persistence using <code>localStorage</code>. Calling <code>window.toggleTheme()</code> or <code>window.toggleDirection()</code> automatically switches modes, updates HTML attributes (<code>data-theme="dark"</code>, <code>dir="rtl"</code>), and toggles button labels.
+          </p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="forms" class="mb-5">
+          <h3 class="fw-bold text-secondary mb-3">7. Form Validation & Toast Alerts</h3>
+          <p class="text-muted">
+            Interactive form validation runs via <code>assets/js/validation.js</code>. Trigger custom notifications anywhere in your scripts using:
+          </p>
+          <pre class="bg-dark text-light p-3 rounded-4 small"><code>window.showToast('Your custom message here!', 'success'); // or 'error', 'info'</code></pre>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-navy-dark text-white text-center small" style="background-color: #071527;">
+    <div class="container">
+      &copy; 2026 Fish Market - Seafood & Fresh Fish Market Template.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+</body>
+</html>

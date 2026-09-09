@@ -1,0 +1,123 @@
+<!-- ==========================================================================
+     Main Sticky Navigation Component (No Topbar, Fish Market Branding)
+     ========================================================================== -->
+
+<nav class="navbar navbar-expand-lg main-navbar">
+  <div class="container">
+    <!-- Brand Logo with Fish Image -->
+    <a class="navbar-brand brand-logo" href="index.html">
+      <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+        <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+        <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+        <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>Fish <span class="accent">Market</span></span>
+    </a>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainCollapse" aria-controls="navbarMainCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Menu Items -->
+    <div class="collapse navbar-collapse" id="navbarMainCollapse">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <!-- Home dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Home
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item py-2" href="index.html">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-water text-primary fs-5"></i>
+                  <div>
+                    <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                    <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li><hr class="dropdown-divider my-1 opacity-25"></li>
+            <li>
+              <a class="dropdown-item py-2" href="home-2.html">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-shop text-primary fs-5"></i>
+                  <div>
+                    <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                    <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pricing.html">Pricing</a>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login / Register (Combined) -->
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+          <i class="bi bi-cart3"></i>
+          <span>Cart</span>
+        </a>
+        <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+          <i class="bi bi-moon-stars-fill"></i>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+          <i class="bi bi-text-right"></i>
+          <span class="rtl-text">RTL</span>
+        </button>
+        <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+          <i class="bi bi-person-circle"></i>
+          <span>Login / Register</span>
+        </a>
+      </div>
+
+      <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+      <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+        <!-- 1. Cart -->
+        <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+          <i class="bi bi-cart3"></i> <span>Cart</span>
+        </a>
+        
+        <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+        <div class="d-flex gap-2">
+          <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+        </div>
+
+        <!-- 4. Login / Register -->
+        <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+          <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

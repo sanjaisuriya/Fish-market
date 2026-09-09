@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seafood Recipes & Culinary Guides | Fish Market</title>
+  <meta name="description" content="Discover chef-tested seafood recipes for grilled salmon, garlic butter tiger prawns, spicy crab curry, steamed mussels, and crispy calamari.">
+  <meta name="keywords" content="seafood recipes, fish recipes, how to cook tiger prawns, crab curry recipe, pan seared seabass">
+
+  <!-- Favicon (Data URI SVG ensures instant display on Chrome Tab) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRecipesCollapse" aria-controls="navbarRecipesCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarRecipesCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item py-2" href="index.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1 opacity-25"></li>
+              <li>
+                <a class="dropdown-item py-2" href="home-2.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span>Cart</span>
+          </a>
+          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+            <i class="bi bi-person-circle"></i>
+            <span>Login / Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <!-- 1. Cart -->
+          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+            <i class="bi bi-cart3"></i> <span>Cart</span>
+          </a>
+          
+          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+          <div class="d-flex gap-2">
+            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+              <span class="theme-text">Dark</span>
+            </button>
+            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+              <span class="rtl-text">RTL</span>
+            </button>
+          </div>
+
+          <!-- 4. Login / Register -->
+          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner page-banner-recipes">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-9 text-start">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Culinary Masterclass</span>
+          <h1 class="page-banner-title mb-2">Seafood Recipes &amp; Cooking Inspiration</h1>
+          <p class="page-banner-desc ms-0 mb-3 text-start">Discover chef-crafted recipes, marination tips, pan-searing techniques, and authentic coastal curries.</p>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-custom justify-content-start mb-0">
+              <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
+              <li><i class="bi bi-chevron-right small text-muted"></i></li>
+              <li class="active">Recipes</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Recipes Filter & Grid Engine
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-3">
+      
+      <!-- Filter Toolbar -->
+      <div class="card p-4 rounded-4 border bg-card mb-5 shadow-sm">
+        <div class="row g-3 align-items-center">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-search text-muted"></i></span>
+              <input type="text" id="recipe-search-input" class="form-control" placeholder="Search recipe by ingredient (e.g. salmon, garlic butter, crab curry)...">
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <select id="recipe-difficulty-select" class="form-select">
+              <option value="all">All Difficulty Levels</option>
+              <option value="easy">Easy (Under 20 Mins)</option>
+              <option value="medium">Medium (Classic Gourmet)</option>
+              <option value="chef special">Chef Special (Fine Dining)</option>
+            </select>
+          </div>
+          <div class="col-sm-6 col-lg-3 text-sm-end">
+            <button class="btn btn-outline-secondary w-100" onclick="resetRecipeFilters()">
+              <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Buttons Scrollable -->
+        <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top">
+          <button class="btn btn-sm btn-ocean recipe-cat-btn active" data-category="all">All Recipes</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="fish">Fish Recipes</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="prawns">Prawn Recipes</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="curry">Seafood Curry</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="grilled">Grilled Seafood</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="fried">Fried Seafood</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="lobster">Lobster & Crab</button>
+          <button class="btn btn-sm btn-outline-ocean recipe-cat-btn" data-category="healthy">Healthy & Steamed</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Recipes Grid -->
+      <div id="recipes-grid-container" class="row g-4">
+        <!-- Populated via assets/js/recipes.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a>
+            <a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/recipes.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

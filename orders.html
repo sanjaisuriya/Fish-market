@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders & History | Seafood & Fresh Fish Market</title>
+  <meta name="description" content="Track live seafood shipments, view past invoices, reorder favorite catches, and check delivery status.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐟</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="bg-body">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarOrdersCollapse" aria-controls="navbarOrdersCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarOrdersCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item py-2" href="index.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1 opacity-25"></li>
+              <li>
+                <a class="dropdown-item py-2" href="home-2.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span>Cart</span>
+          </a>
+          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+            <i class="bi bi-person-circle"></i>
+            <span>Login / Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <!-- 1. Cart -->
+          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+            <i class="bi bi-cart3"></i> <span>Cart</span>
+          </a>
+          
+          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+          <div class="d-flex gap-2">
+            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+              <span class="theme-text">Dark</span>
+            </button>
+            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+              <span class="rtl-text">RTL</span>
+            </button>
+          </div>
+
+          <!-- 4. Login / Register -->
+          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="py-4 bg-subtle border-bottom">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+        <div>
+          <h1 class="h3 fw-bold mb-1">My Orders & Live Tracking</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 small">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Order History</li>
+            </ol>
+          </nav>
+        </div>
+        <a href="products.html" class="btn btn-primary-sea btn-sm">
+          <i class="fas fa-plus me-1"></i> Order More Fresh Catch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orders Content Area -->
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Success Notification banner if navigated after checkout -->
+      <div id="placedOrderBanner" class="alert alert-success border-0 shadow-sm rounded-4 p-4 mb-4 d-none">
+        <div class="d-flex align-items-center gap-3">
+          <i class="fas fa-check-circle display-5 text-success"></i>
+          <div>
+            <h5 class="fw-bold mb-1">Order Placed Successfully!</h5>
+            <p class="mb-0 small text-success-emphasis">
+              Your seafood order <strong id="placedOrderIdText">#SFM-0000</strong> has been confirmed. Our team is hand-picking and cleaning your catch at harbor jetty.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center p-3 bg-card rounded-4 border shadow-sm mb-4 gap-3">
+        <div class="btn-group btn-group-sm" role="group" id="orderStatusFilters">
+          <button type="button" class="btn btn-outline-primary active" data-filter="all">All Orders</button>
+          <button type="button" class="btn btn-outline-primary" data-filter="Processing">Processing</button>
+          <button type="button" class="btn btn-outline-primary" data-filter="Delivered">Delivered</button>
+        </div>
+        <div class="text-muted small">
+          Showing <span id="orders-count-num" class="fw-bold text-primary">0</span> orders
+        </div>
+      </div>
+
+      <!-- Orders List Container -->
+      <div class="d-flex flex-column gap-4" id="orders-list-container">
+        <!-- Rendered dynamically by orders script -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="orders-empty-state" class="text-center py-5 bg-card rounded-4 border shadow-sm" style="display: none;">
+        <i class="fas fa-box-open display-1 text-muted mb-3 opacity-50"></i>
+        <h4 class="fw-bold">No Orders Found</h4>
+        <p class="text-muted mx-auto mb-4" style="max-width: 450px;">
+          You haven't placed any fresh seafood orders yet. Start exploring our ocean daily landings!
+        </p>
+        <a href="products.html" class="btn btn-primary-sea px-4 py-2">
+          Shop Fresh Catch
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- View Invoice / Details Modal -->
+  <div class="modal fade" id="orderInvoiceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header bg-primary text-white border-bottom-0">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fas fa-receipt fs-4"></i>
+            <h5 class="modal-title fw-bold" id="invoiceModalTitle">Order Invoice</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="invoiceModalBody">
+          <!-- Populated by JS -->
+        </div>
+        <div class="modal-footer bg-subtle border-top-0">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary-sea btn-sm" onclick="window.print()">
+            <i class="fas fa-print me-1"></i> Print Invoice
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a>
+            <a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Orders Controller -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('orders-list-container');
+      const emptyState = document.getElementById('orders-empty-state');
+      const countNum = document.getElementById('orders-count-num');
+      const placedBanner = document.getElementById('placedOrderBanner');
+      const placedText = document.getElementById('placedOrderIdText');
+
+      // Check URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const placedId = urlParams.get('placed');
+      const viewId = urlParams.get('view');
+
+      if (placedId) {
+        placedBanner.classList.remove('d-none');
+        placedText.textContent = `#${placedId}`;
+      }
+
+      const orders = window.CheckoutManager?.getOrders() || [];
+
+      function renderOrders(filter = 'all') {
+        let filtered = orders;
+        if (filter !== 'all') {
+          filtered = orders.filter(o => o.status === filter);
+        }
+
+        countNum.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+          container.innerHTML = '';
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        emptyState.style.display = 'none';
+
+        container.innerHTML = filtered.map(order => {
+          let statusColor = 'success';
+          let statusIcon = 'fa-check-circle';
+          let progressWidth = '100%';
+
+          if (order.status === 'Processing') {
+            statusColor = 'warning';
+            statusIcon = 'fa-clock';
+            progressWidth = '35%';
+          } else if (order.status === 'Out for Delivery') {
+            statusColor = 'info';
+            statusIcon = 'fa-truck-fast';
+            progressWidth = '75%';
+          }
+
+          return `
+            <div class="p-4 bg-card rounded-4 border shadow-sm ${placedId === order.orderId ? 'border-primary border-2' : ''}">
+              <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 pb-3 border-bottom gap-2">
+                <div>
+                  <span class="fs-5 fw-bold text-primary">Order #${order.orderId}</span>
+                  <span class="badge bg-${statusColor} ms-2"><i class="fas ${statusIcon} me-1"></i>${order.status}</span>
+                  <div class="text-muted small mt-1">Placed on ${order.date} at ${order.time || '10:00 AM'}</div>
+                </div>
+                <div class="text-md-end">
+                  <span class="fs-4 fw-bold text-main">₹${order.amount}</span>
+                  <div class="small text-muted">${order.paymentMethod}</div>
+                </div>
+              </div>
+
+              <!-- Live Timeline Tracker -->
+              <div class="my-4">
+                <div class="d-flex justify-content-between small fw-semibold text-muted mb-2">
+                  <span class="text-primary"><i class="fas fa-check me-1"></i>Catch Landed & Inspected</span>
+                  <span class="${order.status !== 'Pending' ? 'text-primary' : ''}"><i class="fas fa-knife me-1"></i>Cleanroom Butchery</span>
+                  <span class="${order.status === 'Out for Delivery' || order.status === 'Delivered' ? 'text-primary' : ''}"><i class="fas fa-truck-fast me-1"></i>Chilled Dispatch</span>
+                  <span class="${order.status === 'Delivered' ? 'text-success' : ''}"><i class="fas fa-house-chimney me-1"></i>Delivered</span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: ${progressWidth}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <!-- Items Table -->
+              <div class="table-responsive mb-3">
+                <table class="table table-sm align-middle mb-0">
+                  <thead class="table-light small text-muted">
+                    <tr>
+                      <th>Product Item</th>
+                      <th>Cut / Weight</th>
+                      <th>Unit Price</th>
+                      <th class="text-center">Qty</th>
+                      <th class="text-end">Item Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${order.items.map(item => `
+                      <tr>
+                        <td class="fw-semibold">${item.name}</td>
+                        <td class="small text-muted">${item.weight || '1 kg'} • ${item.cut || 'Curry Cut'}</td>
+                        <td class="small">₹${item.price}</td>
+                        <td class="text-center small">${item.qty}</td>
+                        <td class="text-end fw-semibold">₹${Math.round(item.price * (parseFloat(item.weight) || 1) * item.qty)}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Delivery slot and actions -->
+              <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 border-top gap-2">
+                <div class="small text-muted">
+                  <i class="fas fa-clock text-primary me-1"></i> Delivery Slot: <strong>${order.deliverySlot}</strong>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-sea btn-sm" onclick="showInvoiceModal('${order.orderId}')">
+                    <i class="fas fa-receipt me-1"></i> View Invoice
+                  </button>
+                  <a href="products.html" class="btn btn-primary-sea btn-sm">
+                    <i class="fas fa-redo me-1"></i> Reorder
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Invoice Modal Handler
+      window.showInvoiceModal = function (orderId) {
+        const order = orders.find(o => o.orderId === orderId);
+        if (!order) return;
+
+        document.getElementById('invoiceModalTitle').textContent = `Invoice #${order.orderId}`;
+        const modalBody = document.getElementById('invoiceModalBody');
+
+        modalBody.innerHTML = `
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start mb-4 pb-3 border-bottom">
+              <div>
+                <h4 class="fw-bold text-primary mb-1">Seafood & Fresh Fish Market</h4>
+                <p class="small text-muted mb-0">Harbor Terminal 4, Coastal Wharf Road, Coastal Marine Port<br>GSTIN: 33AAACR1234F1Z5 | FSSAI: 12421008000123</p>
+              </div>
+              <div class="text-end">
+                <span class="badge bg-success fs-6 mb-1">TAX INVOICE</span>
+                <div class="small text-muted">Invoice No: <strong>INV-${order.orderId}</strong></div>
+                <div class="small text-muted">Date: ${order.date}</div>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+              <div class="col-6">
+                <h6 class="small fw-bold text-muted text-uppercase">Billed To:</h6>
+                <strong>${order.customer?.name || 'Valued Customer'}</strong>
+                <div class="small text-muted">${order.customer?.address || 'Chennai, Tamil Nadu'}</div>
+                <div class="small text-muted">Phone: ${order.customer?.phone || '+91 98765 43210'}</div>
+              </div>
+              <div class="col-6 text-end">
+                <h6 class="small fw-bold text-muted text-uppercase">Payment Details:</h6>
+                <div><strong>${order.paymentMethod}</strong></div>
+                <div class="small text-muted">Status: <span class="text-success fw-bold">PAID</span></div>
+                <div class="small text-muted">Slot: ${order.deliverySlot}</div>
+              </div>
+            </div>
+
+            <table class="table table-bordered mb-4">
+              <thead class="table-light small">
+                <tr>
+                  <th>Description</th>
+                  <th>Weight & Cut</th>
+                  <th>Rate</th>
+                  <th class="text-center">Qty</th>
+                  <th class="text-end">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${order.items.map(item => `
+                  <tr>
+                    <td>${item.name}</td>
+                    <td class="small text-muted">${item.weight || '1 kg'} • ${item.cut || 'Standard'}</td>
+                    <td>₹${item.price}</td>
+                    <td class="text-center">${item.qty}</td>
+                    <td class="text-end">₹${Math.round(item.price * (parseFloat(item.weight) || 1) * item.qty)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="4" class="text-end">Grand Total Paid:</th>
+                  <th class="text-end text-primary fs-5">₹${order.amount}</th>
+                </tr>
+              </tfoot>
+            </table>
+
+            <div class="alert alert-light border small text-center mb-0 text-muted">
+              Thank you for trusting Seafood & Fresh Fish Market! 100% chemical-free guaranteed.
+            </div>
+          </div>
+        `;
+
+        const modal = new bootstrap.Modal(document.getElementById('orderInvoiceModal'));
+        modal.show();
+      };
+
+      // Filter clicks
+      document.querySelectorAll('#orderStatusFilters button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#orderStatusFilters button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderOrders(btn.getAttribute('data-filter'));
+        });
+      });
+
+      renderOrders();
+
+      if (viewId) {
+        showInvoiceModal(viewId);
+      }
+    });
+  </script>
+</body>
+</html>

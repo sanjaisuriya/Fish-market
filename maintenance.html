@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduled Maintenance | Fish Market</title>
+  <meta name="description" content="Fish Market systems are undergoing brief maintenance to sync morning dock ingestion records. Phone orders remain active.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-alt">
+
+  <!-- Header -->
+  <header class="py-3 bg-card border-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="toggle-btn theme-toggle-btn">
+          <i class="bi bi-moon-stars-fill"></i>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button type="button" class="toggle-btn rtl-toggle-btn">
+          <i class="bi bi-text-right"></i>
+          <span class="rtl-text">RTL</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Maintenance Body -->
+  <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          
+          <div class="p-4 bg-card rounded-4 border shadow-xl">
+            <div class="rounded-circle bg-primary-subtle text-primary p-3 d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+              <i class="bi bi-tools display-6"></i>
+            </div>
+
+            <span class="badge bg-warning bg-opacity-10 text-warning border border-warning text-uppercase px-3 py-1 fw-bold d-inline-block mb-3">
+              Scheduled Pier Maintenance
+            </span>
+
+            <h2 class="fw-bold text-secondary mb-2">Upgrading Dock Ingestion Systems</h2>
+            <p class="text-muted small mx-auto mb-4" style="max-width: 500px;">
+              We are currently performing our scheduled morning dock database synchronization to ensure accurate boat GPS traceability and real-time live market pricing.
+            </p>
+
+            <div class="p-3 bg-alt rounded-3 border mb-4 text-start small">
+              <div class="d-flex justify-content-between mb-1">
+                <strong>Progress:</strong>
+                <span class="text-primary fw-bold">85% Complete</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 85%"></div>
+              </div>
+              <small class="text-muted mt-2 d-block text-center">Estimated completion in ~15 minutes.</small>
+            </div>
+
+            <div class="card p-3 rounded-3 border bg-primary-subtle border-primary mb-4 text-center">
+              <h6 class="fw-bold text-secondary mb-1"><i class="bi bi-telephone-inbound-fill text-primary me-2"></i>Need Immediate Delivery?</h6>
+              <p class="small text-muted mb-2">Our dock fishmongers are taking orders directly via phone:</p>
+              <a href="tel:+18005553474" class="btn btn-ocean btn-sm mx-auto">
+                Call +1 (800) 555-FISH (3474)
+              </a>
+            </div>
+
+            <a href="index.html" class="btn btn-outline-secondary btn-sm">
+              <i class="bi bi-arrow-clockwise me-1"></i> Refresh Page
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <div><a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a></div>
+            <div><a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Seafood & Fresh Fish Market - RTL (Right-to-Left) Stylesheet
+   Supports Arabic, Hebrew, and RTL languages
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+[dir="rtl"] .me-1, [dir="rtl"] .me-2, [dir="rtl"] .me-3, [dir="rtl"] .me-4 {
+  margin-right: 0 !important;
+}
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; }
+[dir="rtl"] .me-4 { margin-left: 1.5rem !important; }
+
+[dir="rtl"] .ms-1, [dir="rtl"] .ms-2, [dir="rtl"] .ms-3, [dir="rtl"] .ms-4 {
+  margin-left: 0 !important;
+}
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; }
+[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; }
+
+[dir="rtl"] .pe-1, [dir="rtl"] .pe-2, [dir="rtl"] .pe-3 {
+  padding-right: 0 !important;
+}
+[dir="rtl"] .pe-1 { padding-left: 0.25rem !important; }
+[dir="rtl"] .pe-2 { padding-left: 0.5rem !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; }
+
+[dir="rtl"] .ps-1, [dir="rtl"] .ps-2, [dir="rtl"] .ps-3 {
+  padding-left: 0 !important;
+}
+[dir="rtl"] .ps-1 { padding-right: 0.25rem !important; }
+[dir="rtl"] .ps-2 { padding-right: 0.5rem !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; }
+
+/* Navbar & Dropdowns */
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+/* Badges on Cards */
+[dir="rtl"] .product-badge-group {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .recipe-meta-pill {
+  left: auto;
+  right: 12px;
+}
+
+/* Hero floating cards */
+[dir="rtl"] .hero-float-card.bottom-left {
+  left: auto;
+  right: -15px;
+}
+[dir="rtl"] .hero-float-card.top-right {
+  right: auto;
+  left: -15px;
+}
+
+/* Toast Container */
+[dir="rtl"] .toast-container {
+  right: auto;
+  left: 24px;
+}
+[dir="rtl"] .custom-toast.toast-success {
+  border-left: none;
+  border-right: 4px solid var(--color-seafoam);
+}
+[dir="rtl"] .custom-toast.toast-error {
+  border-left: none;
+  border-right: 4px solid #ef4444;
+}
+
+/* Back to top */
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 25px;
+}
+
+/* Breadcrumb custom */
+[dir="rtl"] .breadcrumb-custom {
+  direction: rtl;
+}
+[dir="rtl"] .breadcrumb-custom .bi-chevron-right::before {
+  content: "\f284"; /* chevron-left */
+}
+
+/* Footer links animation */
+[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .footer-heading::after {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Icons direction reversal where appropriate */
+[dir="rtl"] .bi-arrow-right::before {
+  content: "\f12f"; /* bi-arrow-left */
+}
+[dir="rtl"] .bi-chevron-right::before {
+  content: "\f284"; /* bi-chevron-left */
+}

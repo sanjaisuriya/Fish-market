@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Order Enquiry | Fish Market</title>
+  <meta name="description" content="Send a direct order enquiry for fresh fish, tiger prawns, and crabs. Connect with our dock fishmongers for custom cuts and same-day delivery.">
+  <meta name="keywords" content="contact fish market, order seafood online, seafood enquiry, custom cut fish order, harbor fishmonger phone">
+
+  <!-- Favicon (Data URI SVG ensures instant display on Chrome Tab) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContactCollapse" aria-controls="navbarContactCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContactCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item py-2" href="index.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1 opacity-25"></li>
+              <li>
+                <a class="dropdown-item py-2" href="home-2.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item active"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span>Cart</span>
+          </a>
+          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+            <i class="bi bi-person-circle"></i>
+            <span>Login / Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <!-- 1. Cart -->
+          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+            <i class="bi bi-cart3"></i> <span>Cart</span>
+          </a>
+          
+          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+          <div class="d-flex gap-2">
+            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+              <span class="theme-text">Dark</span>
+            </button>
+            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+              <span class="rtl-text">RTL</span>
+            </button>
+          </div>
+
+          <!-- 4. Login / Register -->
+          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner page-banner-contact">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-9 text-start">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Get in Touch</span>
+          <h1 class="page-banner-title mb-2">Contact &amp; Order Enquiry</h1>
+          <p class="page-banner-desc ms-0 mb-3 text-start">Reach out for custom cuts, wholesale rates, party bulk orders, or instant WhatsApp enquiries.</p>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-custom justify-content-start mb-0">
+              <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
+              <li><i class="bi bi-chevron-right small text-muted"></i></li>
+              <li class="active">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Contact Form & Information Cards
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="row g-5">
+        
+        <!-- Left: Contact Form -->
+        <div class="col-lg-7">
+          <div class="card p-4 p-md-5 rounded-4 border bg-card shadow-lg">
+            <span class="section-subtitle">Direct Pier Order</span>
+            <h3 class="fw-bold text-secondary mb-2">Send Seafood Order Enquiry</h3>
+            <p class="text-muted small mb-4">
+              Fill out your desired seafood varieties and custom cuts. Our dock manager will check this morning's live ingestion and contact you within 30 minutes.
+            </p>
+
+            <form id="contact-enquiry-form" novalidate>
+              <div class="row g-3">
+                
+                <!-- Full Name -->
+                <div class="col-md-6">
+                  <label for="contact-name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="contact-name" placeholder="John Doe" required>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                  <label for="contact-email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="contact-email" placeholder="john@example.com" required>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-6">
+                  <label for="contact-phone" class="form-label">Phone / WhatsApp Number <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="contact-phone" placeholder="+1 (555) 000-0000" required>
+                </div>
+
+                <!-- Seafood Variety Selection -->
+                <div class="col-md-6">
+                  <label for="enquiry-seafood-type" class="form-label">Seafood Variety <span class="text-danger">*</span></label>
+                  <select class="form-select" id="enquiry-seafood-type" required>
+                    <option value="">Choose Seafood...</option>
+                    <option value="salmon">Norwegian Atlantic Salmon</option>
+                    <option value="tuna">Yellowfin Tuna Loin</option>
+                    <option value="seabass">Mediterranean Sea Bass</option>
+                    <option value="pomfret">Silver Pomfret</option>
+                    <option value="tiger-prawns">Jumbo Tiger Prawns</option>
+                    <option value="white-prawns">Coastal White Prawns</option>
+                    <option value="crab">Live Blue Swimmer Crab</option>
+                    <option value="lobster">Rock Spiny Lobster</option>
+                    <option value="oysters">Pacific Fine Oysters</option>
+                    <option value="mussels">Green Lipped Sea Mussels</option>
+                    <option value="squid">Calamari Squid Rings</option>
+                    <option value="mackerel">King Mackerel (Surmai)</option>
+                    <option value="custom-box">Curated Seafood Box / Package</option>
+                  </select>
+                </div>
+
+                <!-- Quantity in kg -->
+                <div class="col-md-6">
+                  <label for="enquiry-quantity" class="form-label">Quantity (kg) <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="enquiry-quantity" placeholder="e.g. 2.5" min="0.5" step="0.5" value="1.0" required>
+                </div>
+
+                <!-- Preferred Delivery Date -->
+                <div class="col-md-6">
+                  <label for="enquiry-date" class="form-label">Preferred Delivery Date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="enquiry-date" required>
+                </div>
+
+                <!-- Custom Cutting & Message -->
+                <div class="col-12">
+                  <label for="enquiry-message" class="form-label">Cutting Style & Special Notes</label>
+                  <textarea class="form-control" id="enquiry-message" rows="4" placeholder="Specify your desired cutting (e.g. skin-on fillets, 1-inch steaks, curry cut cubes) or delivery address instructions..."></textarea>
+                </div>
+
+                <!-- Dual Submit Actions -->
+                <div class="col-12 mt-4 d-flex flex-column gap-2">
+                  <button type="button" id="btn-submit-whatsapp" class="btn btn-success w-100 py-3 justify-content-center fs-6 fw-bold shadow-sm" style="background-color: #25D366; border-color: #25D366;">
+                    <i class="bi bi-whatsapp me-2 fs-5"></i> Send Enquiry via WhatsApp (Instant)
+                  </button>
+                  <button type="submit" id="btn-submit-email" class="btn btn-outline-ocean w-100 py-2 justify-content-center fs-6">
+                    <i class="bi bi-envelope-fill me-2"></i> Submit via Email Form
+                  </button>
+                  <small class="text-muted text-center d-block mt-1">
+                    <i class="bi bi-shield-check text-success me-1"></i> No upfront payment. Our dock manager confirms live weight, cuts & exact price within 30 mins.
+                  </small>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Business Info, Hours & Map Card -->
+        <div class="col-lg-5">
+          <!-- Business Details Card -->
+          <div class="card p-4 rounded-4 border bg-card mb-4 shadow-sm">
+            <h5 class="fw-bold text-secondary mb-3"><i class="bi bi-building text-primary me-2"></i>Pier Market Headquarters</h5>
+            
+            <div class="d-flex flex-column gap-3 small">
+              <div class="d-flex gap-3">
+                <div class="feature-icon-box m-0 flex-shrink-0" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <strong class="d-block text-secondary">Harbor Location</strong>
+                  <span class="text-muted">Dock Slip 14, Pier 44, Harbor Bay Coastal Marina, CA 94111</span>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <div class="feature-icon-box m-0 flex-shrink-0" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div>
+                  <strong class="d-block text-secondary">Phone Support</strong>
+                  <span class="text-muted">+1 (800) 555-FISH (3474) / +1 (415) 555-0198</span>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <div class="feature-icon-box m-0 flex-shrink-0" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                  <strong class="d-block text-secondary">Email Support</strong>
+                  <span class="text-muted">orders@oceancatchmarket.com</span>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <div class="feature-icon-box m-0 flex-shrink-0" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <div>
+                  <strong class="d-block text-secondary">Operating & Ingestion Hours</strong>
+                  <span class="text-muted">5:00 AM – 8:00 PM (Open 7 Days a Week)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Google Maps -->
+          <div class="card rounded-4 border overflow-hidden bg-card shadow-sm">
+            <div class="p-3 bg-alt border-bottom d-flex justify-content-between align-items-center">
+              <span class="small fw-bold text-secondary"><i class="bi bi-geo-alt-fill text-danger me-1"></i> Pier 44 Harbor Market Map</span>
+              <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-circle-fill small me-1"></i> Live Dock Location</span>
+            </div>
+            <div class="position-relative" style="height: 280px; width: 100%;">
+              <iframe 
+                src="https://maps.google.com/maps?q=Fisherman's%20Wharf,%20Pier%2045,%20San%20Francisco&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Fish Market Location Map">
+              </iframe>
+            </div>
+            <div class="p-3 bg-card border-top d-flex justify-content-between align-items-center">
+              <div class="small text-muted">
+                <i class="bi bi-pin-map-fill text-primary me-1"></i> Pier 44, Coastal Marina Wharf
+              </div>
+              <a href="https://maps.google.com/?q=Fisherman's+Wharf+Pier+45" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary py-1 px-2">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a>
+            <a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enquiry Confirmation Modal -->
+  <div class="modal fade" id="enquirySuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-xl text-center p-4">
+        <div class="modal-body">
+          <div class="rounded-circle bg-success-subtle text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+            <i class="bi bi-check-circle-fill fs-1"></i>
+          </div>
+          <h4 class="fw-bold text-secondary mb-2">Order Enquiry Received!</h4>
+          <p class="text-muted small mb-3">
+            Thank you, <strong id="modal-enq-name" class="text-dark">Customer</strong>! Your enquiry has been routed directly to our Harbor Pier Dock Manager.
+          </p>
+          
+          <div class="bg-light p-3 rounded-3 text-start small mb-3 border">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Enquiry Ref:</span>
+              <strong id="modal-enq-ref" class="text-primary">#ENQ-00000</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Seafood Item:</span>
+              <strong id="modal-enq-item">-</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Quantity:</span>
+              <strong id="modal-enq-qty">1.0 kg</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted">Preferred Date:</span>
+              <strong id="modal-enq-date">-</strong>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <a id="modal-enq-whatsapp-link" href="#" target="_blank" class="btn btn-success fw-bold py-2 d-flex align-items-center justify-content-center gap-2" style="background-color: #25D366; border-color: #25D366;">
+              <i class="bi bi-whatsapp fs-5"></i> Chat with Dock Manager on WhatsApp
+            </a>
+            <button type="button" class="btn btn-outline-secondary py-2" data-bs-dismiss="modal">Close & Continue Browsing</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

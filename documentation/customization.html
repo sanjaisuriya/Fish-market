@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customization Guide | OceanFresh Template</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b; }
+    .doc-sidebar { background: #0f4c81; color: #fff; min-height: 100vh; }
+    .doc-sidebar a { color: #cbd5e1; text-decoration: none; padding: 10px 16px; display: block; border-radius: 6px; }
+    .doc-sidebar a:hover, .doc-sidebar a.active { color: #fff; background: rgba(0,168,150,0.3); }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 col-lg-2 doc-sidebar p-4">
+      <h4 class="fw-bold mb-4 text-white"><i class="fas fa-fish me-2 text-info"></i> OceanFresh Docs</h4>
+      <nav class="d-flex flex-column gap-1">
+        <a href="index.html"><i class="fas fa-book me-2"></i> Overview</a>
+        <a href="installation.html"><i class="fas fa-download me-2"></i> Installation</a>
+        <a href="customization.html" class="active"><i class="fas fa-palette me-2"></i> Customization</a>
+        <a href="dark-light-mode.html"><i class="fas fa-moon me-2"></i> Dark / Light Mode</a>
+        <a href="rtl-ltr.html"><i class="fas fa-globe me-2"></i> RTL / LTR Support</a>
+        <a href="credits.html"><i class="fas fa-award me-2"></i> Credits & Assets</a>
+      </nav>
+      <div class="mt-5 pt-4 border-top border-secondary">
+        <a href="../index.html" class="btn btn-sm btn-outline-light w-100"><i class="fas fa-arrow-left me-1"></i> Back to Main Site</a>
+      </div>
+    </div>
+
+    <div class="col-md-9 col-lg-10 p-5">
+      <div class="max-w-4xl">
+        <h1 class="fw-extrabold mb-3">Customization & Color Variables</h1>
+        <p class="lead text-muted mb-4">Easily customize the primary brand colors, typography, and product datasets.</p>
+
+        <h4 class="fw-bold mb-2">Changing Brand Colors in <code>assets/css/style.css</code></h4>
+        <pre class="bg-dark text-light p-3 rounded"><code>:root {
+  --primary-color: #0f4c81;     /* Deep Ocean Blue */
+  --secondary-color: #00a896;   /* Fresh Teal Accent */
+  --accent-color: #ff6b6b;      /* Coral Badge */
+  --bg-main: #f8fafc;           /* Light Theme Background */
+}</code></pre>
+
+        <h4 class="fw-bold mt-4 mb-2">Modifying Product & Market Datasets</h4>
+        <p class="text-muted">Edit JSON files inside <code>data/</code> folder: <code>products.json</code>, <code>recipes.json</code>, <code>testimonials.json</code>, and <code>market-prices.json</code>. The frontend scripts automatically adapt without needing code changes!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

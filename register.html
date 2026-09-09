@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Registration | Fish Market</title>
+  <meta name="description" content="Register your customer account to enjoy priority daily catch deliveries, recurring seafood boxes, and customized cut profiles.">
+  <meta name="keywords" content="register seafood market, sign up fresh fish, seafood customer registration">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-alt">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login / Register (Combined) -->
+      <div class="d-flex align-items-center gap-2">
+        <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+          <i class="bi bi-cart3"></i>
+          <span>Cart</span>
+        </a>
+        <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+          <i class="bi bi-moon-stars-fill"></i>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+          <i class="bi bi-text-right"></i>
+          <span class="rtl-text">RTL</span>
+        </button>
+        <a href="login.html?tab=register" class="nav-auth-btn nav-login-btn active" title="Login / Register">
+          <i class="bi bi-person-circle"></i>
+          <span>Login / Register</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Unified Auth Main Section -->
+  <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          
+          <div class="card p-4 p-md-5 rounded-4 border bg-card shadow-xl">
+            <div class="text-center mb-4">
+              <a href="index.html" class="brand-logo fs-3 mb-2 d-inline-flex align-items-center gap-2">
+                <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+                  <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+                  <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+                  <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Fish <span class="accent">Market</span></span>
+              </a>
+              <h4 class="fw-bold text-secondary mb-1" id="auth-main-title">Account Portal</h4>
+              <p class="text-muted small mb-0" id="auth-main-subtitle">Sign in or register to manage fresh catch orders</p>
+            </div>
+
+            <!-- Interactive Auth Tabs (Login & Register in ONE place) -->
+            <ul class="nav nav-pills nav-fill mb-4" id="authTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-pill fw-bold py-2" id="signin-tab" data-bs-toggle="pill" data-bs-target="#signin-pane" type="button" role="tab" aria-controls="signin-pane" aria-selected="false">
+                  <i class="bi bi-box-arrow-in-right me-1"></i> Sign In
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-pill fw-bold py-2" id="register-tab" data-bs-toggle="pill" data-bs-target="#register-pane" type="button" role="tab" aria-controls="register-pane" aria-selected="true">
+                  <i class="bi bi-person-plus-fill me-1"></i> Create Account
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="authTabContent">
+              <!-- Tab 1: Sign In (Login) -->
+              <div class="tab-pane fade" id="signin-pane" role="tabpanel" aria-labelledby="signin-tab" tabindex="0">
+                <form id="login-form" novalidate>
+                  <!-- Email -->
+                  <div class="mb-3">
+                    <label for="login-email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light border-end-0"><i class="bi bi-envelope text-muted"></i></span>
+                      <input type="email" class="form-control border-start-0" id="login-email" placeholder="name@example.com" value="customer@example.com" required>
+                    </div>
+                  </div>
+
+                  <!-- Password -->
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                      <label for="login-password" class="form-label mb-0">Password</label>
+                      <a href="#" class="small text-primary text-decoration-none" onclick="event.preventDefault(); window.showToast('Password reset link sent to your email!', 'info');">Forgot Password?</a>
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock text-muted"></i></span>
+                      <input type="password" class="form-control border-start-0" id="login-password" placeholder="Enter your password" value="seafood123" required>
+                    </div>
+                  </div>
+
+                  <!-- Remember Me -->
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                    <label class="form-check-label text-muted small" for="rememberMe">
+                      Remember my session on this device
+                    </label>
+                  </div>
+
+                  <!-- Submit -->
+                  <button type="submit" class="btn btn-ocean w-100 py-3 justify-content-center fw-bold fs-6">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Account
+                  </button>
+                </form>
+
+                <div class="text-center mt-3 pt-3 border-top">
+                  <span class="text-muted small">Need a new account? </span>
+                  <button type="button" class="btn btn-link p-0 fw-bold text-primary small text-decoration-none" onclick="document.getElementById('register-tab').click();">Register here</button>
+                </div>
+              </div>
+
+              <!-- Tab 2: Create Account (Register) -->
+              <div class="tab-pane fade show active" id="register-pane" role="tabpanel" aria-labelledby="register-tab" tabindex="0">
+                <form id="register-form" novalidate>
+                  <div class="row g-3">
+                    
+                    <!-- Full Name -->
+                    <div class="col-12">
+                      <label for="reg-name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-person text-muted"></i></span>
+                        <input type="text" class="form-control border-start-0" id="reg-name" placeholder="John Doe" required>
+                      </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                      <label for="reg-email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-envelope text-muted"></i></span>
+                        <input type="email" class="form-control border-start-0" id="reg-email" placeholder="john@example.com" required>
+                      </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="col-md-6">
+                      <label for="reg-phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-telephone text-muted"></i></span>
+                        <input type="tel" class="form-control border-start-0" id="reg-phone" placeholder="+1 (555) 000-0000" required>
+                      </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="col-md-6">
+                      <label for="reg-password" class="form-label">Password <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock text-muted"></i></span>
+                        <input type="password" class="form-control border-start-0" id="reg-password" placeholder="Min. 6 chars" required>
+                      </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="col-md-6">
+                      <label for="reg-confirm-password" class="form-label">Confirm Password <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="bi bi-shield-lock text-muted"></i></span>
+                        <input type="password" class="form-control border-start-0" id="reg-confirm-password" placeholder="Repeat password" required>
+                      </div>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="reg-terms" required>
+                        <label class="form-check-label text-muted small" for="reg-terms">
+                          I agree to the <a href="#" class="text-primary text-decoration-none">Terms of Service</a> & <a href="#" class="text-primary text-decoration-none">Privacy Policy</a>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 mt-3">
+                      <button type="submit" class="btn btn-ocean w-100 py-3 justify-content-center fw-bold fs-6">
+                        <i class="bi bi-person-plus-fill me-1"></i> Complete Registration
+                      </button>
+                    </div>
+
+                  </div>
+                </form>
+
+                <div class="text-center mt-3 pt-3 border-top">
+                  <span class="text-muted small">Already registered? </span>
+                  <button type="button" class="btn btn-link p-0 fw-bold text-primary small text-decoration-none" onclick="document.getElementById('signin-tab').click();">Sign In here</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-center mt-3">
+            <a href="index.html" class="text-muted small text-decoration-none"><i class="bi bi-arrow-left me-1"></i> Back to Home Page</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="py-3 text-white text-center small" style="background-color: #000000 !important;">
+    <div class="container">
+      &copy; 2026 Fish Market. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/validation.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get('tab');
+
+      if (hash === '#signin' || hash === '#login' || tabParam === 'login' || tabParam === 'signin') {
+        const signinTab = document.getElementById('signin-tab');
+        if (signinTab) {
+          const tab = new bootstrap.Tab(signinTab);
+          tab.show();
+        }
+      } else {
+        const registerTab = document.getElementById('register-tab');
+        if (registerTab) {
+          const tab = new bootstrap.Tab(registerTab);
+          tab.show();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Fish Market</title>
+  <meta name="description" content="Order fresh Norwegian Atlantic Salmon fillet or steaks. Cleaned in RO water, custom cut, and delivered same-day in insulated cold-chain boxes.">
+  <meta name="keywords" content="fresh salmon, buy salmon fillet, salmon steak cut, sashimi salmon delivery, clean fish">
+
+  <!-- Favicon (Data URI SVG ensures instant display on Chrome Tab) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <svg class="brand-fish-img" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+          <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+          <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+          <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Fish <span class="accent">Market</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProductDetailCollapse" aria-controls="navbarProductDetailCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarProductDetailCollapse">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item py-2" href="index.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider my-1 opacity-25"></li>
+              <li>
+                <a class="dropdown-item py-2" href="home-2.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span>Cart</span>
+          </a>
+          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+            <span class="theme-text">Dark</span>
+          </button>
+          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+            <i class="bi bi-text-right"></i>
+            <span class="rtl-text">RTL</span>
+          </button>
+          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
+            <i class="bi bi-person-circle"></i>
+            <span>Login / Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <!-- 1. Cart -->
+          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
+            <i class="bi bi-cart3"></i> <span>Cart</span>
+          </a>
+          
+          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
+          <div class="d-flex gap-2">
+            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+              <span class="theme-text">Dark</span>
+            </button>
+            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+              <span class="rtl-text">RTL</span>
+            </button>
+          </div>
+
+          <!-- 4. Login / Register -->
+          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <section class="page-banner page-banner-products">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-9 text-start">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Product Deep Dive</span>
+          <h1 class="page-banner-title mb-2" id="p-title-banner">Norwegian Atlantic Salmon</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-custom justify-content-start mb-0">
+              <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
+              <li><i class="bi bi-chevron-right small text-muted"></i></li>
+              <li><a href="products.html">Products</a></li>
+              <li><i class="bi bi-chevron-right small text-muted"></i></li>
+              <li class="active" id="p-crumb-title">Norwegian Atlantic Salmon</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Product Details View
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-3">
+      <div class="row g-5">
+        
+        <!-- Left: Image Gallery & Badges -->
+        <div class="col-lg-6">
+          <div class="card rounded-4 border overflow-hidden bg-card shadow-lg position-sticky" style="top: 90px;">
+            <div class="position-relative">
+              <img id="p-main-image" src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/raw_norwegian_salmon_fillet_1788766533557.jpg" alt="Norwegian Atlantic Salmon" class="w-100 object-fit-cover" style="aspect-ratio: 4/3;" onerror="this.src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80'">
+              <div class="position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
+                <span class="badge-fresh fs-6 px-3 py-2"><i class="bi bi-check-circle-fill"></i> Fresh Catch Today</span>
+                <span class="badge-wild fs-6 px-3 py-2"><i class="bi bi-shield-check"></i> Sashimi Grade A</span>
+              </div>
+            </div>
+
+            <!-- Trust Features Below Image -->
+            <div class="p-4 bg-alt border-top">
+              <div class="row g-3 text-center">
+                <div class="col-4">
+                  <i class="bi bi-snow text-primary fs-4"></i>
+                  <div class="small fw-bold mt-1">Chilled Flake Ice</div>
+                  <small class="text-muted">0° - 4°C</small>
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-scissors text-primary fs-4"></i>
+                  <div class="small fw-bold mt-1">Custom Cuts</div>
+                  <small class="text-muted">Descaled & Cleaned</small>
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-truck text-primary fs-4"></i>
+                  <div class="small fw-bold mt-1">Same-Day Express</div>
+                  <small class="text-muted">Direct to Door</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Details, Nutrition, Cuts & Enquiry -->
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-primary-subtle text-primary fw-bold text-uppercase px-3 py-1" id="p-cat-badge">Fresh Fish</span>
+            <span class="badge bg-success bg-opacity-10 text-success fw-bold px-3 py-1"><i class="bi bi-dot"></i> In Stock (Daily Catch)</span>
+          </div>
+
+          <h2 class="display-6 fw-bold text-secondary mb-2" id="p-name">Norwegian Atlantic Salmon</h2>
+          
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rating-stars mb-0">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+            </div>
+            <span class="text-muted small fw-semibold">4.9 / 5.0 (128 verified customer reviews)</span>
+          </div>
+
+          <div class="d-flex align-items-baseline gap-3 p-3 bg-card rounded-4 border mb-4 shadow-sm">
+            <span class="display-6 fw-bold text-primary" id="p-price">$34.50</span>
+            <span class="text-muted fs-5">/ per kilogram (approx. 2-3 fillets)</span>
+          </div>
+
+          <p class="text-muted mb-4 lead fs-6" id="p-desc">
+            Harvested from the cold, oxygenated fjords of Norway. Features deep vibrant orange meat, exquisite marbling, and rich concentrations of heart-healthy Omega-3 EPA/DHA fatty acids. Unbelievably tender whether pan-seared crispy skin, grilled over wood coals, or enjoyed raw as sashimi.
+          </p>
+
+          <!-- Sourcing Details -->
+          <div class="card p-3 rounded-3 border bg-alt mb-4">
+            <div class="row g-2 small">
+              <div class="col-6">
+                <strong class="text-secondary d-block">Origin / Catch Area:</strong>
+                <span class="text-muted" id="p-origin">Cold Fjords of Norway (FAO 27)</span>
+              </div>
+              <div class="col-6">
+                <strong class="text-secondary d-block">Catch Method:</strong>
+                <span class="text-muted">Certified Sustainable Marine Pens</span>
+              </div>
+              <div class="col-6">
+                <strong class="text-secondary d-block">Preservatives:</strong>
+                <span class="text-success fw-bold">100% Chemical & Formalin Free</span>
+              </div>
+              <div class="col-6">
+                <strong class="text-secondary d-block">Storage Guideline:</strong>
+                <span class="text-muted">Refrigerate at 0°-4°C (Cook in 48h)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cutting & Cleaning Options -->
+          <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <label class="form-label fw-bold text-secondary mb-0">Select Cutting Style:</label>
+              <span class="badge bg-primary text-white" id="selected-cut-display">Fillet</span>
+            </div>
+            <input type="hidden" id="selected-cut-input" value="Fillet">
+
+            <div class="row g-2">
+              <div class="col-sm-4 col-6">
+                <div class="cut-option-card card p-2 text-center rounded-3 border active border-primary bg-primary-subtle cursor-pointer" data-cut="Skin-On Fillet">
+                  <i class="bi bi-slash-square text-primary fs-5 mb-1"></i>
+                  <div class="small fw-bold">Skin-On Fillet</div>
+                  <small class="text-muted" style="font-size: 0.72rem;">Pan-fry & Grilling</small>
+                </div>
+              </div>
+
+              <div class="col-sm-4 col-6">
+                <div class="cut-option-card card p-2 text-center rounded-3 border cursor-pointer" data-cut="Steak Slices">
+                  <i class="bi bi-circle text-primary fs-5 mb-1"></i>
+                  <div class="small fw-bold">Steak Slices</div>
+                  <small class="text-muted" style="font-size: 0.72rem;">Cross-section Bone-in</small>
+                </div>
+              </div>
+
+              <div class="col-sm-4 col-6">
+                <div class="cut-option-card card p-2 text-center rounded-3 border cursor-pointer" data-cut="Curry Cut Cubes">
+                  <i class="bi bi-grid text-primary fs-5 mb-1"></i>
+                  <div class="small fw-bold">Curry Cut</div>
+                  <small class="text-muted" style="font-size: 0.72rem;">Bite-sized Cubes</small>
+                </div>
+              </div>
+
+              <div class="col-sm-4 col-6">
+                <div class="cut-option-card card p-2 text-center rounded-3 border cursor-pointer" data-cut="Whole Scaled & Gutted">
+                  <i class="bi bi-water text-primary fs-5 mb-1"></i>
+                  <div class="small fw-bold">Whole Cleaned</div>
+                  <small class="text-muted" style="font-size: 0.72rem;">Gutted & Descaled</small>
+                </div>
+              </div>
+
+              <div class="col-sm-4 col-6">
+                <div class="cut-option-card card p-2 text-center rounded-3 border cursor-pointer" data-cut="Shallow Fry Cut">
+                  <i class="bi bi-pie-chart text-primary fs-5 mb-1"></i>
+                  <div class="small fw-bold">Fry Cut</div>
+                  <small class="text-muted" style="font-size: 0.72rem;">Slits on Flesh</small>
+                </div>
+              </div>
+
+              <div class="col-sm-4 col-6">
+                <div class="cut-option-card card p-2 text-center rounded-3 border cursor-pointer" data-cut="Custom Chef Cut">
+                  <i class="bi bi-scissors text-primary fs-5 mb-1"></i>
+                  <div class="small fw-bold">Custom Cut</div>
+                  <small class="text-muted" style="font-size: 0.72rem;">Specify in Order</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantity Controller & Action Buttons -->
+          <div class="p-3 bg-card rounded-4 border shadow-sm mb-4">
+            <div class="row g-3 align-items-center">
+              <div class="col-sm-5">
+                <label class="form-label small text-muted fw-bold mb-1">Order Quantity (kg):</label>
+                <div class="input-group input-group-quantity">
+                  <button class="btn btn-outline-secondary qty-btn-minus" type="button"><i class="bi bi-dash"></i></button>
+                  <input type="number" class="form-control text-center qty-input fw-bold" value="1" min="1" max="25" aria-label="Quantity in kg">
+                  <button class="btn btn-outline-secondary qty-btn-plus" type="button"><i class="bi bi-plus"></i></button>
+                </div>
+              </div>
+              <div class="col-sm-7">
+                <label class="form-label small text-transparent d-none d-sm-block mb-1">Action</label>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-ocean flex-grow-1 py-2 justify-content-center" id="btn-add-product-cart">
+                    <i class="bi bi-cart-plus-fill me-1"></i> Add to Cart
+                  </button>
+                  <a href="cart.html" class="btn btn-outline-ocean py-2 px-3 d-flex align-items-center" title="View Cart">
+                    <i class="bi bi-cart3 fs-5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nutrition Facts Table -->
+          <div class="card p-3 rounded-4 border bg-card mb-4">
+            <h6 class="fw-bold text-secondary mb-3"><i class="bi bi-activity text-primary me-2"></i>Nutritional Profile (Per 100g)</h6>
+            <div class="row g-2 text-center">
+              <div class="col-3 border-end">
+                <div class="fw-bold text-secondary">208 kcal</div>
+                <small class="text-muted">Calories</small>
+              </div>
+              <div class="col-3 border-end">
+                <div class="fw-bold text-primary">20.4 g</div>
+                <small class="text-muted">Protein</small>
+              </div>
+              <div class="col-3 border-end">
+                <div class="fw-bold text-secondary">2.3 g</div>
+                <small class="text-muted">Omega-3</small>
+              </div>
+              <div class="col-3">
+                <div class="fw-bold text-secondary">0.0 g</div>
+                <small class="text-muted">Carbs</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="row justify-content-center mt-5 pt-4 border-top">
+        <div class="col-lg-10">
+          <div class="section-header text-center mb-4">
+            <span class="section-subtitle">Frequently Asked Questions</span>
+            <h3 class="section-title">Product & Preparation FAQs</h3>
+          </div>
+
+          <div class="accordion" id="productFaqAccordion">
+            <div class="accordion-item rounded-3 border mb-3">
+              <h2 class="accordion-header" id="faqHeadingOne">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">
+                  Is this seafood really delivered fresh and never frozen?
+                </button>
+              </h2>
+              <div id="faqCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes, absolutely. Our catch is received every morning from registered harbor boats. It is cleaned in RO water, immediately packed in food-grade thermal ice trays between 0°C to 4°C, and delivered to your kitchen within hours.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded-3 border mb-3">
+              <h2 class="accordion-header" id="faqHeadingTwo">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">
+                  Where and how is the seafood cleaned?
+                </button>
+              </h2>
+              <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-muted">
+                  All cleaning, descaling, and cutting takes place in our ISO-certified, temperature-controlled cleanrooms using UV-treated RO water. Our fishmongers wear food-grade PPE to ensure 100% hygiene and zero cross-contamination.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded-3 border mb-3">
+              <h2 class="accordion-header" id="faqHeadingThree">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree">
+                  Can I request a custom cut or specific slice thickness?
+                </button>
+              </h2>
+              <div id="faqCollapseThree" class="accordion-collapse collapse" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! Simply select the "Custom Cut" option or mention your preferences (e.g. 1-inch steaks, bone-in curry cut, sashimi slices, or head separated) in the message box when sending your order enquiry.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item rounded-3 border mb-3">
+              <h2 class="accordion-header" id="faqHeadingFour">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour">
+                  How quickly will my seafood order arrive?
+                </button>
+              </h2>
+              <div id="faqCollapseFour" class="accordion-collapse collapse" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-muted">
+                  Orders placed before 10:00 AM are delivered in our Morning Express slot (8:00 AM - 12:00 PM). Orders placed by 2:00 PM are delivered in our Evening Slot (3:00 PM - 7:00 PM) in specialized refrigerated vans.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer Component
+       ========================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Column 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo footer-brand-badge mb-3" href="index.html">
+            <svg class="brand-fish-img" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z" fill="#0284c7"/>
+              <path d="M10 32L2 22V42L10 32Z" fill="#0284c7"/>
+              <circle cx="42" cy="30" r="2.5" fill="#ffffff"/>
+              <path d="M28 26C32 29 32 35 28 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Fish <span class="accent">Market</span></span>
+          </a>
+          <p class="text-muted pe-lg-4 mb-4">
+            Directly sourced from trusted local docks and certified sustainable fisheries. Cleaned, cut with chef-precision, and delivered ice-cold to your kitchen within hours.
+          </p>
+          <div class="d-flex align-items-center gap-2 social-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn insta" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="about.html" class="text-white text-decoration-none">Company</a></h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right text-primary small"></i> About Us</a></li>
+            <li><a href="about.html#our-story"><i class="bi bi-chevron-right text-primary small"></i> Our Story</a></li>
+            <li><a href="about.html#sourcing"><i class="bi bi-chevron-right text-primary small"></i> Sourcing Standards</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right text-primary small"></i> Market Services</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right text-primary small"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Seafood Categories -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-heading"><a href="products.html#products-catalog" class="text-white text-decoration-none">Seafood</a></h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=fish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Fresh Fish</a></li>
+            <li><a href="products.html?category=shellfish#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Shellfish & Oysters</a></li>
+            <li><a href="products.html?category=prawns#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Tiger Prawns</a></li>
+            <li><a href="products.html?category=crab#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Mud & Blue Crabs</a></li>
+            <li><a href="products.html?category=lobster#products-catalog"><i class="bi bi-chevron-right text-primary small"></i> Spiny Lobsters</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Daily Fresh Catch Alerts -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading"><a href="contact.html#newsletter" class="text-white text-decoration-none">Daily Fresh Catch Alerts</a></h5>
+          <p class="small text-muted mb-3">
+            Subscribe for early morning catch notifications, seasonal arrivals, and discounts.
+          </p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email for newsletter">
+              <button class="btn btn-ocean" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-2 text-muted small">
+            <a href="tel:+18005553474" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-FISH (3474)</a>
+            <a href="mailto:freshcatch@fishmarket.com" class="text-muted text-decoration-none d-inline-flex align-items-center"><i class="bi bi-envelope-fill text-primary me-2"></i> freshcatch@fishmarket.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="m-0 text-muted">
+          &copy; 2026 Fish Market. All rights reserved.
+        </p>
+        <div class="d-flex gap-4 small text-muted">
+          <a href="cleaning-delivery.html#faq" class="text-muted text-decoration-none">Hygiene FAQ</a>
+          <a href="pricing.html" class="text-muted text-decoration-none">Wholesale & Packages</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    function hydrateProductDetails() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let productId = urlParams.get('id') || urlParams.get('product') || 'prod-salmon';
+      
+      if (typeof SEAFOOD_PRODUCTS === 'undefined' || !Array.isArray(SEAFOOD_PRODUCTS)) {
+        return;
+      }
+
+      const product = SEAFOOD_PRODUCTS.find(p => 
+        p.id.toLowerCase() === productId.toLowerCase() || 
+        p.id.toLowerCase() === ('prod-' + productId).toLowerCase() ||
+        p.name.toLowerCase().includes(productId.toLowerCase()) ||
+        productId.toLowerCase().includes(p.id.replace('prod-', '').toLowerCase())
+      ) || SEAFOOD_PRODUCTS[0];
+
+      if (product) {
+        document.title = `${product.name} - Fresh Seafood Market`;
+        
+        // Banner & Crumb
+        const titleBanner = document.getElementById('p-title-banner');
+        if (titleBanner) titleBanner.textContent = product.name;
+        
+        const crumbTitle = document.getElementById('p-crumb-title');
+        if (crumbTitle) crumbTitle.textContent = product.name;
+        
+        // Product Name & Category Badge
+        const pName = document.getElementById('p-name');
+        if (pName) pName.textContent = product.name;
+        
+        const catBadge = document.getElementById('p-cat-badge');
+        if (catBadge) catBadge.textContent = product.categoryLabel;
+        
+        // Price
+        const pPrice = document.getElementById('p-price');
+        if (pPrice) pPrice.textContent = `$${product.price.toFixed(2)}`;
+        
+        // Description & Origin
+        const pDesc = document.getElementById('p-desc');
+        if (pDesc) pDesc.textContent = product.desc;
+        
+        const pOrigin = document.getElementById('p-origin');
+        if (pOrigin) pOrigin.textContent = product.origin;
+        
+        // Main Product Image
+        const mainImg = document.getElementById('p-main-image');
+        if (mainImg) {
+          mainImg.src = product.image;
+          mainImg.alt = product.name;
+        }
+
+        // Add to Cart Button Logic
+        const addCartBtn = document.getElementById('btn-add-product-cart');
+        if (addCartBtn) {
+          addCartBtn.onclick = function() {
+            const qtyInput = document.querySelector('.qty-input');
+            const qty = qtyInput ? (parseInt(qtyInput.value, 10) || 1) : 1;
+            const cutDisplay = document.getElementById('selected-cut-display');
+            const cut = cutDisplay ? cutDisplay.textContent.trim() : 'Skin-On Fillet';
+
+            if (window.CartManager) {
+              window.CartManager.add({
+                id: product.id,
+                name: product.name,
+                pricePerKg: product.price,
+                image: product.image,
+                category: product.categoryLabel,
+                quantity: qty,
+                weightKg: 1.0,
+                cutType: cut
+              });
+            }
+          };
+        }
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', hydrateProductDetails);
+    } else {
+      hydrateProductDetails();
+    }
+  </script>
+</body>
+</html>
