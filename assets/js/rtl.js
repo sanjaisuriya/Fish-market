@@ -34,12 +34,12 @@
       const icon = btn.querySelector('i');
       if (dir === 'rtl') {
         if (text) text.textContent = 'LTR';
-        if (icon) icon.className = 'bi bi-text-left';
+        if (icon) icon.className = 'bi bi-globe2';
         btn.setAttribute('aria-label', 'Switch to Left-to-Right Layout');
         btn.setAttribute('title', 'Switch to LTR Layout');
       } else {
         if (text) text.textContent = 'RTL';
-        if (icon) icon.className = 'bi bi-text-right';
+        if (icon) icon.className = 'bi bi-globe2';
         btn.setAttribute('aria-label', 'Switch to Right-to-Left Layout');
         btn.setAttribute('title', 'Switch to RTL Layout');
       }

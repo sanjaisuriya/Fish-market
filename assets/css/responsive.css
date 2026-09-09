@@ -17,20 +17,70 @@
   }
 
   .brand-logo {
-    font-size: 1.15rem !important;
+    font-size: 1.2rem !important;
     white-space: nowrap !important;
   }
 
-  .navbar-collapse .toggle-btn {
-    padding: 0.55rem 0.85rem !important;
-    font-size: 0.88rem !important;
-    border-radius: 8px !important;
+  .nav-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .nav-actions-group .toggle-btn,
+  .nav-actions-group .nav-cart-btn {
+    padding: 0.35rem 0.55rem !important;
+    font-size: 0.8rem !important;
+    gap: 0.25rem !important;
+  }
+  .nav-actions-group .toggle-btn i,
+  .nav-actions-group .nav-cart-btn i {
+    font-size: 0.85rem !important;
   }
 
   .main-navbar .navbar-toggler {
-    padding: 0.3rem 0.5rem !important;
-    font-size: 1.25rem !important;
-    border-radius: 6px !important;
+    padding: 0.35rem 0.55rem !important;
+    font-size: 1.15rem !important;
+    border-radius: 8px !important;
+    border: 1.5px solid var(--color-border) !important;
+    background-color: var(--color-bg-alt) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+  }
+  .main-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25) !important;
+    outline: none !important;
+  }
+
+  .navbar-collapse {
+    background-color: var(--color-bg-card) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 1.25rem !important;
+    margin-top: 0.75rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .navbar-collapse .toggle-btn {
+    padding: 0.6rem 0.85rem !important;
+    font-size: 0.92rem !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+  }
+
+  .navbar-collapse .nav-auth-btn {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+  }
+
+  .navbar-collapse .nav-cart-btn {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
   }
 
   .hero-wrapper {
@@ -140,6 +190,13 @@
   }
   .page-banner-cleaning.banner-tab-faq::after {
     background-position: center center !important;
+  }
+
+  .page-banner-blog::after,
+  .page-banner-pricing::after,
+  .page-banner-contact::after {
+    width: 65% !important;
+    opacity: 0.32 !important;
   }
 
   /* Mobile Workflow Tab Bar - Touch-Friendly Swipeable Pills */
@@ -307,6 +364,63 @@
   }
 }
 
+/* Universal Device Responsive Image & Card Tuning (Mobile, Tablet, Laptop) */
+.live-tank-img-box {
+  height: 420px;
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .live-tank-img-box {
+    height: 350px !important;
+  }
+  .recipe-thumb {
+    aspect-ratio: 16/10 !important;
+  }
+  .product-thumb {
+    aspect-ratio: 4/3 !important;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3.8vw, 2.2rem) !important;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 5.5vw, 3rem) !important;
+  }
+  .page-banner-title {
+    font-size: clamp(1.75rem, 4.2vw, 2.4rem) !important;
+  }
+  .pricing-box-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .live-tank-img-box {
+    height: 280px !important;
+  }
+  .recipe-card, .product-card, .blog-card {
+    height: 100%;
+  }
+  .footer-bottom {
+    text-align: center;
+  }
+  .main-footer .col-6 {
+    margin-bottom: 1.5rem;
+  }
+  .page-banner-title {
+    font-size: 1.6rem !important;
+  }
+  .page-banner-desc {
+    font-size: 0.92rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .live-tank-img-box {
+    height: 240px !important;
+  }
+}
+
 /* Print Styles */
 @media print {
   .main-navbar, .topbar, .main-footer, .back-to-top, .btn-ocean, .btn-coral, .btn-outline-ocean {
@@ -321,3 +435,4 @@
     box-shadow: none !important;
   }
 }
+

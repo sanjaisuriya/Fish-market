@@ -41,8 +41,20 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
+      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+        <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+          <i class="bi bi-moon-stars-fill"></i>
+          <span class="theme-text d-none d-sm-inline">Dark</span>
+        </button>
+        <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+          <i class="bi bi-globe2"></i>
+          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+      </div>
+
       <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHome2Collapse" aria-controls="navbarHome2Collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHome2Collapse" aria-controls="navbarHome2Collapse" aria-expanded="false" aria-label="Toggle navigation" style="height: 38px;">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -86,7 +98,7 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
 
-        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <!-- Desktop Action Controls (Right Side of Navbar) -->
         <div class="d-none d-lg-flex align-items-center gap-2">
           <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
             <i class="bi bi-cart3"></i>
@@ -97,7 +109,7 @@
             <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
+            <i class="bi bi-globe2"></i>
             <span class="rtl-text">RTL</span>
           </button>
           <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
@@ -106,27 +118,9 @@
           </a>
         </div>
 
-        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
-        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
-          <!-- 1. Cart -->
-          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
-            <i class="bi bi-cart3"></i> <span>Cart</span>
-          </a>
-          
-          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
-          <div class="d-flex gap-2">
-            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-              <i class="bi bi-moon-stars-fill"></i>
-              <span class="theme-text">Dark</span>
-            </button>
-            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-              <i class="bi bi-text-right"></i>
-              <span class="rtl-text">RTL</span>
-            </button>
-          </div>
-
-          <!-- 4. Login / Register -->
-          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+        <!-- Mobile Login Action (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top">
+          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
             <i class="bi bi-person-circle"></i> <span>Login / Register</span>
           </a>
         </div>
@@ -135,122 +129,166 @@
   </nav>
 
   <!-- ==========================================
-       Home 2 Hero: Live Market Board & Daily Catch
+       Home 2 Hero: Gourmet Seafood Counter & Master Fillet Bar
        ========================================== -->
-  <section class="hero-wrapper" style="background: linear-gradient(135deg, #06111f 0%, #0b2545 50%, #014168 100%);">
+  <header class="hero-wrapper" style="background: linear-gradient(135deg, #051329 0%, #0b2545 55%, #024b75 100%); padding: 4.5rem 0 5rem;">
     <div class="container position-relative">
       <div class="row align-items-center g-5">
-        <div class="col-lg-7">
-          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-danger bg-opacity-25 border border-danger border-opacity-50 text-white small mb-3">
-            <span class="spinner-grow spinner-grow-sm text-danger" role="status"></span>
-            <span>LIVE DOCK CATCH INGESTION: OPEN</span>
+        <div class="col-lg-7 text-start">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-info bg-opacity-25 border border-info border-opacity-50 text-white small mb-3">
+            <i class="bi bi-gem text-info"></i>
+            <span>ARTISANAL GOURMET SEAFOOD COUNTER</span>
           </div>
-          <h1 class="hero-title">
-            Today's Fresh <span class="text-highlight">Harbor Catch</span>
+          <h1 class="hero-title text-white">
+            Chef-Cut Steaks &amp; <span class="text-highlight">Live Tank Shellfish</span>
           </h1>
-          <p class="hero-subtitle">
-            Skip the middleman supermarkets. Access artisanal boat harvests, whole scaled fish, live crustaceans, and sashimi cuts delivered in refrigerated cold-chain boxes within hours.
+          <p class="hero-subtitle text-white-50">
+            Hand-portioned by master fishmongers within hours of coastal harvest. Order precision cuts — sashimi-grade loins, butterflied steaks, live lobster tanks, and ready-to-bake seafood meal kits.
           </p>
-          
-          <!-- Live Market Quick Search Form -->
-          <div class="p-3 bg-white bg-opacity-10 backdrop-blur rounded-4 border border-white border-opacity-20 mb-4" style="backdrop-filter: blur(12px);">
+
+          <!-- Interactive Cut & Meal Quick Filter Bar -->
+          <div class="p-3 bg-white bg-opacity-10 rounded-4 border border-white border-opacity-20 mb-4" style="backdrop-filter: blur(14px);">
             <form action="products.html" method="GET" class="row g-2 align-items-center">
               <div class="col-md-5">
                 <div class="input-group">
-                  <span class="input-group-text bg-white border-0"><i class="bi bi-search text-primary"></i></span>
-                  <input type="text" name="search" class="form-control border-0" placeholder="Find fish, prawns, crab...">
+                  <span class="input-group-text bg-white border-0"><i class="bi bi-knife text-primary"></i></span>
+                  <input type="text" name="search" class="form-control border-0" placeholder="e.g. Sashimi Salmon, Live Lobster, Crab kit...">
                 </div>
               </div>
               <div class="col-md-4">
                 <select class="form-select border-0" name="category">
-                  <option value="all">All Market Categories</option>
-                  <option value="fish">Fresh Fish</option>
-                  <option value="prawns">Prawns & Shrimp</option>
-                  <option value="shellfish">Shellfish & Oysters</option>
-                  <option value="other">Squid & Octopus</option>
+                  <option value="all">All Gourmet Cuts & Kits</option>
+                  <option value="fish">Sashimi & Thick Steaks</option>
+                  <option value="shellfish">Live Lobster & Oysters</option>
+                  <option value="prawns">Marinated Prawn Skewers</option>
+                  <option value="crab">Live Blue & Mud Crabs</option>
                 </select>
               </div>
               <div class="col-md-3">
                 <button type="submit" class="btn btn-coral w-100 justify-content-center">
-                  Search Market
+                  <i class="bi bi-search me-1"></i> View Cuts
                 </button>
               </div>
             </form>
           </div>
 
-          <div class="d-flex flex-wrap gap-4 text-white-50 small">
-            <div><i class="bi bi-check2-circle text-success me-1"></i> Docked 2.5 Hrs Ago</div>
-            <div><i class="bi bi-check2-circle text-success me-1"></i> Precision Knife Filleting</div>
-            <div><i class="bi bi-check2-circle text-success me-1"></i> Zero Chemical Guarantee</div>
+          <div class="row g-3 text-white">
+            <div class="col-4">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-patch-check-fill text-info fs-4"></i>
+                <div>
+                  <strong class="d-block text-white" style="font-size: 0.95rem;">Chef Cut</strong>
+                  <small class="text-white-50" style="font-size: 0.75rem;">Custom Butchery</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-droplet-fill text-info fs-4"></i>
+                <div>
+                  <strong class="d-block text-white" style="font-size: 0.95rem;">Live Tank</strong>
+                  <small class="text-white-50" style="font-size: 0.75rem;">Seawater Kept</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-box2-heart-fill text-info fs-4"></i>
+                <div>
+                  <strong class="d-block text-white" style="font-size: 0.95rem;">Meal Kits</strong>
+                  <small class="text-white-50" style="font-size: 0.75rem;">Oven &amp; Grill Ready</small>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Hero Right: Chef Signature Counter Showcase -->
         <div class="col-lg-5">
-          <!-- Live Market Price Board Card -->
-          <div class="card rounded-4 border-0 shadow-2xl p-4" style="background: rgba(13, 28, 46, 0.95); border: 1px solid rgba(56, 189, 248, 0.2) !important;">
-            <div class="d-flex justify-content-between align-items-center pb-3 border-bottom border-secondary border-opacity-25 mb-3">
-              <h5 class="fw-bold text-white mb-0"><i class="bi bi-table text-primary me-2"></i>Live Market Board</h5>
-              <span class="badge bg-success bg-opacity-25 text-success border border-success">Live Price / kg</span>
-            </div>
-            
-            <div class="table-responsive">
-              <table class="table table-borderless table-dark text-white align-middle mb-0" style="background: transparent;">
-                <tbody>
-                  <tr class="border-bottom border-secondary border-opacity-10">
-                    <td>
-                      <div class="fw-bold text-white">Atlantic Salmon</div>
-                      <small class="text-muted">Sashimi Grade Fillet</small>
-                    </td>
-                    <td class="text-end">
-                      <span class="text-primary fw-bold fs-5">$34.50</span>
-                    </td>
-                    <td class="text-end">
-                      <a href="contact.html?product=Salmon" class="btn btn-sm btn-outline-ocean py-1 px-2">Order</a>
-                    </td>
-                  </tr>
-                  <tr class="border-bottom border-secondary border-opacity-10">
-                    <td>
-                      <div class="fw-bold text-white">Jumbo Tiger Prawns</div>
-                      <small class="text-muted">Head-on 15-20 count</small>
-                    </td>
-                    <td class="text-end">
-                      <span class="text-primary fw-bold fs-5">$42.00</span>
-                    </td>
-                    <td class="text-end">
-                      <a href="contact.html?product=Tiger%20Prawns" class="btn btn-sm btn-outline-ocean py-1 px-2">Order</a>
-                    </td>
-                  </tr>
-                  <tr class="border-bottom border-secondary border-opacity-10">
-                    <td>
-                      <div class="fw-bold text-white">Yellowfin Tuna Loin</div>
-                      <small class="text-muted">Deep Red Center Cut</small>
-                    </td>
-                    <td class="text-end">
-                      <span class="text-primary fw-bold fs-5">$38.00</span>
-                    </td>
-                    <td class="text-end">
-                      <a href="contact.html?product=Yellowfin%20Tuna" class="btn btn-sm btn-outline-ocean py-1 px-2">Order</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="fw-bold text-white">Blue Swimmer Crab</div>
-                      <small class="text-muted">Live Coastal Catch</small>
-                    </td>
-                    <td class="text-end">
-                      <span class="text-primary fw-bold fs-5">$36.00</span>
-                    </td>
-                    <td class="text-end">
-                      <a href="contact.html?product=Blue%20Crab" class="btn btn-sm btn-outline-ocean py-1 px-2">Order</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="card rounded-4 border-0 shadow-2xl p-4 position-relative overflow-hidden" style="background: rgba(10, 24, 43, 0.95); border: 1px solid rgba(56, 189, 248, 0.25) !important;">
+            <div class="rounded-3 overflow-hidden mb-3 position-relative shadow" style="height: 260px;">
+              <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=1000&q=85" alt="Center-Cut Pan Seared Gourmet Halibut Fillet with Herbs" class="w-100 h-100 object-fit-cover" onerror="this.src='https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1000&q=85'">
             </div>
 
-            <a href="products.html" class="btn btn-ocean w-100 justify-content-center mt-3">
-              View Complete 16+ Catch Catalog <i class="bi bi-arrow-right ms-2"></i>
-            </a>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <strong class="text-white d-block">Center-Cut Halibut &amp; Herb Butter</strong>
+                <small class="text-info">Ready to pan-sear in 8 mins</small>
+              </div>
+              <div class="text-end">
+                <span class="fs-4 fw-bold text-warning">$39.50</span>
+                <small class="text-white-50 d-block">per kg pack</small>
+              </div>
+            </div>
+
+            <div>
+              <button type="button" class="btn btn-coral w-100 justify-content-center py-2 fw-semibold" onclick="window.addToCartDirect('prod-salmon')">
+                <i class="bi bi-cart-plus-fill me-2"></i> Order Today's Cut
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       Section 1: Custom Fillet & Knife Cuts Bar
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="section-header text-center mb-5">
+        <span class="section-subtitle">Precision Butchery</span>
+        <h2 class="section-title">Custom Knife Cuts for Every Recipe</h2>
+        <p class="section-desc">Tell us how you plan to cook — our skilled fishmongers prepare your catch with zero extra fees.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Cut 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
+              <i class="bi bi-knife"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Sashimi &amp; Poke Cut</h5>
+            <p class="text-muted small mb-3">Zero skin, zero pin-bones, uniform rectangular loins or 1-inch poke cubes ready for raw consumption.</p>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Sushi &amp; Crudo</span>
+          </div>
+        </div>
+
+        <!-- Cut 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
+              <i class="bi bi-square-half"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Center-Cut Steaks</h5>
+            <p class="text-muted small mb-3">Thick bone-in cross-cut steaks (200g - 350g) that hold intense moisture and sear evenly on high heat.</p>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Grill &amp; Cast Iron</span>
+          </div>
+        </div>
+
+        <!-- Cut 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
+              <i class="bi bi-intersect"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Butterflied &amp; Boned</h5>
+            <p class="text-muted small mb-3">Spine carefully removed while keeping both sides intact. Opens flat for quick broiling, stuffing, and baking.</p>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Oven &amp; Broiler</span>
+          </div>
+        </div>
+
+        <!-- Cut 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
+              <i class="bi bi-check2-all"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Whole Cleaned &amp; Scored</h5>
+            <p class="text-muted small mb-3">Gilled, gutted, and descaled with diagonal diamond scores across the skin for deep marinade penetration.</p>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Steaming &amp; Roasting</span>
           </div>
         </div>
       </div>
@@ -258,120 +296,80 @@
   </section>
 
   <!-- ==========================================
-       Best Sellers & Market Fresh Grid
+       Section 2: Chef's Daily Marinated & Ready-to-Cook Seafood Kits
        ========================================== -->
-  <section class="py-5 bg-main">
+  <section class="py-5 bg-alt">
     <div class="container py-4">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
         <div>
-          <span class="section-subtitle">Market Favorites</span>
-          <h2 class="section-title mb-0">Today's Best Sellers</h2>
+          <span class="section-subtitle">Chef's Prep Counter</span>
+          <h2 class="section-title mb-0">Ready-to-Cook Seafood Meal Kits</h2>
+          <p class="text-muted small mb-0 mt-1">Marinated in cold-pressed olive oils, fresh aromatics, and packaged in oven-safe trays.</p>
         </div>
         <a href="products.html" class="btn btn-outline-ocean mt-3 mt-md-0">
-          Explore All Seafood <i class="bi bi-arrow-right ms-1"></i>
+          View All 7+ Seafood Products <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
 
       <div class="row g-4">
-        <!-- Best 1: Norwegian Salmon -->
-        <div class="col-md-6 col-lg-3">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/raw_norwegian_salmon_fillet_1788766533557.jpg" alt="Norwegian Atlantic Salmon" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80'">
-              <div class="product-badge-group">
-                <span class="badge-fresh">Sashimi Grade</span>
-              </div>
+        <!-- Kit 1: Garlic Butter King Crab -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
+            <div class="position-relative">
+              <img src="https://plus.unsplash.com/premium_photo-1668143363099-1d9e04d4a3f7?auto=format&fit=crop&w=700&q=80" alt="Garlic-Herb King Crab Cluster" class="w-100" style="height: 190px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=700&q=80'">
+              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">12 Mins Oven Kit</span>
             </div>
-            <div class="product-body">
-              <span class="product-category">Fresh Fish</span>
-              <h5 class="product-title"><a href="product-details.html?id=prod-salmon">Norwegian Salmon</a></h5>
-              <p class="product-desc">Omega-3 rich sashimi grade fillets with velvety, melt-in-mouth texture.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$34.50 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-salmon')" title="Add to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-salmon" class="btn btn-sm btn-outline-ocean">Details</a>
-                </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Crab Special</span>
+              <h5 class="fw-bold mb-2">Garlic-Herb King Crab Cluster</h5>
+              <p class="text-muted small flex-grow-1">Pre-split Alaskan crab legs infused with roasted garlic, sweet dairy butter, and fresh tarragon.</p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <span class="fs-5 fw-bold text-primary">$44.00 <small class="text-muted fs-6">/ pack</small></span>
+                <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-mud-crab')">
+                  <i class="bi bi-cart-plus me-1"></i> Add Kit
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Best 2: Live Mud Crab -->
-        <div class="col-md-6 col-lg-3">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blue_swimmer_crab_1788781381393.jpg" alt="Live Blue Swimmer Crab" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1548943487-a2e4e43b4853?auto=format&fit=crop&w=900&q=80'">
-              <div class="product-badge-group">
-                <span class="badge-coral">Live Catch</span>
-              </div>
+        <!-- Kit 2: Citrus Salmon Portions -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
+            <div class="position-relative">
+              <img src="https://plus.unsplash.com/premium_photo-1668143363297-f5793eb1ca43?auto=format&fit=crop&w=700&q=80" alt="Citrus & Dill Norwegian Salmon Fillet Meal Kit" class="w-100" style="height: 190px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&fit=crop&w=700&q=80'">
+              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">10 Mins Pan Sear</span>
             </div>
-            <div class="product-body">
-              <span class="product-category">Mud &amp; Blue Crabs</span>
-              <h5 class="product-title"><a href="product-details.html?id=prod-mud-crab">Live Swimmer Crab</a></h5>
-              <p class="product-desc">Sweet and luscious crab meat inside strong shells. Perfect for rich pepper crab.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$36.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-mud-crab')" title="Add to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-mud-crab" class="btn btn-sm btn-outline-ocean">Details</a>
-                </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Steak Cut</span>
+              <h5 class="fw-bold mb-2">Citrus &amp; Dill Norwegian Salmon</h5>
+              <p class="text-muted small flex-grow-1">Sashimi-grade salmon loins paired with fresh dill fronds, Meyer lemon slices, and extra virgin olive oil.</p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <span class="fs-5 fw-bold text-primary">$34.50 <small class="text-muted fs-6">/ kg</small></span>
+                <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-salmon')">
+                  <i class="bi bi-cart-plus me-1"></i> Add Kit
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Best 3: Coastal White Prawns -->
-        <div class="col-md-6 col-lg-3">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/coastal_white_prawns_1788781343200.jpg" alt="Coastal White Prawns" loading="lazy">
-              <div class="product-badge-group">
-                <span class="badge-fresh">Fresh Catch</span>
-              </div>
+        <!-- Kit 3: Jumbo Marinated Tiger Prawns -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80" alt="Spiced Tiger Prawn Skewers" class="w-100" style="height: 190px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1603496987175-d912448374d3?auto=format&fit=crop&w=700&q=80'">
+              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">6 Mins BBQ Ready</span>
             </div>
-            <div class="product-body">
-              <span class="product-category">Prawns &amp; Shrimp</span>
-              <h5 class="product-title"><a href="product-details.html?id=prod-white-prawns">Coastal White Prawns</a></h5>
-              <p class="product-desc">Sweet, tender fresh prawns ideal for coastal curries, stir-fries, and pasta.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$24.50 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-white-prawns')" title="Add to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-white-prawns" class="btn btn-sm btn-outline-ocean">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Best 4: Rock Spiny Lobster -->
-        <div class="col-md-6 col-lg-3">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/spiny_rock_lobster_1788781406447.jpg" alt="Rock Spiny Lobster" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1687144171995-e5d148fdfbad?auto=format&fit=crop&w=900&q=80'">
-              <div class="product-badge-group">
-                <span class="badge-coral">Gourmet Catch</span>
-              </div>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Spiny Lobsters</span>
-              <h5 class="product-title"><a href="product-details.html?id=prod-lobster">Rock Spiny Lobster</a></h5>
-              <p class="product-desc">Luxuriously sweet tail meat with a firm bite. Excellent grilled with butter.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$68.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-lobster')" title="Add to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-lobster" class="btn btn-sm btn-outline-ocean">Details</a>
-                </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Prawn Skewers</span>
+              <h5 class="fw-bold mb-2">Spiced Tiger Prawn Skewers (8pc)</h5>
+              <p class="text-muted small flex-grow-1">De-veined colossal prawns skewered with sweet bell peppers, smoked paprika, lime juice, and sea salt.</p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <span class="fs-5 fw-bold text-primary">$32.00 <small class="text-muted fs-6">/ pack</small></span>
+                <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-white-prawns')">
+                  <i class="bi bi-cart-plus me-1"></i> Add Kit
+                </button>
               </div>
             </div>
           </div>
@@ -381,128 +379,50 @@
   </section>
 
   <!-- ==========================================
-       Cleaning & Cold-Chain Workflow
-       ========================================== -->
-  <section class="py-5 bg-alt">
-    <div class="container py-4">
-      <div class="section-header text-center">
-        <span class="section-subtitle">Hygiene Protocol</span>
-        <h2 class="section-title">Our 5-Step Clean & Cut Standard</h2>
-        <p class="section-desc">We sanitize every catch in medical-grade chilled RO washrooms with customized chef cutting styles.</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="feature-card text-center">
-            <div class="feature-icon-box mx-auto"><i class="bi bi-shield-check"></i></div>
-            <h5 class="fw-bold">1. Dockside Inspection</h5>
-            <p class="text-muted small">Checked for clear glossy eyes, bright red gills, firm meat, and natural sea fragrance.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card text-center">
-            <div class="feature-icon-box mx-auto"><i class="bi bi-droplet-half"></i></div>
-            <h5 class="fw-bold">2. RO Water Descaling</h5>
-            <p class="text-muted small">Washed in pure UV-filtered RO water at 2°C to eliminate dock residues and microbes.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card text-center">
-            <div class="feature-icon-box mx-auto"><i class="bi bi-scissors"></i></div>
-            <h5 class="fw-bold">3. Master Cutting</h5>
-            <p class="text-muted small">Filleted, steaked, curry cut, or left whole according to your cooking preferences.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="feature-card text-center">
-            <div class="feature-icon-box mx-auto"><i class="bi bi-box-seam"></i></div>
-            <h5 class="fw-bold">4. Vacuum Chill Seal</h5>
-            <p class="text-muted small">Hermetically sealed in multi-layer oxygen-barrier food-grade vacuum trays.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="feature-card text-center">
-            <div class="feature-icon-box mx-auto"><i class="bi bi-truck"></i></div>
-            <h5 class="fw-bold">5. Insulated Cold Delivery</h5>
-            <p class="text-muted small">Delivered in temperature-monitored cooler boxes packed with non-melting ice gel pads.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Delivery Coverage Areas
+       Section 3: Live Seawater Tank & Raw Shellfish Bar
        ========================================== -->
   <section class="py-5 bg-main">
     <div class="container py-4">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <span class="section-subtitle">Rapid Express Routing</span>
-          <h2 class="section-title mb-3">Daily Delivery Coverage & Express Hubs</h2>
+          <span class="section-subtitle">Zero Freezing. 100% Live.</span>
+          <h2 class="section-title mb-3">Live Seawater Tank &amp; Fresh Oyster Bar</h2>
           <p class="text-muted mb-4">
-            Our specialized fleet of chilled vans serves metro regions, coastal suburbs, and restaurant districts with 2 daily delivery windows (Morning: 8 AM - 12 PM | Evening: 3 PM - 7 PM).
+            Our live filtration system replicates pristine oceanic salinities at 12°C. Choose whole live crustaceans hand-picked from tanks right before your delivery leaves the facility.
           </p>
 
-          <div class="row g-3 mb-4">
-            <div class="col-6">
-              <div class="p-3 bg-card rounded-3 border d-flex align-items-center gap-2">
-                <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
-                <div>
-                  <strong class="d-block small text-secondary">Coastal Bay & Marina</strong>
-                  <span class="badge bg-success bg-opacity-10 text-success">Same-Day Express</span>
-                </div>
+          <div class="list-group list-group-flush mb-4">
+            <div class="list-group-item bg-transparent px-0 py-3 border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="d-block text-secondary">Live Boston Spiny Lobsters</strong>
+                <small class="text-muted">Sizes available from 1.0kg to 2.5kg</small>
               </div>
+              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">$68.00 / kg</span>
             </div>
-            <div class="col-6">
-              <div class="p-3 bg-card rounded-3 border d-flex align-items-center gap-2">
-                <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
-                <div>
-                  <strong class="d-block small text-secondary">Central Metro City</strong>
-                  <span class="badge bg-success bg-opacity-10 text-success">Same-Day Express</span>
-                </div>
+            <div class="list-group-item bg-transparent px-0 py-3 border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="d-block text-secondary">Pacific Rock Oysters (Half-Shell / Live)</strong>
+                <small class="text-muted">Freshly shucked with mignonette &amp; lemon</small>
               </div>
+              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">$28.00 / dozen</span>
             </div>
-            <div class="col-6">
-              <div class="p-3 bg-card rounded-3 border d-flex align-items-center gap-2">
-                <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
-                <div>
-                  <strong class="d-block small text-secondary">Harbor North Ridge</strong>
-                  <span class="badge bg-success bg-opacity-10 text-success">Same-Day Express</span>
-                </div>
+            <div class="list-group-item bg-transparent px-0 py-3 border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="d-block text-secondary">Live Mud Crabs (Green &amp; Blue Swimmer)</strong>
+                <small class="text-muted">Hard shell, heavy meat yield</small>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="p-3 bg-card rounded-3 border d-flex align-items-center gap-2">
-                <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
-                <div>
-                  <strong class="d-block small text-secondary">Suburban Valleys</strong>
-                  <span class="badge bg-primary bg-opacity-10 text-primary">Scheduled Slots</span>
-                </div>
-              </div>
+              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">$36.00 / kg</span>
             </div>
           </div>
 
-          <a href="cleaning-delivery.html" class="btn btn-ocean">
-            <i class="bi bi-map-fill"></i> View Detailed Delivery Schedule
+          <a href="contact.html?subject=LiveTankOrder" class="btn btn-ocean">
+            <i class="bi bi-chat-dots me-1"></i> Request Live Tank Reservation
           </a>
         </div>
 
-        <div class="col-lg-6">
-          <div class="card p-4 rounded-4 border shadow-lg bg-card">
-            <h5 class="fw-bold text-secondary mb-3"><i class="bi bi-pin-map-fill text-primary me-2"></i>Check Delivery To Your Pin Code</h5>
-            <p class="small text-muted mb-3">Enter your postal code or area name to verify morning slot availability.</p>
-            
-            <form onsubmit="event.preventDefault(); window.showToast('Great news! Express seafood delivery is available to your area.', 'success');">
-              <div class="input-group mb-3">
-                <span class="input-group-text bg-light"><i class="bi bi-geo-alt"></i></span>
-                <input type="text" class="form-control" placeholder="Enter Zip Code or Neighborhood" required>
-                <button class="btn btn-ocean" type="submit">Check Area</button>
-              </div>
-            </form>
-            <div class="d-flex align-items-center gap-2 text-muted small">
-              <i class="bi bi-shield-lock-fill text-success"></i> Free delivery on orders over $60 / 3kg
-            </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="live-tank-img-box rounded-4 overflow-hidden shadow-xl">
+            <img src="https://images.unsplash.com/photo-1559742811-82286364ceaf?auto=format&fit=crop&w=1000&q=80" alt="Fresh Oysters on the Half Shell with Lemon" class="w-100 h-100 object-fit-cover" onerror="this.src='https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=1000&q=80'">
           </div>
         </div>
       </div>
@@ -510,73 +430,121 @@
   </section>
 
   <!-- ==========================================
-       Seafood Recipes & Culinary Guide Showcase (Home 2)
+       Section 4: Chef Cooking Temperatures Guide
        ========================================== -->
   <section class="py-5 bg-alt">
     <div class="container py-4">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
-        <div>
-          <span class="section-subtitle">Dockside Masterclass</span>
-          <h2 class="section-title mb-0">Chef-Approved Seafood Recipes</h2>
-        </div>
-        <a href="recipes.html" class="btn btn-outline-ocean mt-3 mt-md-0">
-          View All Recipes <i class="bi bi-arrow-right ms-1"></i>
-        </a>
+      <div class="section-header text-center mb-5">
+        <span class="section-subtitle">Culinary Masterclass</span>
+        <h2 class="section-title">Chef Doneness &amp; Internal Temperature Guide</h2>
+        <p class="section-desc">Achieve restaurant-quality tenderness at home with our foolproof cooking parameters.</p>
       </div>
 
       <div class="row g-4">
-        <!-- Recipe 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
-            <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80" alt="Herb & Lemon Garlic Grilled Salmon" class="w-100" style="height: 220px; object-fit: cover; object-position: center center;">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">15 Mins Prep</span>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 bg-card border text-center h-100">
+            <div class="fs-2 text-primary mb-2"><i class="bi bi-fire"></i></div>
+            <h5 class="fw-bold">Atlantic Salmon</h5>
+            <div class="display-6 fw-bold text-primary my-2">125°F</div>
+            <span class="badge bg-primary-subtle text-primary mb-3">Medium Rare / Tender</span>
+            <p class="text-muted small">Skin seared 4 mins high heat, flipped for 2 mins. Translucent center with luscious flaking.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 bg-card border text-center h-100">
+            <div class="fs-2 text-coral mb-2"><i class="bi bi-thermometer-half"></i></div>
+            <h5 class="fw-bold">Yellowfin Tuna Loin</h5>
+            <div class="display-6 fw-bold text-coral my-2">115°F</div>
+            <span class="badge bg-danger bg-opacity-10 text-danger mb-3">Flash-Seared Rare</span>
+            <p class="text-muted small">Hot sesame oil sear for 45 seconds per side. Ruby red core with seasoned toasted crust.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 bg-card border text-center h-100">
+            <div class="fs-2 text-primary mb-2"><i class="bi bi-water"></i></div>
+            <h5 class="fw-bold">Jumbo Tiger Prawns</h5>
+            <div class="display-6 fw-bold text-primary my-2">120°F</div>
+            <span class="badge bg-primary-subtle text-primary mb-3">Juicy Opaque Pink</span>
+            <p class="text-muted small">Pan tossed in garlic butter for 2.5 mins until shell turns bright coral pink with a curved C-shape.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 bg-card border text-center h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-patch-check"></i></div>
+            <h5 class="fw-bold">Sea Scallops</h5>
+            <div class="display-6 fw-bold text-success my-2">130°F</div>
+            <span class="badge bg-success bg-opacity-10 text-success mb-3">Golden Brown Sear</span>
+            <p class="text-muted small">Patted bone-dry, seared undisturbed in ghee for 90 seconds per side for a deep caramel crust.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 5: Customer & Chef Reviews
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="section-header text-center mb-5">
+        <span class="section-subtitle">Customer Praise</span>
+        <h2 class="section-title">Trusted by Home Foodies &amp; Private Chefs</h2>
+        <p class="section-desc">Read how our customized cutting and chilled delivery elevate home kitchen dining.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card p-4 rounded-4 border bg-card h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
-            <div class="card-body p-4 d-flex flex-column">
-              <span class="badge bg-primary-subtle text-primary mb-2 align-self-start">Grilled Seafood</span>
-              <h5 class="fw-bold mb-2">Herb &amp; Lemon Garlic Grilled Salmon</h5>
-              <p class="text-muted small flex-grow-1">Succulent Atlantic salmon steak seared with rosemary, fresh thyme, minced garlic, and charred lemon wedges.</p>
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
-                <small class="text-muted"><i class="bi bi-people-fill text-primary"></i> 4 Servings</small>
-                <a href="recipe-details.html?id=recipe-grilled-salmon" class="btn btn-sm btn-ocean">View Recipe</a>
+            <p class="text-muted small flex-grow-1">
+              "The Sashimi Salmon was impeccably clean with zero fishy smell. The fishmonger cut it into uniform blocks that made homemade nigiri effortless!"
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">SL</div>
+              <div>
+                <strong class="d-block small text-secondary">Samantha Lin</strong>
+                <small class="text-muted">Home Gourmet Enthusiast</small>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Recipe 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
-            <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1687144171995-e5d148fdfbad?auto=format&fit=crop&w=700&q=80" alt="Gourmet Butter-Poached Whole Lobster" class="w-100" style="height: 220px; object-fit: cover; object-position: center center;">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">20 Mins Prep</span>
+        <div class="col-md-4">
+          <div class="card p-4 rounded-4 border bg-card h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
-            <div class="card-body p-4 d-flex flex-column">
-              <span class="badge bg-primary-subtle text-primary mb-2 align-self-start">Lobster Special</span>
-              <h5 class="fw-bold mb-2">Gourmet Butter-Poached Lobster Tail</h5>
-              <p class="text-muted small flex-grow-1">Succulent Maine lobster tails gently poached in garlic herb butter broth, served with fresh sea salt.</p>
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-2">
-                <span class="small text-muted"><i class="bi bi-people me-1"></i> 2 Servings</span>
-                <a href="recipe-details.html?id=recipe-lobster-tail" class="btn btn-sm btn-ocean">View Recipe</a>
+            <p class="text-muted small flex-grow-1">
+              "Ordered live mud crabs and lobster tails for our family anniversary. Delivered ice cold in gel packs. The butter poaching recipe was restaurant level!"
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">MR</div>
+              <div>
+                <strong class="d-block small text-secondary">Marcus Reynolds</strong>
+                <small class="text-muted">Culinary Host &amp; Caterer</small>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Recipe 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
-            <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Crispy Fried Golden Calamari Rings" class="w-100" style="height: 220px; object-fit: cover; object-position: center center;">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">12 Mins Prep</span>
+        <div class="col-md-4">
+          <div class="card p-4 rounded-4 border bg-card h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
-            <div class="card-body p-4 d-flex flex-column">
-              <span class="badge bg-primary-subtle text-primary mb-2 align-self-start">Crispy Appetizers</span>
-              <h5 class="fw-bold mb-2">Crispy Golden Calamari &amp; Tartar Dip</h5>
-              <p class="text-muted small flex-grow-1">Tender ocean squid rings flash-fried in light seasoned batter, served with homemade herb tartar dip.</p>
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-2">
-                <span class="small text-muted"><i class="bi bi-people me-1"></i> 3-4 Servings</span>
-                <a href="recipe-details.html?id=recipe-calamari" class="btn btn-sm btn-ocean">View Recipe</a>
+            <p class="text-muted small flex-grow-1">
+              "As a private chef, seafood freshness is non-negotiable. Their center-cut Halibut and Mediterranean sea bass have never let my dinner guests down."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">DA</div>
+              <div>
+                <strong class="d-block small text-secondary">Chef David Alvarez</strong>
+                <small class="text-muted">Private Dining Specialist</small>
               </div>
             </div>
           </div>
@@ -586,21 +554,25 @@
   </section>
 
   <!-- ==========================================
-       Newsletter Subscription Section
+       Section 6: Network Ecosystem Bridge Banner (Home 2 -> Home 1)
        ========================================== -->
-  <section class="py-5 bg-navy-dark text-white text-center" style="background: linear-gradient(135deg, #071527 0%, #0c2f57 100%);">
+  <section class="py-5 text-white text-center" style="background: linear-gradient(135deg, #071930 0%, #034b75 100%);">
     <div class="container py-4">
-      <span class="badge bg-light text-primary fw-bold text-uppercase px-3 py-2 mb-3">Dock Ingestion Alerts</span>
-      <h2 class="display-6 fw-bold text-white mb-3">Get Morning Catch Reports at 6:00 AM</h2>
-      <p class="text-white-50 mx-auto mb-4" style="max-width: 580px;">
-        Never miss rare catches like Wild King Salmon, Jumbo Crabs, or Live Lobsters. We email daily dock ingestion summaries and chef discounts.
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white bg-opacity-15 text-white small mb-3">
+        <i class="bi bi-link-45deg text-warning"></i> Fish Market Network
+      </div>
+      <h2 class="display-6 fw-bold text-white mb-3">Need Raw Bulk Catches Direct From Harbor Boats?</h2>
+      <p class="text-white-50 mx-auto mb-4" style="max-width: 600px;">
+        Switch over to <strong>Home 1 – Harbor Port Landing</strong> for whole scaled catches, early morning dock auctions, and commercial wholesale rates.
       </p>
-      <form class="newsletter-form mx-auto" style="max-width: 500px;">
-        <div class="input-group input-group-lg">
-          <input type="email" class="form-control" placeholder="Your best email address" required aria-label="Newsletter email">
-          <button class="btn btn-coral" type="submit">Subscribe Free</button>
-        </div>
-      </form>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="index.html" class="btn btn-ocean px-4 py-2">
+          <i class="bi bi-water me-2"></i> Visit Home 1 (Harbor Landing)
+        </a>
+        <a href="products.html" class="btn btn-coral px-4 py-2">
+          <i class="bi bi-bag-check me-2"></i> Browse Complete Market Catalog
+        </a>
+      </div>
     </div>
   </section>
 

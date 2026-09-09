@@ -15,6 +15,7 @@
 
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-bs-theme', theme);
     localStorage.setItem(STORAGE_KEY, theme);
     updateToggleButtons(theme);
   }

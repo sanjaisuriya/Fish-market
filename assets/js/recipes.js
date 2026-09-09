@@ -27,7 +27,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '8 min',
     servings: '2–3 Servings',
     calories: '290 kcal',
-    image: 'https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=1000&q=80',
     desc: 'Plump king prawns tossed in foaming butter, crushed garlic, and fresh Italian parsley.'
   },
   {
@@ -40,7 +40,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '30 min',
     servings: '4 Servings',
     calories: '450 kcal',
-    image: 'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1000&q=80',
     desc: 'Authentic coastal blue swimmer crab simmered in a velvety gravy of roasted spices and coconut milk.'
   },
   {

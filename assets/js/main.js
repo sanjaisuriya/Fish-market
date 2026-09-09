@@ -8,6 +8,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initStickyNavbar();
+    initMobileNavbarToggle();
     initBackToTop();
     initActiveNavLinks();
     initQuantityControls();
@@ -15,6 +16,32 @@
     initGlobalSearchModal();
     initAuthTabs();
   });
+
+  /* ------------------------------------------------------------------------
+     0. Mobile Navbar Collapse Fallback Handler
+     ------------------------------------------------------------------------ */
+  function initMobileNavbarToggle() {
+    const toggler = document.querySelector('.navbar-toggler');
+    if (!toggler) return;
+
+    toggler.addEventListener('click', function (e) {
+      const targetSelector = this.getAttribute('data-bs-target') || '#navbarMainCollapse';
+      const collapseEl = document.querySelector(targetSelector);
+      if (!collapseEl) return;
+
+      // If bootstrap collapse is loaded, let bootstrap or toggle class directly
+      if (window.bootstrap && bootstrap.Collapse) {
+        let bsCollapse = bootstrap.Collapse.getInstance(collapseEl);
+        if (!bsCollapse) {
+          bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
+        }
+        bsCollapse.toggle();
+      } else {
+        // Direct CSS fallback
+        collapseEl.classList.toggle('show');
+      }
+    });
+  }
 
   /* ------------------------------------------------------------------------
      0. Auth Hash Tab Controller

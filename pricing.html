@@ -37,8 +37,20 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
+      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+        <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+          <i class="bi bi-moon-stars-fill"></i>
+          <span class="theme-text d-none d-sm-inline">Dark</span>
+        </button>
+        <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+          <i class="bi bi-globe2"></i>
+          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+      </div>
+
       <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPricingCollapse" aria-controls="navbarPricingCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPricingCollapse" aria-controls="navbarPricingCollapse" aria-expanded="false" aria-label="Toggle navigation" style="height: 38px;">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -80,7 +92,7 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
 
-        <!-- Action Controls in User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login, 5. Register -->
+        <!-- Desktop Action Controls (Right Side of Navbar) -->
         <div class="d-none d-lg-flex align-items-center gap-2">
           <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
             <i class="bi bi-cart3"></i>
@@ -91,7 +103,7 @@
             <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
+            <i class="bi bi-globe2"></i>
             <span class="rtl-text">RTL</span>
           </button>
           <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
@@ -100,27 +112,9 @@
           </a>
         </div>
 
-        <!-- Mobile Action Items (Inside Collapse in Exact User Requested Order: 1. Cart, 2. Dark/Light, 3. RTL/LTR, 4. Login/Register) -->
-        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
-          <!-- 1. Cart -->
-          <a href="cart.html" class="nav-cart-btn justify-content-center" title="Cart">
-            <i class="bi bi-cart3"></i> <span>Cart</span>
-          </a>
-          
-          <!-- 2 & 3. Dark/Light Mode & RTL/LTR Toggles Side-by-Side -->
-          <div class="d-flex gap-2">
-            <button type="button" class="btn toggle-btn theme-toggle-btn flex-fill justify-content-center py-2" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-              <i class="bi bi-moon-stars-fill"></i>
-              <span class="theme-text">Dark</span>
-            </button>
-            <button type="button" class="btn toggle-btn rtl-toggle-btn flex-fill justify-content-center py-2" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-              <i class="bi bi-text-right"></i>
-              <span class="rtl-text">RTL</span>
-            </button>
-          </div>
-
-          <!-- 4. Login / Register -->
-          <a href="login.html" class="nav-auth-btn nav-login-btn justify-content-center" title="Login / Register">
+        <!-- Mobile Login Action (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top">
+          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
             <i class="bi bi-person-circle"></i> <span>Login / Register</span>
           </a>
         </div>
