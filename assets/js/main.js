@@ -351,7 +351,7 @@
       price: 34.50,
       category: 'Fresh Fish',
       categoryLabel: 'Fresh Fish',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/raw_norwegian_salmon_fillet_1788766533557.jpg'
+      image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg'
     },
     'prod-tuna': {
       id: 'prod-tuna',
@@ -359,7 +359,7 @@
       price: 38.00,
       category: 'Fresh Fish',
       categoryLabel: 'Fresh Fish',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/yellowfin_tuna_loin_catch_1788765304353.jpg'
+      image: 'assets/images/yellowfin_tuna_loin_catch_1788765304353.jpg'
     },
     'prod-seabass': {
       id: 'prod-seabass',
@@ -367,7 +367,7 @@
       price: 28.00,
       category: 'Fresh Fish',
       categoryLabel: 'Fresh Fish',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/mediterranean_sea_bass_fresh_1788766017507.jpg'
+      image: 'assets/images/mediterranean_sea_bass_fresh_1788766017507.jpg'
     },
     'prod-squid': {
       id: 'prod-squid',
@@ -375,7 +375,7 @@
       price: 22.00,
       category: 'Squid & Calamari',
       categoryLabel: 'Squid & Calamari',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/cleaned_calamari_squid_fresh_1788766184966.jpg'
+      image: 'assets/images/cleaned_calamari_squid_fresh_1788766184966.jpg'
     },
     'prod-tiger-prawns': {
       id: 'prod-tiger-prawns',
@@ -383,7 +383,7 @@
       price: 42.00,
       category: 'Prawns & Shrimp',
       categoryLabel: 'Prawns & Shrimp',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/tiger_prawns_catch_1788765391401.jpg'
+      image: 'assets/images/tiger_prawns_catch_1788765391401.jpg'
     },
     'prod-white-prawns': {
       id: 'prod-white-prawns',
@@ -391,7 +391,7 @@
       price: 24.50,
       category: 'Prawns & Shrimp',
       categoryLabel: 'Prawns & Shrimp',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/coastal_white_prawns_1788781343200.jpg'
+      image: 'assets/images/coastal_white_prawns_1788781343200.jpg'
     },
     'prod-pomfret': {
       id: 'prod-pomfret',
@@ -399,7 +399,7 @@
       price: 32.00,
       category: 'Fresh Fish',
       categoryLabel: 'Fresh Fish',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/silver_pomfret_fish_1788781292906.jpg'
+      image: 'assets/images/silver_pomfret_fish_1788781292906.jpg'
     },
     'prod-mud-crab': {
       id: 'prod-mud-crab',
@@ -407,7 +407,7 @@
       price: 36.00,
       category: 'Crab & Shellfish',
       categoryLabel: 'Crab & Shellfish',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blue_swimmer_crab_1788781381393.jpg'
+      image: 'assets/images/blue_swimmer_crab_1788781381393.jpg'
     },
     'prod-lobster': {
       id: 'prod-lobster',
@@ -415,7 +415,7 @@
       price: 68.00,
       category: 'Crab & Shellfish',
       categoryLabel: 'Crab & Shellfish',
-      image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/spiny_rock_lobster_1788781406447.jpg'
+      image: 'assets/images/spiny_rock_lobster_1788781406447.jpg'
     }
   };
 
@@ -446,7 +446,7 @@
     const lookup = window.SeafoodProducts.getById(item.id);
     const resolvedName = item.name && item.name !== 'Fresh Seafood Item' ? item.name : (lookup?.name || 'Fresh Seafood Item');
     const resolvedPrice = parseFloat(item.pricePerKg || item.price || lookup?.price) || 28.00;
-    const resolvedImage = (item.image && !item.image.includes('images.unsplash.com/photo-1534939561126-855b8675edd7')) ? item.image : (lookup?.image || item.image || '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/raw_norwegian_salmon_fillet_1788766533557.jpg');
+    const resolvedImage = (item.image && !item.image.includes('images.unsplash.com/photo-1534939561126-855b8675edd7')) ? item.image : (lookup?.image || item.image || 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg');
     const resolvedCategory = item.category || lookup?.categoryLabel || lookup?.category || 'Fresh Seafood';
 
     const existingIndex = cart.findIndex(

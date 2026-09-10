@@ -53,7 +53,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '12 min',
     servings: '4 Servings',
     calories: '380 kcal',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/recipe_grilled_salmon_1788864962069.jpg',
+    image: 'assets/images/recipe_grilled_salmon_1788864962069.jpg',
     desc: 'Succulent Atlantic salmon steak seared with rosemary, fresh thyme, minced garlic, and charred lemon wedges.'
   },
   {

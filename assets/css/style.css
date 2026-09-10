@@ -1320,7 +1320,7 @@ img {
 
 .page-banner-about {
   position: relative;
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/service_fresh_supply_1788842904206.jpg') !important;
+  background-image: url('../images/service_fresh_supply_1788842904206.jpg') !important;
   background-position: right 28% !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -1344,7 +1344,7 @@ img {
 
 .page-banner-products {
   position: relative;
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_banner_fresh_market_1788934703316.jpg') !important;
+  background-image: url('../images/blog_banner_fresh_market_1788934703316.jpg') !important;
   background-position: right 55% !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -1385,7 +1385,7 @@ img {
   right: 0;
   bottom: 0;
   width: 68%;
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/service_restaurant_delivery_1788844267618.jpg');
+  background-image: url('../images/service_restaurant_delivery_1788844267618.jpg');
   background-position: right 25%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1423,7 +1423,7 @@ img {
   right: 0;
   bottom: 0;
   width: 65%;
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/seafood_cleaning_process_banner_1788935826080.jpg');
+  background-image: url('../images/seafood_cleaning_process_banner_1788935826080.jpg');
   background-position: 55% 15%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1436,12 +1436,12 @@ img {
 /* Tab specific banner images for Cleaning & Delivery */
 .page-banner-cleaning.banner-tab-all::after,
 .page-banner-cleaning.banner-tab-cleaning::after {
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/seafood_cleaning_process_banner_1788935826080.jpg') !important;
+  background-image: url('../images/seafood_cleaning_process_banner_1788935826080.jpg') !important;
   background-position: 55% 15% !important;
 }
 
 .page-banner-cleaning.banner-tab-cutting::after {
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/service_cutting_1788843003690.jpg') !important;
+  background-image: url('../images/service_cutting_1788843003690.jpg') !important;
   width: 65% !important;
   background-position: 65% 0% !important;
   background-size: cover !important;
@@ -1449,12 +1449,12 @@ img {
 }
 
 .page-banner-cleaning.banner-tab-delivery::after {
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/service_delivery_1788843038179.jpg') !important;
+  background-image: url('../images/service_delivery_1788843038179.jpg') !important;
   background-position: 72% 15% !important;
 }
 
 .page-banner-cleaning.banner-tab-faq::after {
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_seafood_home_storage_1788860482469.jpg') !important;
+  background-image: url('../images/blog_seafood_home_storage_1788860482469.jpg') !important;
   background-position: right center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -1586,7 +1586,7 @@ img {
 
 .page-banner-recipes {
   position: relative;
-  background-image: url('../../../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/seafood_recipes_center_banner_1788864403046.jpg') !important;
+  background-image: url('../images/seafood_recipes_center_banner_1788864403046.jpg') !important;
   background-position: center 58% !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;

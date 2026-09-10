@@ -15,7 +15,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Fresh Catch',
     badgeClass: 'badge-fresh',
     origin: 'Cold Fjords of Norway (Wild / Farmed)',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/raw_norwegian_salmon_fillet_1788766533557.jpg',
+    image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg',
     desc: 'Omega-3 rich sashimi grade fillets with velvety, melt-in-mouth texture.',
     cuts: ['Whole Cleaned', 'Skin-On Fillet', 'Steak Slices', 'Curry Cut'],
     available: true
@@ -31,7 +31,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Wild Caught',
     badgeClass: 'badge-wild',
     origin: 'Indian Ocean Deep Waters',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/yellowfin_tuna_loin_catch_1788765304353.jpg',
+    image: 'assets/images/yellowfin_tuna_loin_catch_1788765304353.jpg',
     desc: 'Ruby red, dense steak cuts ideal for pan-searing or poke bowls.',
     cuts: ['Sashimi Block', 'Steak Slices', 'Curry Cut'],
     available: true
@@ -47,7 +47,7 @@ const SEAFOOD_PRODUCTS = [
     badge: "Chef's Choice",
     badgeClass: 'badge-coral',
     origin: 'Mediterranean Coastal Waters',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/mediterranean_sea_bass_fresh_1788766017507.jpg',
+    image: 'assets/images/mediterranean_sea_bass_fresh_1788766017507.jpg',
     desc: 'Sweet, delicate white meat that crisps up beautifully with herbs and lemon.',
     cuts: ['Whole Scaled & Gutted', 'Butterfly Fillet', 'Curry Cut'],
     available: true
@@ -63,7 +63,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Bestseller',
     badgeClass: 'badge-coral',
     origin: 'Coastal Waters',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/cleaned_calamari_squid_fresh_1788766184966.jpg',
+    image: 'assets/images/cleaned_calamari_squid_fresh_1788766184966.jpg',
     desc: 'Tender, ocean-fresh calamari squid with ink removed. Perfect for quick pan-sear or crispy frying.',
     cuts: ['Whole Cleaned Tubes & Tentacles', 'Rings Cut'],
     available: true
@@ -79,7 +79,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Bestseller',
     badgeClass: 'badge-coral',
     origin: 'Arabian Sea Coasts',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/silver_pomfret_fish_1788781292906.jpg',
+    image: 'assets/images/silver_pomfret_fish_1788781292906.jpg',
     desc: 'Soft, tender, and uniquely sweet flesh. Ideal for shallow frying, tandoor, or rich coconut curries.',
     cuts: ['Whole Cleaned (With Slits)', 'Steak Slices'],
     available: true
@@ -95,7 +95,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Premium Grade',
     badgeClass: 'badge-coral',
     origin: 'Bay of Bengal Deep Waters',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/tiger_prawns_catch_1788765391401.jpg',
+    image: 'assets/images/tiger_prawns_catch_1788765391401.jpg',
     desc: 'Crisp, succulent bite with sweet natural brininess. Deveined upon request.',
     cuts: ['Whole Head-On', 'Deveined & Peeled', 'Tail-On Butterfly'],
     available: true
@@ -111,7 +111,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Fresh Catch',
     badgeClass: 'badge-fresh',
     origin: 'Local Estuary & Coastal Catch',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/coastal_white_prawns_1788781343200.jpg',
+    image: 'assets/images/coastal_white_prawns_1788781343200.jpg',
     desc: 'Sweet, tender prawns ideal for traditional curries, stir-fries, and pasta dishes.',
     cuts: ['Peeled & Deveined', 'Headless Shell-On'],
     available: true
@@ -127,7 +127,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Wild Caught',
     badgeClass: 'badge-wild',
     origin: 'Coastal Estuaries',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blue_swimmer_crab_1788781381393.jpg',
+    image: 'assets/images/blue_swimmer_crab_1788781381393.jpg',
     desc: 'Sweet and luscious crab meat inside strong shells. Perfect for pepper crab or fiery spicy curries.',
     cuts: ['Whole Live', 'Cleaned & Halved (Claws Cracked)'],
     available: true
@@ -143,7 +143,7 @@ const SEAFOOD_PRODUCTS = [
     badge: 'Gourmet Selection',
     badgeClass: 'badge-coral',
     origin: 'Deep Sea Coral Reefs',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/spiny_rock_lobster_1788781406447.jpg',
+    image: 'assets/images/spiny_rock_lobster_1788781406447.jpg',
     desc: 'Luxuriously sweet tail meat with a firm bite. Excellent grilled with garlic herb butter.',
     cuts: ['Whole Cleaned', 'Tail Split Halves'],
     available: true

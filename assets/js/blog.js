@@ -13,7 +13,7 @@ const BLOG_ARTICLES = [
     author: 'Chef Marcus Sterling',
     authorRole: 'Master Fishmonger',
     readTime: '5 min read',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_how_to_choose_fresh_fish_1788859736684.jpg',
+    image: 'assets/images/blog_how_to_choose_fresh_fish_1788859736684.jpg',
     fallback: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80',
     summary: 'Learn how to inspect clear convex eyes, fresh ocean briny smell (never fishy), vibrant bright-red gills, and resilient elastic flesh texture.',
     relatedIds: ['seafood-storage-guide-keep-it-fresh-at-home', 'from-harbor-to-your-table']
@@ -27,7 +27,7 @@ const BLOG_ARTICLES = [
     author: 'David Lin',
     authorRole: 'Seafood Culinary Specialist',
     readTime: '6 min read',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_family_seafood_dinner_spread_1788931530653.jpg',
+    image: 'assets/images/blog_family_seafood_dinner_spread_1788931530653.jpg',
     fallback: 'https://images.unsplash.com/photo-1559737558-245cb384c688?auto=format&fit=crop&w=800&q=80',
     summary: 'Discover family-friendly crowd pleasers including rich pan-seared salmon fillets, sweet tiger prawns, mild pomfret, and tender calamari squid.',
     relatedIds: ['the-benefits-of-eating-seafood', 'how-to-choose-fresh-seafood']
@@ -41,7 +41,7 @@ const BLOG_ARTICLES = [
     author: 'Victor Vance',
     authorRole: 'Cold-Chain Logistics Lead',
     readTime: '4 min read',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/cold_chain_seafood_delivery_van_1788931165408.jpg',
+    image: 'assets/images/cold_chain_seafood_delivery_van_1788931165408.jpg',
     fallback: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     summary: 'An inside look at our unbroken cold-chain: triple-layer insulated thermal packaging, food-grade ice packs, and temperature-controlled refrigerated vans.',
     relatedIds: ['seafood-storage-guide-keep-it-fresh-at-home', 'from-harbor-to-your-table']
@@ -55,7 +55,7 @@ const BLOG_ARTICLES = [
     author: 'Maya Torres',
     authorRole: 'Quality & Food Safety Director',
     readTime: '5 min read',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_seafood_home_ice_storage_1788931472846.jpg',
+    image: 'assets/images/blog_seafood_home_ice_storage_1788931472846.jpg',
     fallback: 'https://images.unsplash.com/photo-1584269600519-112d071b35e6?auto=format&fit=crop&w=800&q=80',
     summary: 'Master home storage guidelines: proper fridge vs. freezer timing, optimal 32°F–36°F temperature zones, vacuum packs, and parchment wrapping.',
     relatedIds: ['how-we-keep-seafood-fresh-during-delivery', 'how-to-choose-fresh-seafood']
@@ -69,7 +69,7 @@ const BLOG_ARTICLES = [
     author: 'Dr. Elena Vance',
     authorRole: 'Marine Nutritionist',
     readTime: '6 min read',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_seafood_health_nutrition_1788860547723.jpg',
+    image: 'assets/images/blog_seafood_health_nutrition_1788860547723.jpg',
     fallback: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80',
     summary: 'Supercharge your body with lean bioavailable protein, heart-healthy EPA/DHA Omega-3s, natural Vitamin D, zinc, selenium, and essential minerals.',
     relatedIds: ['best-seafood-for-family-dinners', 'how-to-choose-fresh-seafood']
@@ -83,7 +83,7 @@ const BLOG_ARTICLES = [
     author: 'Arthur Pendelton',
     authorRole: 'Dock Master & Sourcing Lead',
     readTime: '7 min read',
-    image: '../../brain/3ce8e3c3-fc6a-4415-a28a-fa22e1f46b69/blog_harbor_journey_boats_1788860601516.jpg',
+    image: 'assets/images/blog_harbor_journey_boats_1788860601516.jpg',
     fallback: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80',
     summary: 'Follow the complete ocean-to-doorstep journey: dawn landings with local fishermen, precision dockside sorting, hygienic prep, and express delivery.',
     relatedIds: ['how-we-keep-seafood-fresh-during-delivery', 'how-to-choose-fresh-seafood']
