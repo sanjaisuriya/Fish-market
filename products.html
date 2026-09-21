@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/dark-mode.css">
-  <link rel="stylesheet" href="assets/css/rtl.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
           <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-          <i class="bi bi-globe2"></i>
+          <i class="bi bi-text-right"></i>
           <span class="rtl-text d-none d-sm-inline">RTL</span>
         </button>
       </div>
@@ -103,7 +103,7 @@
             <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-globe2"></i>
+            <i class="bi bi-text-right"></i>
             <span class="rtl-text">RTL</span>
           </button>
           <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
@@ -198,12 +198,12 @@
             <div class="mb-4">
               <div class="d-flex justify-content-between align-items-center mb-1">
                 <label class="form-label small text-uppercase text-muted fw-bold mb-0">Max Price / kg</label>
-                <span id="price-range-val" class="fw-bold text-primary">$80.00</span>
+                <span id="price-range-val" class="fw-bold text-primary">₹80.00</span>
               </div>
               <input type="range" class="form-range" id="price-range-slider" min="15" max="80" step="1" value="80">
               <div class="d-flex justify-content-between text-muted small">
-                <span>$15/kg</span>
-                <span>$80/kg</span>
+                <span>₹15/kg</span>
+                <span>₹80/kg</span>
               </div>
             </div>
 
@@ -224,7 +224,7 @@
           <div class="card p-3 rounded-4 border bg-card mb-4 shadow-sm">
             <div class="row g-3 align-items-center justify-content-between">
               <div class="col-sm-6">
-                <span id="products-count-badge" class="fw-bold text-secondary">Showing 12 products</span>
+                <span id="products-count-badge" class="fw-bold text-secondary">Showing 9 products</span>
               </div>
               <div class="col-sm-6 d-flex align-items-center justify-content-sm-end gap-3">
                 <!-- Sorting Dropdown -->

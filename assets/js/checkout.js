@@ -193,4 +193,30 @@
     createOrder: createOrder,
     handleSubmit: handleCheckoutFormSubmit
   };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.querySelector('input[name="customerPhone"]');
+    const pincodeInput = document.querySelector('input[name="customerPincode"]');
+    const cardInput = document.querySelector('input[name="cardNumber"]');
+    const cvvInput = document.querySelector('input[name="cardCvv"]');
+
+    [phoneInput, pincodeInput, cvvInput].forEach(inp => {
+      if (!inp) return;
+      inp.addEventListener('keypress', (e) => {
+        const charCode = (e.which !== undefined) ? e.which : e.keyCode;
+        if (charCode < 48 || charCode > 57) e.preventDefault();
+      });
+      inp.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+      });
+    });
+
+    if (cardInput) {
+      cardInput.addEventListener('input', function() {
+        // Format with space every 4 digits
+        let digits = this.value.replace(/\D/g, '').slice(0, 16);
+        this.value = digits.replace(/(\d{4})(?=\d)/g, '$1 ');
+      });
+    }
+  });
 })();

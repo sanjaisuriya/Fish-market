@@ -8,6 +8,7 @@ const SEAFOOD_RECIPES = [
     id: 'recipe-seafood-paella',
     title: 'Traditional Spanish Seafood Paella',
     category: 'signature',
+    categories: ['signature', 'fish', 'prawns', 'healthy'],
     categoryLabel: 'Signature Special',
     difficulty: 'Medium',
     prepTime: '20 min',
@@ -21,6 +22,7 @@ const SEAFOOD_RECIPES = [
     id: 'recipe-garlic-butter-prawns',
     title: 'Garlic Butter Tossed Tiger Prawns',
     category: 'prawns',
+    categories: ['prawns', 'fried', 'signature'],
     categoryLabel: 'Prawn Recipes',
     difficulty: 'Easy',
     prepTime: '10 min',
@@ -34,6 +36,7 @@ const SEAFOOD_RECIPES = [
     id: 'recipe-crab-curry',
     title: 'Coastal Spicy Coconut Crab Curry',
     category: 'curry',
+    categories: ['curry', 'lobster'],
     categoryLabel: 'Seafood Curry',
     difficulty: 'Medium',
     prepTime: '25 min',
@@ -47,6 +50,7 @@ const SEAFOOD_RECIPES = [
     id: 'recipe-grilled-salmon',
     title: 'Herb & Lemon Garlic Grilled Salmon',
     category: 'grilled',
+    categories: ['grilled', 'fish', 'healthy'],
     categoryLabel: 'Grilled Seafood',
     difficulty: 'Easy',
     prepTime: '15 min',
@@ -56,10 +60,12 @@ const SEAFOOD_RECIPES = [
     image: 'assets/images/recipe_grilled_salmon_1788864962069.jpg',
     desc: 'Succulent Atlantic salmon steak seared with rosemary, fresh thyme, minced garlic, and charred lemon wedges.'
   },
+
   {
     id: 'recipe-lobster-tail',
     title: 'Gourmet Butter-Poached Whole Lobster',
     category: 'lobster',
+    categories: ['lobster', 'signature', 'healthy'],
     categoryLabel: 'Lobster & Crab',
     difficulty: 'Chef Special',
     prepTime: '20 min',
@@ -73,6 +79,7 @@ const SEAFOOD_RECIPES = [
     id: 'recipe-calamari',
     title: 'Crispy Golden Calamari & Tartar Dip',
     category: 'fried',
+    categories: ['fried'],
     categoryLabel: 'Crispy Appetizers',
     difficulty: 'Easy',
     prepTime: '12 min',
@@ -132,7 +139,8 @@ const SEAFOOD_RECIPES = [
 
   function getFilteredRecipes() {
     return SEAFOOD_RECIPES.filter(r => {
-      const matchCat = (currentCategory === 'all') || (r.category === currentCategory);
+      const catList = r.categories || [r.category];
+      const matchCat = (currentCategory === 'all') || (r.category === currentCategory) || catList.includes(currentCategory);
       const matchDiff = (currentDifficulty === 'all') || (r.difficulty.toLowerCase() === currentDifficulty.toLowerCase());
       const matchSearch = r.title.toLowerCase().includes(searchQuery) ||
                           r.desc.toLowerCase().includes(searchQuery) ||

@@ -49,7 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const emailInput = nForm.querySelector('input[type="email"]');
       if (emailInput && emailInput.value.trim() !== '') {
-        alert('🎉 Subscription Successful! You will now receive daily fish market prices and fresh catch alerts.');
+        if (window.showToast) {
+          window.showToast('🎉 Subscription Successful! You will now receive daily fish market prices and fresh catch alerts.', 'success');
+        }
         emailInput.value = '';
       }
     });

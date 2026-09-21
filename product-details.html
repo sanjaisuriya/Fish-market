@@ -44,7 +44,7 @@
           <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-          <i class="bi bi-globe2"></i>
+          <i class="bi bi-text-right"></i>
           <span class="rtl-text d-none d-sm-inline">RTL</span>
         </button>
       </div>
@@ -103,7 +103,7 @@
             <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-globe2"></i>
+            <i class="bi bi-text-right"></i>
             <span class="rtl-text">RTL</span>
           </button>
           <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
@@ -205,7 +205,7 @@
           </div>
 
           <div class="d-flex align-items-baseline gap-3 p-3 bg-card rounded-4 border mb-4 shadow-sm">
-            <span class="display-6 fw-bold text-primary" id="p-price">$34.50</span>
+            <span class="display-6 fw-bold text-primary" id="p-price">₹34.00</span>
             <span class="text-muted fs-5">/ per kilogram (approx. 2-3 fillets)</span>
           </div>
 
@@ -243,7 +243,7 @@
             </div>
             <input type="hidden" id="selected-cut-input" value="Fillet">
 
-            <div class="row g-2">
+            <div class="row g-2" id="cut-options-container">
               <div class="col-sm-4 col-6">
                 <div class="cut-option-card card p-2 text-center rounded-3 border active border-primary bg-primary-subtle cursor-pointer" data-cut="Skin-On Fillet">
                   <i class="bi bi-slash-square text-primary fs-5 mb-1"></i>
@@ -310,6 +310,9 @@
                 <div class="d-flex gap-2">
                   <button type="button" class="btn btn-ocean flex-grow-1 py-2 justify-content-center" id="btn-add-product-cart">
                     <i class="bi bi-cart-plus-fill me-1"></i> Add to Cart
+                  </button>
+                  <button type="button" class="btn btn-outline-danger py-2 px-3 d-flex align-items-center btn-wishlist-toggle" id="btn-product-wishlist" title="Save to Wishlist" data-id="prod-salmon">
+                    <i class="far fa-heart fs-5"></i>
                   </button>
                   <a href="cart.html" class="btn btn-outline-ocean py-2 px-3 d-flex align-items-center" title="View Cart">
                     <i class="bi bi-cart3 fs-5"></i>
@@ -509,17 +512,80 @@
     function hydrateProductDetails() {
       const urlParams = new URLSearchParams(window.location.search);
       let productId = urlParams.get('id') || urlParams.get('product') || 'prod-salmon';
-      
-      if (typeof SEAFOOD_PRODUCTS === 'undefined' || !Array.isArray(SEAFOOD_PRODUCTS)) {
-        return;
+      const paramImg = urlParams.get('img') || urlParams.get('image');
+
+      const MEAL_KITS_CATALOG = {
+        'prod-crab-kit': {
+          id: 'prod-crab-kit',
+          name: 'Garlic-Herb King Crab Cluster',
+          category: 'crab',
+          categoryLabel: 'Ready-to-Cook Kit',
+          price: 44.00,
+          rating: 5.0,
+          reviews: 84,
+          badge: '12 Mins Oven Kit',
+          badgeClass: 'badge-coral',
+          origin: 'Cold Waters of Alaska / Bering Sea',
+          image: 'assets/images/garlic_herb_king_crab_cluster.jpg',
+          desc: 'Pre-split colossal Alaskan king crab legs infused with roasted garlic butter, fresh tarragon, lemon zest, and sea salt. Packaged in an oven-safe tray ready to roast in 12 minutes.',
+          cuts: ['Pre-Split Oven Ready', 'Whole Legs & Claws', 'Cracked & Cleaned']
+        },
+        'prod-salmon-kit': {
+          id: 'prod-salmon-kit',
+          name: 'Citrus & Dill Norwegian Salmon',
+          category: 'fish',
+          categoryLabel: 'Ready-to-Cook Kit',
+          price: 34.00,
+          rating: 4.9,
+          reviews: 116,
+          badge: '10 Mins Pan Sear',
+          badgeClass: 'badge-fresh',
+          origin: 'Cold Fjords of Norway',
+          image: 'https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&fit=crop&w=800&q=80',
+          desc: 'Sashimi-grade salmon loins paired with fresh dill fronds, Meyer lemon slices, and extra virgin olive oil. Perfectly portioned for a 10-minute crispy skin pan sear.',
+          cuts: ['Marinated Fillet', 'Skin-On Pan Sear', 'Center-Cut Loin']
+        },
+        'prod-prawn-skewer': {
+          id: 'prod-prawn-skewer',
+          name: 'Spiced Tiger Prawn Skewers (8pc)',
+          category: 'prawns',
+          categoryLabel: 'Ready-to-Cook Kit',
+          price: 32.00,
+          rating: 4.8,
+          reviews: 92,
+          badge: '6 Mins BBQ Ready',
+          badgeClass: 'badge-coral',
+          origin: 'Bay of Bengal Deep Waters',
+          image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80',
+          desc: 'De-veined colossal prawns skewered with sweet bell peppers, smoked paprika, lime juice, and sea salt. Ready for a 6-minute BBQ or stove grill.',
+          cuts: ['Skewers Pack (8pc)', 'Tail-On Butterfly', 'Spiced & Marinated']
+        }
+      };
+
+      let product = MEAL_KITS_CATALOG[productId] || MEAL_KITS_CATALOG[productId.toLowerCase()];
+
+      if (!product && typeof SEAFOOD_PRODUCTS !== 'undefined' && Array.isArray(SEAFOOD_PRODUCTS)) {
+        product = SEAFOOD_PRODUCTS.find(p => p.id.toLowerCase() === productId.toLowerCase());
+        if (!product) {
+          product = SEAFOOD_PRODUCTS.find(p => 
+            p.id.toLowerCase() === ('prod-' + productId).toLowerCase() ||
+            p.name.toLowerCase().includes(productId.toLowerCase()) ||
+            productId.toLowerCase().includes(p.id.replace('prod-', '').toLowerCase())
+          );
+        }
       }
 
-      const product = SEAFOOD_PRODUCTS.find(p => 
-        p.id.toLowerCase() === productId.toLowerCase() || 
-        p.id.toLowerCase() === ('prod-' + productId).toLowerCase() ||
-        p.name.toLowerCase().includes(productId.toLowerCase()) ||
-        productId.toLowerCase().includes(p.id.replace('prod-', '').toLowerCase())
-      ) || SEAFOOD_PRODUCTS[0];
+      if (!product && typeof window.SeafoodProducts?.getById === 'function') {
+        product = window.SeafoodProducts.getById(productId);
+      }
+
+      if (!product) {
+        product = (typeof SEAFOOD_PRODUCTS !== 'undefined' && SEAFOOD_PRODUCTS[0]) ? SEAFOOD_PRODUCTS[0] : MEAL_KITS_CATALOG['prod-crab-kit'];
+      }
+
+      if (paramImg && product) {
+        product = Object.assign({}, product, { image: paramImg });
+      }
 
       if (product) {
         document.title = `${product.name} - Fresh Seafood Market`;
@@ -540,7 +606,7 @@
         
         // Price
         const pPrice = document.getElementById('p-price');
-        if (pPrice) pPrice.textContent = `$${product.price.toFixed(2)}`;
+        if (pPrice) pPrice.textContent = `₹${product.price.toFixed(2)}`;
         
         // Description & Origin
         const pDesc = document.getElementById('p-desc');
@@ -552,8 +618,55 @@
         // Main Product Image
         const mainImg = document.getElementById('p-main-image');
         if (mainImg) {
+          mainImg.removeAttribute('onerror');
           mainImg.src = product.image;
           mainImg.alt = product.name;
+        }
+
+        // Dynamic Cutting Options
+        const cutsContainer = document.getElementById('cut-options-container');
+        const cutDisplay = document.getElementById('selected-cut-display');
+        const cutInputHidden = document.getElementById('selected-cut-input');
+        if (cutsContainer && Array.isArray(product.cuts) && product.cuts.length > 0) {
+          cutsContainer.innerHTML = product.cuts.map((cut, idx) => `
+            <div class="col-sm-4 col-6">
+              <div class="cut-option-card card p-2 text-center rounded-3 border cursor-pointer ${idx === 0 ? 'active border-primary bg-primary-subtle' : ''}" data-cut="${cut}">
+                <i class="bi bi-scissors text-primary fs-5 mb-1"></i>
+                <div class="small fw-bold">${cut}</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Fresh dock prep</small>
+              </div>
+            </div>
+          `).join('');
+
+          if (cutDisplay) cutDisplay.textContent = product.cuts[0];
+          if (cutInputHidden) cutInputHidden.value = product.cuts[0];
+
+          // Re-bind click event on newly created cards
+          const newCards = cutsContainer.querySelectorAll('.cut-option-card');
+          newCards.forEach(card => {
+            card.addEventListener('click', () => {
+              newCards.forEach(c => c.classList.remove('border-primary', 'bg-primary-subtle', 'active'));
+              card.classList.add('border-primary', 'bg-primary-subtle', 'active');
+              const cutName = card.getAttribute('data-cut');
+              if (cutDisplay) cutDisplay.textContent = cutName;
+              if (cutInputHidden) cutInputHidden.value = cutName;
+              if (window.showToast) window.showToast(`Selected Cut Option: ${cutName}`, 'info');
+            });
+          });
+        }
+
+        // Wishlist Toggle Button
+        const wishlistBtn = document.getElementById('btn-product-wishlist');
+        if (wishlistBtn) {
+          wishlistBtn.setAttribute('data-id', product.id);
+          wishlistBtn.onclick = function() {
+            if (window.WishlistManager) {
+              window.WishlistManager.toggle(product.id);
+            }
+          };
+          if (window.WishlistManager?.updateIcons) {
+            window.WishlistManager.updateIcons();
+          }
         }
 
         // Add to Cart Button Logic
@@ -563,7 +676,7 @@
             const qtyInput = document.querySelector('.qty-input');
             const qty = qtyInput ? (parseInt(qtyInput.value, 10) || 1) : 1;
             const cutDisplay = document.getElementById('selected-cut-display');
-            const cut = cutDisplay ? cutDisplay.textContent.trim() : 'Skin-On Fillet';
+            const cut = cutDisplay ? cutDisplay.textContent.trim() : (product.cuts ? product.cuts[0] : 'Standard Cut');
 
             if (window.CartManager) {
               window.CartManager.add({

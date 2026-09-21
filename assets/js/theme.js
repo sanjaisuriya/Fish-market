@@ -37,7 +37,7 @@
         if (text) text.textContent = 'Light';
         btn.setAttribute('aria-label', 'Switch to Light Mode');
       } else {
-        if (icon) icon.className = 'bi bi-moon-stars-fill';
+        if (icon) icon.className = 'bi bi-moon-stars-fill text-primary';
         if (text) text.textContent = 'Dark';
         btn.setAttribute('aria-label', 'Switch to Dark Mode');
       }

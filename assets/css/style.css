@@ -51,6 +51,10 @@
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.4s ease;
+
+  /* Brand logo colors — overridden in dark-mode.css */
+  --brand-text-color: #0f172a;
+  --brand-accent-color: #0284c7;
 }
 
 /* --------------------------------------------------------------------------
@@ -163,6 +167,21 @@ img {
 
 .main-navbar .navbar-collapse {
   align-items: center;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 992px) {
+  .main-navbar .navbar-collapse {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }
 
 .main-navbar .navbar-nav {
@@ -170,11 +189,14 @@ img {
   align-items: center;
   gap: 0.4rem;
   margin: 0 auto;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .main-navbar .nav-item {
   display: inline-flex;
   align-items: center;
+  background: transparent !important;
 }
 
 .brand-logo {
@@ -186,7 +208,7 @@ img {
   font-weight: 800;
   letter-spacing: -0.5px;
   line-height: 1;
-  color: #0f172a;
+  color: var(--brand-text-color, #0f172a);
   position: relative;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
@@ -201,12 +223,12 @@ img {
   filter: drop-shadow(0 2px 4px rgba(2, 132, 199, 0.25));
 }
 .brand-logo span {
-  color: #0f172a;
+  color: var(--brand-text-color, #0f172a);
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .brand-logo .accent,
 .brand-logo .text-primary {
-  color: var(--color-primary);
+  color: var(--brand-accent-color, var(--color-primary));
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .brand-logo:hover {
@@ -216,7 +238,7 @@ img {
 .brand-logo:hover span,
 .brand-logo:hover .accent,
 .brand-logo:hover .text-primary {
-  color: var(--color-primary) !important;
+  color: var(--brand-accent-color, var(--color-primary)) !important;
   text-shadow: 0 0 12px rgba(2, 132, 199, 0.35);
 }
 .brand-logo:hover svg.brand-fish-img {
@@ -224,33 +246,56 @@ img {
   filter: drop-shadow(0 4px 10px rgba(2, 132, 199, 0.65));
 }
 
-.nav-link {
-  font-weight: 500;
+/* Navbar Navigation Links & Underline */
+.navbar-nav .nav-link {
+  font-family: var(--font-heading);
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px;
+  font-size: 0.88rem !important;
   color: var(--color-text-main) !important;
-  padding: 0.5rem 0.85rem !important;
+  padding: 0.55rem 0.85rem 0.65rem 0.85rem !important;
   background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
   outline: none !important;
   box-shadow: none !important;
   text-decoration: none !important;
-  transition: color var(--transition-fast);
-  font-size: 0.95rem;
   white-space: nowrap !important;
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex !important;
+  align-items: center !important;
   line-height: 1.2;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 3px solid transparent !important;
+  transition: color var(--transition-fast), border-bottom-color var(--transition-fast) !important;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.nav-link.active {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
   color: var(--color-primary) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border-bottom: 3px solid rgba(2, 132, 199, 0.45) !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--color-primary) !important;
+  font-weight: 800 !important;
+  border-bottom: 3px solid var(--color-primary) !important;
+}
+
+.navbar-nav .dropdown-toggle::after {
+  display: inline-block !important;
+  margin-left: 0.4em !important;
+  vertical-align: 0.15em !important;
+  content: "" !important;
+  border-top: 0.35em solid currentColor !important;
+  border-right: 0.3em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.3em solid transparent !important;
+  transition: transform 0.2s ease !important;
+}
+
+.navbar-nav .dropdown-toggle.show::after {
+  transform: rotate(180deg) !important;
 }
 
 .nav-user-icon {
@@ -287,36 +332,90 @@ img {
   }
 }
 
-.nav-item.dropdown {
-  position: relative !important;
+@media (min-width: 992px) {
+  .nav-item.dropdown {
+    position: relative !important;
+  }
+
+  .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0.45rem !important;
+    min-width: 260px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+    animation: fadeInDown 0.2s ease-in-out;
+  }
 }
 
 .dropdown-menu {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  margin-top: 0.45rem !important;
-  min-width: 260px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
   padding: 0.5rem;
   background-color: var(--color-bg-card);
   z-index: 1080 !important;
-  animation: fadeInDown 0.2s ease-in-out;
 }
 
 .dropdown-item {
-  padding: 0.55rem 1rem;
+  padding: 0.55rem 0.85rem;
   font-weight: 500;
   border-radius: var(--radius-sm);
   color: var(--color-text-main);
   transition: all var(--transition-fast);
 }
 
+/* Ensure dropdown icons are ALWAYS visible, never hidden */
+.dropdown-menu .dropdown-item .bi,
+.dropdown-menu .dropdown-item i,
+.dropdown-menu .dropdown-item .text-primary {
+  color: var(--color-primary, #0284c7) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  transition: transform var(--transition-fast);
+}
+
 .dropdown-item:hover {
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary-dark);
+  background-color: var(--color-primary-subtle, rgba(2, 132, 199, 0.08)) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+.dropdown-item:hover .bi,
+.dropdown-item:hover i,
+.dropdown-item:hover .text-primary {
+  color: var(--color-primary-dark, #0369a1) !important;
+  transform: scale(1.1);
+}
+
+/* Active Dropdown Item: subtle ocean highlight, blue left border, visible blue icon */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: rgba(2, 132, 199, 0.12) !important;
+  color: var(--color-text-main) !important;
+  border-left: 3.5px solid var(--color-primary, #0284c7) !important;
+}
+
+.dropdown-item.active .bi,
+.dropdown-item.active i,
+.dropdown-item.active .text-primary {
+  color: var(--color-primary, #0284c7) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.dropdown-item.active .fw-semibold {
+  color: var(--color-primary, #0284c7) !important;
+  font-weight: 700 !important;
+}
+
+.dropdown-item.active small,
+.dropdown-item.active .text-muted {
+  color: var(--color-text-muted, #64748b) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -426,63 +525,90 @@ img {
   color: #ffffff !important;
 }
 
-/* Control Pills (Dark Mode, RTL, Login User Button) */
+/* Control Action Buttons (Dark Mode, RTL, Cart, Login User Button) - Transparent & Box-free */
 .toggle-btn {
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
-  color: #0369a1;
-  padding: 0.42rem 0.95rem;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  background: transparent !important;
+  border: 1.5px solid transparent !important;
+  box-sizing: border-box !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  align-self: center !important;
+  color: var(--color-text-main) !important;
+  padding: 0.45rem 0.75rem !important;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  box-shadow: none !important;
   transition: all var(--transition-fast);
   text-decoration: none;
 }
 
+.theme-toggle-btn,
+.rtl-toggle-btn {
+  margin: 0 0.2rem !important;
+}
+
 .toggle-btn.nav-user-btn {
-  padding: 0.42rem 0.75rem;
+  padding: 0.45rem 0.75rem !important;
 }
 
 .toggle-btn.nav-user-btn i {
-  font-size: 1.05rem;
-  color: #0284c7;
+  font-size: 1.1rem;
+  color: var(--color-primary);
 }
 
-/* Nav Cart, Toggle & Auth Buttons */
+.toggle-btn i {
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  transition: transform var(--transition-fast);
+}
+
+.toggle-btn:hover {
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: var(--color-primary) !important;
+  box-shadow: none !important;
+}
+
+.toggle-btn:hover i {
+  transform: scale(1.15);
+}
+
+/* Nav Cart Button */
 .nav-cart-btn {
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
-  color: #0369a1 !important;
-  padding: 0.42rem 0.95rem;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 700;
+  background: transparent !important;
+  border: 1.5px solid transparent !important;
+  box-sizing: border-box !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  align-self: center !important;
+  color: var(--color-text-main) !important;
+  padding: 0.45rem 0.75rem !important;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  box-shadow: none !important;
   transition: all var(--transition-fast);
 }
 
 .nav-cart-btn i {
-  font-size: 0.95rem;
-  color: #0284c7;
+  font-size: 1.05rem;
+  color: var(--color-primary);
   transition: transform var(--transition-fast);
 }
 
 .nav-cart-btn:hover {
-  background: #e0f2fe;
-  border-color: #7dd3fc;
-  color: #0284c7 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: var(--color-primary) !important;
+  box-shadow: none !important;
 }
 
 .nav-cart-btn:hover i {
@@ -497,14 +623,13 @@ img {
   padding: 0.2rem 0.45rem !important;
   line-height: 1 !important;
   border-radius: 9999px !important;
-  box-shadow: 0 2px 5px rgba(239, 68, 68, 0.4);
 }
 
 .nav-auth-btn {
-  padding: 0.42rem 0.95rem;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 700;
+  padding: 0.45rem 0.75rem !important;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -513,50 +638,31 @@ img {
 }
 
 .nav-login-btn {
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
-  color: #0284c7 !important;
-  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  background: transparent !important;
+  border: 1.5px solid transparent !important;
+  box-sizing: border-box !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  align-self: center !important;
+  color: var(--color-text-main) !important;
+  box-shadow: none !important;
+}
+
+.nav-login-btn i {
+  font-size: 1.05rem;
+  color: var(--color-primary);
 }
 
 .nav-login-btn:hover {
-  background: #0284c7;
-  border-color: #0284c7;
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: var(--color-primary) !important;
+  box-shadow: none !important;
 }
 
-.nav-register-btn {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff !important;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
-}
-
-.nav-register-btn:hover {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45);
-}
-
-.toggle-btn i {
-  font-size: 0.95rem;
-  color: #0284c7;
-  transition: transform var(--transition-fast);
-}
-
-.toggle-btn:hover {
-  background: #e0f2fe;
-  border-color: #7dd3fc;
-  color: #0284c7;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
-}
-
-.toggle-btn:hover i {
-  transform: scale(1.15) rotate(15deg);
+/* Navbar Action Controls Container Alignment and Spacing */
+.main-navbar .d-none.d-lg-flex.align-items-center {
+  gap: 0.75rem !important;
+  align-items: center !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -834,11 +940,41 @@ img {
 
 .product-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding-top: 0.85rem;
   border-top: 1px solid var(--color-border);
   margin-top: auto;
+  gap: 0.4rem;
+}
+
+.product-footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-card .add-to-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.2);
+}
+
+.product-card .add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
+
+.product-card .add-to-cart-btn:active {
+  transform: translateY(0);
 }
 
 .product-price {
@@ -846,6 +982,7 @@ img {
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--color-secondary);
+  line-height: 1.2;
 }
 .product-price small {
   font-size: 0.82rem;
@@ -1674,11 +1811,15 @@ img {
 /* --------------------------------------------------------------------------
    9. Footer
    -------------------------------------------------------------------------- */
+/* ==========================================================================
+   9. Footer (Light Mode: Consistent with Navbar — same white background)
+   ========================================================================== */
 .main-footer {
-  background-color: #081322 !important;
-  color: #cbd5e1 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important; /* Matches navbar background */
+  color: var(--color-text-muted) !important;
   padding: 5rem 0 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--color-border);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 .main-footer p,
@@ -1687,10 +1828,9 @@ img {
 .main-footer .text-muted,
 .main-footer p.text-muted,
 .main-footer .small.text-muted,
-.main-footer .text-white-50,
 .main-footer div:not(.footer-brand-badge):not(.brand-logo),
 .main-footer span:not(.brand-logo *):not(.footer-brand-badge *) {
-  color: #cbd5e1 !important;
+  color: var(--color-text-muted) !important;
 }
 
 /* Footer Brand Logo - Perfectly matched with Header Brand Logo */
@@ -1711,8 +1851,7 @@ a.footer-brand-badge,
   font-weight: 800 !important;
   letter-spacing: -0.5px !important;
   line-height: 1 !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  color: var(--brand-text-color, #0f172a) !important;
   transition: all var(--transition-normal) !important;
   cursor: pointer !important;
 }
@@ -1725,18 +1864,17 @@ a.footer-brand-badge,
   flex-shrink: 0 !important;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   transform-origin: 30% 50% !important;
-  filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.4)) !important;
+  filter: drop-shadow(0 2px 6px rgba(2, 132, 199, 0.25)) !important;
 }
 
 .main-footer .brand-logo span,
 .main-footer .footer-brand-badge span,
 .footer-brand-badge span {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  color: var(--brand-text-color, #0f172a) !important;
   font-family: var(--font-heading) !important;
   font-size: 1.45rem !important;
   font-weight: 800 !important;
-  transition: color 0.3s ease, -webkit-text-fill-color 0.3s ease, text-shadow 0.3s ease !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease !important;
 }
 
 .main-footer .brand-logo span .accent,
@@ -1744,52 +1882,45 @@ a.footer-brand-badge,
 .main-footer .footer-brand-badge span .accent,
 .main-footer .footer-brand-badge span .text-primary,
 .footer-brand-badge span .accent,
-.footer-brand-badge span .text-primary {
-  color: #38bdf8 !important;
-  -webkit-text-fill-color: #38bdf8 !important;
-  transition: color 0.3s ease, -webkit-text-fill-color 0.3s ease, text-shadow 0.3s ease !important;
+.footer-brand-badge span .text-primary,
+.main-footer .brand-logo .accent,
+.main-footer .brand-logo .text-primary,
+.main-footer .footer-brand-badge .accent,
+.main-footer .footer-brand-badge .text-primary {
+  color: var(--brand-accent-color, var(--color-primary)) !important;
 }
 
-/* Footer Brand Logo Hover Effects in Light Mode & Base */
 .main-footer .brand-logo:hover,
 .main-footer .footer-brand-badge:hover,
-.footer-brand-badge:hover,
-a.footer-brand-badge:hover {
+.footer-brand-badge:hover {
   transform: translateY(-2px) !important;
   background: transparent !important;
   box-shadow: none !important;
 }
 
-.main-footer .brand-logo:hover *,
 .main-footer .brand-logo:hover span,
-.main-footer .brand-logo:hover span .accent,
-.main-footer .brand-logo:hover span .text-primary,
-.main-footer .footer-brand-badge:hover *,
-.main-footer .footer-brand-badge:hover span,
-.main-footer .footer-brand-badge:hover span .accent,
-.main-footer .footer-brand-badge:hover span .text-primary,
-.footer-brand-badge:hover *,
-.footer-brand-badge:hover span,
-.footer-brand-badge:hover span .accent,
-.footer-brand-badge:hover span .text-primary {
-  color: #38bdf8 !important;
-  -webkit-text-fill-color: #38bdf8 !important;
-  text-shadow: 0 0 16px rgba(56, 189, 248, 0.8), 0 0 30px rgba(56, 189, 248, 0.4) !important;
+.main-footer .footer-brand-badge:hover span {
+  color: var(--brand-accent-color, var(--color-primary)) !important;
 }
 
 .main-footer .brand-logo:hover svg.brand-fish-img,
-.main-footer .footer-brand-badge:hover svg.brand-fish-img,
-.footer-brand-badge:hover svg.brand-fish-img {
+.main-footer .footer-brand-badge:hover svg.brand-fish-img {
   animation: fishSwim 0.85s ease-in-out infinite alternate !important;
-  filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.9)) !important;
+  filter: drop-shadow(0 4px 10px rgba(2, 132, 199, 0.65)) !important;
 }
 
 .footer-heading {
-  color: #ffffff !important;
+  color: var(--color-text-main) !important;
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   position: relative;
+}
+
+.footer-heading a,
+.main-footer .text-white,
+.main-footer a.text-white {
+  color: var(--color-text-main) !important;
 }
 
 .footer-heading::after {
@@ -1811,44 +1942,44 @@ a.footer-brand-badge:hover {
   margin-bottom: 0.75rem;
 }
 .footer-links a {
-  color: #cbd5e1 !important;
+  color: var(--color-text-muted) !important;
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
 }
 .footer-links a:hover {
-  color: #38bdf8 !important;
+  color: var(--color-primary) !important;
   transform: translateX(4px);
 }
 
 .main-footer .form-control {
-  background-color: #111827 !important;
-  border: 1.5px solid #374151 !important;
-  color: #ffffff !important;
+  background-color: var(--color-bg-alt) !important;
+  border: 1.5px solid var(--color-border) !important;
+  color: var(--color-text-main) !important;
 }
 .main-footer .form-control:focus {
   border-color: #0284c7 !important;
   box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25) !important;
-  background-color: #1f2937 !important;
-  color: #ffffff !important;
+  background-color: var(--color-bg-card) !important;
+  color: var(--color-text-main) !important;
 }
 .main-footer .form-control::placeholder {
-  color: #9ca3af !important;
+  color: #94a3b8 !important;
 }
 
 .footer-bottom {
   margin-top: 3.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--color-border);
   font-size: 0.88rem;
-  color: #94a3b8 !important;
+  color: var(--color-text-muted) !important;
 }
 .footer-bottom a {
-  color: #94a3b8 !important;
+  color: var(--color-text-muted) !important;
 }
 .footer-bottom a:hover {
-  color: #38bdf8 !important;
+  color: var(--color-primary) !important;
 }
 
 /* Back to Top Button */
@@ -1884,17 +2015,17 @@ a.footer-brand-badge:hover {
   color: #ffffff;
 }
 
-/* Footer Social Links */
+/* Footer Social Links — styled to match navbar icon buttons in light mode */
 .social-links .social-btn {
   width: 40px;
   height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
-  color: #cbd5e1;
+  border-radius: var(--radius-sm);          /* Pill radius — matches navbar toggle-btn */
+  border: 1px solid var(--color-border);    /* Subtle border — matches nav context */
+  background: transparent;
+  color: var(--color-primary);              /* Primary blue — matches navbar icons */
   font-size: 1.1rem;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
@@ -1902,10 +2033,10 @@ a.footer-brand-badge:hover {
 .social-links .social-btn:hover {
   transform: translateY(-4px) scale(1.1);
   color: #ffffff !important;
+  border-color: transparent;
 }
 .social-links .social-btn.insta:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  border-color: transparent;
   box-shadow: 0 8px 18px rgba(214, 36, 159, 0.4);
 }
 .social-links .social-btn.fb:hover {
@@ -2121,4 +2252,149 @@ p {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
   scrollbar-width: thin;
+}
+
+/* --------------------------------------------------------------------------
+   14. Cart Page Table & Quantity Stepper (+ / -) Alignment
+   -------------------------------------------------------------------------- */
+.table-cart {
+  width: 100%;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+
+.table-cart th {
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1rem 0.85rem;
+  border-bottom: 2px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+}
+
+.table-cart td {
+  padding: 1.1rem 0.85rem;
+  border-bottom: 1px solid var(--color-border-light);
+  vertical-align: middle;
+}
+
+.table-cart .cart-row:hover {
+  background-color: rgba(2, 132, 199, 0.02);
+}
+
+.qty-stepper {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-bg-card);
+  padding: 3px;
+  height: 38px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  overflow: hidden;
+  max-width: 124px;
+  min-width: 114px;
+  vertical-align: middle;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.qty-stepper:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.qty-stepper .qty-btn {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  flex: 0 0 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none;
+  background-color: var(--color-bg-alt);
+  color: var(--color-secondary);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform 0.1s ease;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  box-sizing: border-box;
+}
+
+.qty-stepper .qty-btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.qty-stepper .qty-btn:active {
+  transform: scale(0.92);
+}
+
+.qty-stepper .qty-btn i {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.85rem !important;
+  line-height: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.qty-stepper .qty-input {
+  width: 38px !important;
+  min-width: 32px !important;
+  max-width: 44px !important;
+  height: 32px !important;
+  border: none !important;
+  background: transparent !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: var(--color-text-main) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 32px !important;
+  vertical-align: middle !important;
+  user-select: none;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.qty-stepper .qty-input::-webkit-outer-spin-button,
+.qty-stepper .qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Product Details Page Quantity Controller */
+.input-group-quantity {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.input-group-quantity .form-control {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
 }

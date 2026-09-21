@@ -19,12 +19,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/dark-mode.css">
-  <link rel="stylesheet" href="assets/css/rtl.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
 </head>
 <body>
 
@@ -48,7 +50,7 @@
           <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-          <i class="bi bi-globe2"></i>
+          <i class="bi bi-text-right"></i>
           <span class="rtl-text d-none d-sm-inline">RTL</span>
         </button>
       </div>
@@ -61,7 +63,7 @@
       <div class="collapse navbar-collapse" id="navbarHome2Collapse">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
               Home
             </a>
             <ul class="dropdown-menu">
@@ -109,7 +111,7 @@
             <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-globe2"></i>
+            <i class="bi bi-text-right"></i>
             <span class="rtl-text">RTL</span>
           </button>
           <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
@@ -118,11 +120,17 @@
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
-          </a>
+        <!-- Mobile Cart & Login Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column align-items-center gap-2">
+          <div class="mobile-actions-wrapper d-flex flex-column gap-2">
+            <a href="cart.html" class="nav-cart-btn w-100 justify-content-start" title="View Cart" aria-label="Cart">
+              <i class="bi bi-cart3"></i>
+              <span>View Cart</span>
+            </a>
+            <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-start" title="Login / Register">
+              <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -216,13 +224,13 @@
                 <small class="text-info">Ready to pan-sear in 8 mins</small>
               </div>
               <div class="text-end">
-                <span class="fs-4 fw-bold text-warning">$39.50</span>
+                <span class="fs-4 fw-bold text-warning">₹39.50</span>
                 <small class="text-white-50 d-block">per kg pack</small>
               </div>
             </div>
 
             <div>
-              <button type="button" class="btn btn-coral w-100 justify-content-center py-2 fw-semibold" onclick="window.addToCartDirect('prod-salmon')">
+              <button type="button" class="btn btn-coral w-100 justify-content-center py-2 fw-semibold" onclick="window.addToCartDirect('prod-halibut', 'Center-Cut Halibut &amp; Herb Butter', 39.50, 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&amp;fit=crop&amp;w=1000&amp;q=85', 'Chef Signature', 1, 1.0, 'Pan-Sear Cut')">
                 <i class="bi bi-cart-plus-fill me-2"></i> Order Today's Cut
               </button>
             </div>
@@ -244,51 +252,98 @@
       </div>
 
       <div class="row g-4">
-        <!-- Cut 1 -->
+        <!-- Cut 1: Sashimi and Poke Cut -->
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
-            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
-              <i class="bi bi-knife"></i>
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- Precision Slicing Knife -->
+                <path d="M2.5 3.5l3 3" stroke-width="2.2"/>
+                <path d="M5.5 6.5L20.5 3.5c1.1-.3 2 .6 1.7 1.7l-2.2 6.3L7 8z"/>
+                <!-- Sashimi Fillet Slice -->
+                <path d="M2 14.5c2.5-3 7-3.5 11.5-1.5l-1.5 4C7.5 15 4 15.5 2 18.5v-4z"/>
+                <path d="M6 13.5l1.5 3"/>
+                <path d="M9.5 13.8l1.5 3"/>
+                <!-- Poke Cube -->
+                <rect x="15" y="14" width="6.5" height="6.5" rx="1.5"/>
+                <path d="M15 17.5h6.5"/>
+              </svg>
             </div>
-            <h5 class="fw-bold mb-2">Sashimi &amp; Poke Cut</h5>
+            <h5 class="fw-bold mb-2">Sashimi and Poke Cut</h5>
             <p class="text-muted small mb-3">Zero skin, zero pin-bones, uniform rectangular loins or 1-inch poke cubes ready for raw consumption.</p>
-            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Sushi &amp; Crudo</span>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Sushi and Crudo</span>
           </div>
         </div>
 
-        <!-- Cut 2 -->
+        <!-- Cut 2: Center-Cut Steaks -->
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
-            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
-              <i class="bi bi-square-half"></i>
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- Bone-in Fish Steak (Darne Cross-Cut) -->
+                <path d="M12 3.5C7.2 3.5 3.5 7.2 3.5 12c0 5 2.5 8.5 5 8.5 2 0 2.5-3.5 3.5-5.5 1 2 1.5 5.5 3.5 5.5 2.5 0 5-3.5 5-8.5 0-4.8-3.7-8.5-8.5-8.5z"/>
+                <!-- Central spine bone -->
+                <circle cx="12" cy="10.5" r="2.2"/>
+                <circle cx="12" cy="10.5" r="0.8" fill="currentColor"/>
+                <!-- Cast Iron Sear Marks -->
+                <path d="M7 8l3-3"/>
+                <path d="M14 5l3 3"/>
+                <path d="M6 13l3.5-3.5"/>
+                <path d="M14.5 9.5l3.5 3.5"/>
+                <path d="M7 17l2.5-2.5"/>
+                <path d="M14.5 14.5l2.5 2.5"/>
+              </svg>
             </div>
             <h5 class="fw-bold mb-2">Center-Cut Steaks</h5>
             <p class="text-muted small mb-3">Thick bone-in cross-cut steaks (200g - 350g) that hold intense moisture and sear evenly on high heat.</p>
-            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Grill &amp; Cast Iron</span>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Grill and Cast Iron</span>
           </div>
         </div>
 
-        <!-- Cut 3 -->
+        <!-- Cut 3: Butterflied and Boned -->
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
-            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
-              <i class="bi bi-intersect"></i>
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- Symmetrically opened flat butterflied fish -->
+                <path d="M12 3c-2.5 1-8.5 4-8.5 10 0 4.5 3.5 7.5 6.5 7.5 1.5 0 2-2 2-4.5 0 2.5.5 4.5 2 4.5 3 0 6.5-3 6.5-7.5 0-6-6-9-8.5-10z"/>
+                <!-- Central filleted deboned spine line -->
+                <path d="M12 4v16" stroke-dasharray="2 2" stroke-width="1.6"/>
+                <!-- Left fillet ribs -->
+                <path d="M11 8C8.5 9 6.5 10.5 5 13"/>
+                <path d="M11 12C8.5 13 6.8 14.5 5.5 16.5"/>
+                <!-- Right fillet ribs -->
+                <path d="M13 8C15.5 9 17.5 10.5 19 13"/>
+                <path d="M13 12C15.5 13 17.2 14.5 18.5 16.5"/>
+              </svg>
             </div>
-            <h5 class="fw-bold mb-2">Butterflied &amp; Boned</h5>
+            <h5 class="fw-bold mb-2">Butterflied and Boned</h5>
             <p class="text-muted small mb-3">Spine carefully removed while keeping both sides intact. Opens flat for quick broiling, stuffing, and baking.</p>
-            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Oven &amp; Broiler</span>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Oven and Broiler</span>
           </div>
         </div>
 
-        <!-- Cut 4 -->
+        <!-- Cut 4: Whole Cleaned and Scored -->
         <div class="col-md-6 col-lg-3">
           <div class="card h-100 p-4 rounded-4 border bg-card text-center transition-all hover-shadow">
-            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.8rem;">
-              <i class="bi bi-check2-all"></i>
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mb-3" style="width: 64px; height: 64px;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- Whole fish body & tail -->
+                <path d="M2.5 12c2.5-4 7.5-6.5 13.5-5.5 2 1.5 4 .5 5.5-2v15c-1.5-2.5-3.5-3.5-5.5-2-6 1-11-1.5-13.5-5.5z"/>
+                <!-- Eye -->
+                <circle cx="5.5" cy="11.5" r="1" fill="currentColor"/>
+                <!-- Gill slit -->
+                <path d="M8 9.5c-.8 1.5-.8 3.5 0 5"/>
+                <!-- Diamond score marks for marinade penetration -->
+                <path d="M11 9.5l3.5 5"/>
+                <path d="M14.5 9.5l-3.5 5"/>
+                <path d="M14.5 9.5l3.5 5"/>
+                <path d="M18 9.5l-3.5 5"/>
+              </svg>
             </div>
-            <h5 class="fw-bold mb-2">Whole Cleaned &amp; Scored</h5>
+            <h5 class="fw-bold mb-2">Whole Cleaned and Scored</h5>
             <p class="text-muted small mb-3">Gilled, gutted, and descaled with diagonal diamond scores across the skin for deep marinade penetration.</p>
-            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Steaming &amp; Roasting</span>
+            <span class="badge bg-primary bg-opacity-10 text-primary mt-auto align-self-center px-3 py-1 rounded-pill">For Steaming and Roasting</span>
           </div>
         </div>
       </div>
@@ -316,17 +371,22 @@
         <div class="col-md-6 col-lg-4">
           <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
             <div class="position-relative">
-              <img src="https://plus.unsplash.com/premium_photo-1668143363099-1d9e04d4a3f7?auto=format&fit=crop&w=700&q=80" alt="Garlic-Herb King Crab Cluster" class="w-100" style="height: 190px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=700&q=80'">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">12 Mins Oven Kit</span>
+              <img src="assets/images/garlic_herb_king_crab_cluster.jpg" alt="Garlic-Herb King Crab Cluster Ready-to-Cook Kit" class="w-100" style="width: 100%; height: 215px; object-fit: cover; object-position: center 58%;">
+              <span class="badge bg-primary position-absolute px-2.5 py-1 rounded-pill shadow-sm" style="top: 12px; left: 12px; font-size: 0.72rem; font-weight: 500;">12 Mins Oven Kit</span>
             </div>
             <div class="card-body p-4 d-flex flex-column">
               <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Crab Special</span>
               <h5 class="fw-bold mb-2">Garlic-Herb King Crab Cluster</h5>
               <p class="text-muted small flex-grow-1">Pre-split Alaskan crab legs infused with roasted garlic, sweet dairy butter, and fresh tarragon.</p>
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
-                <span class="fs-5 fw-bold text-primary">$44.00 <small class="text-muted fs-6">/ pack</small></span>
-                <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-mud-crab')">
-                  <i class="bi bi-cart-plus me-1"></i> Add Kit
+              <div class="pt-3 border-top mt-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fs-5 fw-bold text-primary">₹44.00 <small class="text-muted fs-6">/ kg</small></span>
+                  <a href="product-details.html?id=prod-crab-kit&img=assets/images/garlic_herb_king_crab_cluster.jpg" class="btn btn-sm btn-outline-ocean py-1 px-3">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+                <button type="button" class="btn btn-ocean w-100" onclick="window.addToCartDirect('prod-crab-kit', 'Garlic-Herb King Crab Cluster', 44.00, 'assets/images/garlic_herb_king_crab_cluster.jpg', 'Ready-to-Cook Kit', 1, 1.0, 'Oven-Ready Pack')">
+                  <i class="bi bi-cart-plus-fill me-1"></i> Add to Cart
                 </button>
               </div>
             </div>
@@ -337,17 +397,22 @@
         <div class="col-md-6 col-lg-4">
           <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
             <div class="position-relative">
-              <img src="https://plus.unsplash.com/premium_photo-1668143363297-f5793eb1ca43?auto=format&fit=crop&w=700&q=80" alt="Citrus & Dill Norwegian Salmon Fillet Meal Kit" class="w-100" style="height: 190px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&fit=crop&w=700&q=80'">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">10 Mins Pan Sear</span>
+              <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&fit=crop&w=800&q=80" alt="Citrus & Dill Norwegian Salmon Fillet Meal Kit" class="w-100" style="width: 100%; height: 215px; object-fit: cover; object-position: center;">
+              <span class="badge bg-primary position-absolute px-2.5 py-1 rounded-pill shadow-sm" style="top: 12px; left: 12px; font-size: 0.72rem; font-weight: 500;">10 Mins Pan Sear</span>
             </div>
             <div class="card-body p-4 d-flex flex-column">
               <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Steak Cut</span>
               <h5 class="fw-bold mb-2">Citrus &amp; Dill Norwegian Salmon</h5>
               <p class="text-muted small flex-grow-1">Sashimi-grade salmon loins paired with fresh dill fronds, Meyer lemon slices, and extra virgin olive oil.</p>
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
-                <span class="fs-5 fw-bold text-primary">$34.50 <small class="text-muted fs-6">/ kg</small></span>
-                <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-salmon')">
-                  <i class="bi bi-cart-plus me-1"></i> Add Kit
+              <div class="pt-3 border-top mt-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fs-5 fw-bold text-primary">₹34.00 <small class="text-muted fs-6">/ kg</small></span>
+                  <a href="product-details.html?id=prod-salmon-kit" class="btn btn-sm btn-outline-ocean py-1 px-3">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+                <button type="button" class="btn btn-ocean w-100" onclick="window.addToCartDirect('prod-salmon-kit', 'Citrus &amp; Dill Norwegian Salmon', 34.00, 'https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&amp;fit=crop&amp;w=800&amp;q=80', 'Ready-to-Cook Kit', 1, 1.0, 'Marinated Fillet')">
+                  <i class="bi bi-cart-plus-fill me-1"></i> Add to Cart
                 </button>
               </div>
             </div>
@@ -358,17 +423,22 @@
         <div class="col-md-6 col-lg-4">
           <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden bg-card">
             <div class="position-relative">
-              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80" alt="Spiced Tiger Prawn Skewers" class="w-100" style="height: 190px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1603496987175-d912448374d3?auto=format&fit=crop&w=700&q=80'">
-              <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">6 Mins BBQ Ready</span>
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80" alt="Spiced Tiger Prawn Skewers" class="w-100" style="width: 100%; height: 215px; object-fit: cover; object-position: center;" onerror="this.src='https://images.unsplash.com/photo-1603496987175-d912448374d3?auto=format&fit=crop&w=700&q=80'">
+              <span class="badge bg-primary position-absolute px-2.5 py-1 rounded-pill shadow-sm" style="top: 12px; left: 12px; font-size: 0.72rem; font-weight: 500;">6 Mins BBQ Ready</span>
             </div>
             <div class="card-body p-4 d-flex flex-column">
               <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Prawn Skewers</span>
               <h5 class="fw-bold mb-2">Spiced Tiger Prawn Skewers (8pc)</h5>
               <p class="text-muted small flex-grow-1">De-veined colossal prawns skewered with sweet bell peppers, smoked paprika, lime juice, and sea salt.</p>
-              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
-                <span class="fs-5 fw-bold text-primary">$32.00 <small class="text-muted fs-6">/ pack</small></span>
-                <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-white-prawns')">
-                  <i class="bi bi-cart-plus me-1"></i> Add Kit
+              <div class="pt-3 border-top mt-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fs-5 fw-bold text-primary">₹32.00 <small class="text-muted fs-6">/ kg</small></span>
+                  <a href="product-details.html?id=prod-prawn-skewer&img=https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format%26fit=crop%26w=700%26q=80" class="btn btn-sm btn-outline-ocean py-1 px-3">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+                <button type="button" class="btn btn-ocean w-100" onclick="window.addToCartDirect('prod-prawn-skewer', 'Spiced Tiger Prawn Skewers (8pc)', 32.00, 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=700&amp;q=80', 'Ready-to-Cook Kit', 1, 1.0, 'Skewers Pack')">
+                  <i class="bi bi-cart-plus-fill me-1"></i> Add to Cart
                 </button>
               </div>
             </div>
@@ -397,21 +467,21 @@
                 <strong class="d-block text-secondary">Live Boston Spiny Lobsters</strong>
                 <small class="text-muted">Sizes available from 1.0kg to 2.5kg</small>
               </div>
-              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">$68.00 / kg</span>
+              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">₹68.00 / kg</span>
             </div>
             <div class="list-group-item bg-transparent px-0 py-3 border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
               <div>
                 <strong class="d-block text-secondary">Pacific Rock Oysters (Half-Shell / Live)</strong>
                 <small class="text-muted">Freshly shucked with mignonette &amp; lemon</small>
               </div>
-              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">$28.00 / dozen</span>
+              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">₹28.00 / dozen</span>
             </div>
             <div class="list-group-item bg-transparent px-0 py-3 border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
               <div>
                 <strong class="d-block text-secondary">Live Mud Crabs (Green &amp; Blue Swimmer)</strong>
                 <small class="text-muted">Hard shell, heavy meat yield</small>
               </div>
-              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">$36.00 / kg</span>
+              <span class="badge bg-success bg-opacity-10 text-success fs-6 fw-bold">₹36.00 / kg</span>
             </div>
           </div>
 

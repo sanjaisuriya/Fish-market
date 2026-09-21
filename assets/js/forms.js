@@ -51,7 +51,7 @@
       } else if (messageTextarea) {
         messageTextarea.value = `I am interested in ordering the "${packageParam}" package. Please let me know today's catch availability and delivery schedule.`;
       }
-      const formCard = document.getElementById('enquiryForm');
+      const formCard = document.getElementById('contact-enquiry-form') || document.getElementById('enquiryForm');
       if (formCard) {
         setTimeout(() => {
           formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });

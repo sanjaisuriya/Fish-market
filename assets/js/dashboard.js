@@ -111,6 +111,17 @@
     const form = document.getElementById('profile-edit-form');
     if (!form) return;
 
+    const phoneInput = form.querySelector('input[name="phone"]');
+    if (phoneInput) {
+      phoneInput.addEventListener('keypress', (e) => {
+        const charCode = (e.which !== undefined) ? e.which : e.keyCode;
+        if (charCode < 48 || charCode > 57) e.preventDefault();
+      });
+      phoneInput.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+      });
+    }
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const updatedUser = {

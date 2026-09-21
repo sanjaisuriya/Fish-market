@@ -22,12 +22,16 @@
 
     const whatsappBtn = document.getElementById('btn-submit-whatsapp');
     const storeWhatsAppNumber = '18005553474'; // Market WhatsApp Number
+    const phoneInput = document.getElementById('contact-phone');
+
+    if (phoneInput) {
+      setupNumericPhoneInput(phoneInput, 'Order enquiry phone number');
+    }
 
     function validateFormData() {
       let isValid = true;
       const nameInput = document.getElementById('contact-name');
       const emailInput = document.getElementById('contact-email');
-      const phoneInput = document.getElementById('contact-phone');
       const seafoodSelect = document.getElementById('enquiry-seafood-type');
       const qtyInput = document.getElementById('enquiry-quantity');
       const dateInput = document.getElementById('enquiry-date');
@@ -53,13 +57,10 @@
         }
       }
 
-      // Phone
+      // Phone (Strict Numeric & Length Validation)
       if (phoneInput) {
-        if (phoneInput.value.trim().length < 7) {
-          showInputError(phoneInput, 'Please enter a valid phone or mobile number.');
+        if (!validatePhoneNumber(phoneInput, 'Order enquiry phone number')) {
           isValid = false;
-        } else {
-          clearInputError(phoneInput);
         }
       }
 
@@ -254,10 +255,27 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
           submitBtn.disabled = false;
           submitBtn.innerHTML = 'Sign In';
         }
-        window.showToast('Welcome back! You have successfully signed in.', 'success');
+        const userEmail = emailInput ? emailInput.value.trim() : 'user@fishmarket.com';
+        const userName = userEmail.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        const loggedInUser = {
+          name: userName,
+          email: userEmail,
+          role: 'Customer',
+          phone: '+91 98765 43210',
+          memberSince: 'March 2026'
+        };
+        try {
+          localStorage.setItem('seafood_user', JSON.stringify(loggedInUser));
+          if (window.AuthManager?.updateNavbar) window.AuthManager.updateNavbar();
+          window.dispatchEvent(new CustomEvent('authChanged', { detail: { user: loggedInUser } }));
+        } catch (err) {
+          console.warn('Could not persist session:', err);
+        }
+
+        window.showToast(`Welcome back, ${userName}! Signed in successfully.`, 'success');
         setTimeout(() => {
-          window.location.href = 'index.html';
-        }, 1500);
+          window.location.href = 'dashboard.html';
+        }, 1200);
       }, 1000);
     });
   }
@@ -269,49 +287,52 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
     const registerForm = document.getElementById('register-form');
     if (!registerForm) return;
 
+    const phoneInput = document.getElementById('reg-phone');
+    if (phoneInput) {
+      setupNumericPhoneInput(phoneInput, 'Registration phone number');
+    }
+
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
       let isValid = true;
 
       const nameInput = document.getElementById('reg-name');
       const emailInput = document.getElementById('reg-email');
-      const phoneInput = document.getElementById('reg-phone');
       const passInput = document.getElementById('reg-password');
       const confirmInput = document.getElementById('reg-confirm-password');
       const termsCheck = document.getElementById('reg-terms');
 
-      if (nameInput.value.trim().length < 2) {
+      if (nameInput && nameInput.value.trim().length < 2) {
         showInputError(nameInput, 'Full name is required.');
         isValid = false;
-      } else {
+      } else if (nameInput) {
         clearInputError(nameInput);
       }
 
-      if (!isValidEmail(emailInput.value.trim())) {
+      if (emailInput && !isValidEmail(emailInput.value.trim())) {
         showInputError(emailInput, 'Valid email required.');
         isValid = false;
-      } else {
+      } else if (emailInput) {
         clearInputError(emailInput);
       }
 
-      if (phoneInput.value.trim().length < 7) {
-        showInputError(phoneInput, 'Valid phone number required.');
-        isValid = false;
-      } else {
-        clearInputError(phoneInput);
+      if (phoneInput) {
+        if (!validatePhoneNumber(phoneInput, 'Registration phone number')) {
+          isValid = false;
+        }
       }
 
-      if (passInput.value.length < 6) {
+      if (passInput && passInput.value.length < 6) {
         showInputError(passInput, 'Password must be at least 6 characters.');
         isValid = false;
-      } else {
+      } else if (passInput) {
         clearInputError(passInput);
       }
 
-      if (confirmInput.value !== passInput.value || confirmInput.value === '') {
+      if (confirmInput && (confirmInput.value !== passInput.value || confirmInput.value === '')) {
         showInputError(confirmInput, 'Passwords do not match.');
         isValid = false;
-      } else {
+      } else if (confirmInput) {
         clearInputError(confirmInput);
       }
 
@@ -338,10 +359,28 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
           submitBtn.disabled = false;
           submitBtn.innerHTML = 'Create Account';
         }
-        window.showToast('Account created successfully! Welcome to Fresh Seafood Market.', 'success');
+        const newUserName = nameInput ? nameInput.value.trim() : 'Customer';
+        const newUserEmail = emailInput ? emailInput.value.trim() : 'user@fishmarket.com';
+        const newUserPhone = phoneInput ? phoneInput.value.trim() : '+91 98765 43210';
+        const newUser = {
+          name: newUserName,
+          email: newUserEmail,
+          phone: newUserPhone,
+          role: 'Customer',
+          memberSince: 'March 2026'
+        };
+        try {
+          localStorage.setItem('seafood_user', JSON.stringify(newUser));
+          if (window.AuthManager?.updateNavbar) window.AuthManager.updateNavbar();
+          window.dispatchEvent(new CustomEvent('authChanged', { detail: { user: newUser } }));
+        } catch (err) {
+          console.warn('Could not persist session:', err);
+        }
+
+        window.showToast(`Account created successfully! Welcome, ${newUserName}.`, 'success');
         setTimeout(() => {
-          window.location.href = 'login.html';
-        }, 1500);
+          window.location.href = 'dashboard.html';
+        }, 1200);
       }, 1200);
     });
   }
@@ -366,6 +405,87 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
         }
       });
     });
+  }
+
+  /* ------------------------------------------------------------------------
+     5. Phone Input & Numeric Validation Helpers
+     ------------------------------------------------------------------------ */
+  function setupNumericPhoneInput(phoneInput, label = 'Phone number') {
+    if (!phoneInput) return;
+
+    // Prevent non-numeric key presses (A-Z, a-z, symbols, spaces, etc.)
+    phoneInput.addEventListener('keypress', function (e) {
+      const charCode = (e.which !== undefined) ? e.which : e.keyCode;
+      // Allow only numbers '0' (48) to '9' (57)
+      if (charCode < 48 || charCode > 57) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Handle beforeinput (e.g. on modern browsers / mobile devices)
+    phoneInput.addEventListener('beforeinput', function (e) {
+      if (e.data && !/^\d+$/.test(e.data)) {
+        e.preventDefault();
+      }
+    });
+
+    // Real-time input sanitizer (strips non-digits instantly)
+    phoneInput.addEventListener('input', function () {
+      const cleanVal = this.value.replace(/\D/g, '');
+      if (this.value !== cleanVal) {
+        this.value = cleanVal;
+      }
+      if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+        validatePhoneNumber(this, label);
+      }
+    });
+
+    // Paste handler (cleans pasted content to numbers only)
+    phoneInput.addEventListener('paste', function (e) {
+      e.preventDefault();
+      const paste = (e.clipboardData || window.clipboardData).getData('text') || '';
+      const numericPaste = paste.replace(/\D/g, '');
+      const start = this.selectionStart || 0;
+      const end = this.selectionEnd || 0;
+      const currentVal = this.value || '';
+      const newVal = (currentVal.substring(0, start) + numericPaste + currentVal.substring(end)).slice(0, 15);
+      this.value = newVal;
+      const newPos = Math.min(newVal.length, start + numericPaste.length);
+      this.setSelectionRange(newPos, newPos);
+      if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+        validatePhoneNumber(this, label);
+      }
+    });
+
+    // On blur validation
+    phoneInput.addEventListener('blur', function () {
+      if (this.value.trim().length > 0) {
+        validatePhoneNumber(this, label);
+      }
+    });
+  }
+
+  function validatePhoneNumber(input, label = 'Phone number') {
+    const val = (input.value || '').trim();
+    if (!val) {
+      showInputError(input, `${label} is required.`);
+      return false;
+    }
+    if (!/^\d+$/.test(val)) {
+      showInputError(input, `${label} must contain only numeric characters (0–9).`);
+      return false;
+    }
+    if (val.length < 7) {
+      showInputError(input, `Please enter a valid ${label.toLowerCase()} (minimum 7 digits).`);
+      return false;
+    }
+    if (val.length > 15) {
+      showInputError(input, `${label} cannot exceed 15 digits.`);
+      return false;
+    }
+    clearInputError(input);
+    return true;
   }
 
   /* Helper Functions */

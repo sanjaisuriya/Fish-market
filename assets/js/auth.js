@@ -61,6 +61,24 @@
         `;
       }
     });
+
+    const individualAuthBtns = document.querySelectorAll('.nav-login-btn, .nav-auth-btn');
+    individualAuthBtns.forEach(btn => {
+      if (btn.closest('.auth-nav-container')) return;
+      if (user) {
+        btn.classList.remove('nav-auth-btn');
+        btn.classList.add('btn', 'btn-outline-sea', 'btn-sm', 'd-inline-flex', 'align-items-center', 'gap-2');
+        btn.href = 'dashboard.html';
+        btn.title = 'My Account';
+        btn.innerHTML = `<i class="bi bi-person-check-fill text-success fs-5"></i><span>${user.name ? user.name.split(' ')[0] : 'Account'}</span>`;
+      } else {
+        btn.classList.add('nav-auth-btn');
+        btn.classList.remove('btn', 'btn-outline-sea', 'btn-sm');
+        btn.href = 'login.html';
+        btn.title = 'Login / Register';
+        btn.innerHTML = `<i class="bi bi-person-circle"></i><span>Login / Register</span>`;
+      }
+    });
   }
 
   // Password Visibility Toggle Utility

@@ -24,10 +24,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/dark-mode.css">
-  <link rel="stylesheet" href="assets/css/rtl.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
 </head>
 <body>
 
@@ -53,7 +53,7 @@
           <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-          <i class="bi bi-globe2"></i>
+          <i class="bi bi-text-right"></i>
           <span class="rtl-text d-none d-sm-inline">RTL</span>
         </button>
       </div>
@@ -67,7 +67,7 @@
       <div class="collapse navbar-collapse" id="navbarMainCollapse">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
               Home
             </a>
             <ul class="dropdown-menu">
@@ -115,7 +115,7 @@
             <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-globe2"></i>
+            <i class="bi bi-text-right"></i>
             <span class="rtl-text">RTL</span>
           </button>
           <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
@@ -124,11 +124,17 @@
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
-          </a>
+        <!-- Mobile Cart & Login Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column align-items-center gap-2">
+          <div class="mobile-actions-wrapper d-flex flex-column gap-2">
+            <a href="cart.html" class="nav-cart-btn w-100 justify-content-start" title="View Cart" aria-label="Cart">
+              <i class="bi bi-cart3"></i>
+              <span>View Cart</span>
+            </a>
+            <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-start" title="Login / Register">
+              <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -148,7 +154,7 @@
             Fresh From the Ocean to <span class="text-highlight">Your Table</span>
           </h1>
           <p class="hero-subtitle">
-            Premium quality seafood, responsibly sourced from certified coastal waters and delivered ice-cold to your doorstep within hours of docking.
+            Premium quality seafood, responsibly sourced from certified coastal waters and delivered ice-cold to your doorstep within hours of docking
           </p>
           <div class="d-flex flex-wrap gap-3 hero-cta-group">
             <a href="products.html" class="btn-ocean">
@@ -209,14 +215,16 @@
               <span class="product-category">Fresh Fish</span>
               <h5 class="product-title"><a href="product-details.html?id=prod-salmon">Norwegian Atlantic Salmon</a></h5>
               <p class="product-desc">Omega-3 rich sashimi grade fillets with velvety, melt-in-mouth texture.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$34.50 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-salmon')" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-salmon" class="btn btn-sm btn-outline-ocean">Details</a>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">₹34.00 <small>/ kg</small></div>
+                  <a href="product-details.html?id=prod-salmon" class="btn btn-sm btn-outline-ocean px-2" title="Details">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" onclick="window.addToCartDirect('prod-salmon')" title="Add 1kg to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -224,25 +232,27 @@
 
         <!-- Card 2: Tuna -->
         <div class="col-md-6 col-lg-4">
-          <div class="product-card">
+          <div class="product-card h-100">
             <div class="product-thumb">
               <img src="assets/images/yellowfin_tuna_loin_catch_1788765304353.jpg" alt="Yellowfin Tuna Loin" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=900&q=80'">
               <div class="product-badge-group">
                 <span class="badge-wild">Wild Caught</span>
               </div>
             </div>
-            <div class="product-body">
+            <div class="product-body d-flex flex-column">
               <span class="product-category">Fresh Fish</span>
               <h5 class="product-title"><a href="product-details.html?id=prod-tuna">Yellowfin Tuna Loin</a></h5>
               <p class="product-desc">Ruby red, dense steak cuts ideal for pan-searing or poke bowls.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$38.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-tuna')" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-tuna" class="btn btn-sm btn-outline-ocean">Details</a>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">₹38.00 <small>/ kg</small></div>
+                  <a href="product-details.html?id=prod-tuna" class="btn btn-sm btn-outline-ocean px-2" title="Details">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" onclick="window.addToCartDirect('prod-tuna')" title="Add 1kg to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -250,25 +260,27 @@
 
         <!-- Card 3: Seabass -->
         <div class="col-md-6 col-lg-4">
-          <div class="product-card">
+          <div class="product-card h-100">
             <div class="product-thumb">
               <img src="assets/images/mediterranean_sea_bass_fresh_1788766017507.jpg" alt="Mediterranean Sea Bass" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=900&q=80'">
               <div class="product-badge-group">
                 <span class="badge-coral"><i class="bi bi-star-fill"></i> Chef's Choice</span>
               </div>
             </div>
-            <div class="product-body">
+            <div class="product-body d-flex flex-column">
               <span class="product-category">Fresh Fish</span>
               <h5 class="product-title"><a href="product-details.html?id=prod-seabass">Mediterranean Sea Bass</a></h5>
               <p class="product-desc">Sweet, delicate white meat that crisps up beautifully with herbs and lemon.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$28.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-seabass')" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-seabass" class="btn btn-sm btn-outline-ocean">Details</a>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">₹28.00 <small>/ kg</small></div>
+                  <a href="product-details.html?id=prod-seabass" class="btn btn-sm btn-outline-ocean px-2" title="Details">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" onclick="window.addToCartDirect('prod-seabass')" title="Add 1kg to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -276,25 +288,27 @@
 
         <!-- Card 4: Calamari Squid -->
         <div class="col-md-6 col-lg-4">
-          <div class="product-card">
+          <div class="product-card h-100">
             <div class="product-thumb">
               <img src="assets/images/cleaned_calamari_squid_fresh_1788766184966.jpg" alt="Calamari Squid" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559742811-82286364ceaf?auto=format&fit=crop&w=900&q=80'">
               <div class="product-badge-group">
                 <span class="badge-coral">Bestseller</span>
               </div>
             </div>
-            <div class="product-body">
+            <div class="product-body d-flex flex-column">
               <span class="product-category">Squid & Calamari</span>
               <h5 class="product-title"><a href="product-details.html?id=prod-squid">Calamari Squid (Cleaned)</a></h5>
               <p class="product-desc">Tender, ocean-fresh calamari squid with ink removed. Perfect for quick pan-sear or crispy frying.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$22.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-squid')" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-squid" class="btn btn-sm btn-outline-ocean">Details</a>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">₹22.00 <small>/ kg</small></div>
+                  <a href="product-details.html?id=prod-squid" class="btn btn-sm btn-outline-ocean px-2" title="Details">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" onclick="window.addToCartDirect('prod-squid')" title="Add 1kg to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -302,25 +316,27 @@
 
         <!-- Card 5: Tiger Prawns -->
         <div class="col-md-6 col-lg-4">
-          <div class="product-card">
+          <div class="product-card h-100">
             <div class="product-thumb">
               <img src="assets/images/tiger_prawns_catch_1788765391401.jpg" alt="Jumbo Tiger Prawns" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=900&q=80'">
               <div class="product-badge-group">
                 <span class="badge-coral">Premium Grade</span>
               </div>
             </div>
-            <div class="product-body">
+            <div class="product-body d-flex flex-column">
               <span class="product-category">Prawns & Shrimp</span>
               <h5 class="product-title"><a href="product-details.html?id=prod-tiger-prawns">Jumbo Tiger Prawns</a></h5>
               <p class="product-desc">Crisp, succulent bite with sweet natural brininess. Deveined upon request.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$42.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-tiger-prawns')" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-tiger-prawns" class="btn btn-sm btn-outline-ocean">Details</a>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">₹42.00 <small>/ kg</small></div>
+                  <a href="product-details.html?id=prod-tiger-prawns" class="btn btn-sm btn-outline-ocean px-2" title="Details">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" onclick="window.addToCartDirect('prod-tiger-prawns')" title="Add 1kg to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -328,25 +344,27 @@
 
         <!-- Card 6: Silver Pomfret -->
         <div class="col-md-6 col-lg-4">
-          <div class="product-card">
+          <div class="product-card h-100">
             <div class="product-thumb">
               <img src="assets/images/silver_pomfret_fish_1788781292906.jpg" alt="Silver Pomfret" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=900&q=80'">
               <div class="product-badge-group">
                 <span class="badge-coral"><i class="bi bi-star-fill"></i> Bestseller</span>
               </div>
             </div>
-            <div class="product-body">
+            <div class="product-body d-flex flex-column">
               <span class="product-category">Fresh Fish</span>
               <h5 class="product-title"><a href="product-details.html?id=prod-pomfret">Silver Pomfret</a></h5>
               <p class="product-desc">Soft, tender, and uniquely sweet flesh. Ideal for shallow frying, tandoor, or rich coconut curries.</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">$32.00 <small>/ kg</small></div>
-                <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-pomfret')" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=prod-pomfret" class="btn btn-sm btn-outline-ocean">Details</a>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">₹32.00 <small>/ kg</small></div>
+                  <a href="product-details.html?id=prod-pomfret" class="btn btn-sm btn-outline-ocean px-2" title="Details">
+                    Details <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
                 </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" onclick="window.addToCartDirect('prod-pomfret')" title="Add 1kg to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>

@@ -9,6 +9,14 @@
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
+/* Prevent BiDi punctuation flipping (e.g. trailing period jumping to the left of words) */
+[dir="rtl"] .hero-subtitle,
+[dir="rtl"] .hero-title,
+[dir="rtl"] .section-desc,
+[dir="rtl"] p {
+  unicode-bidi: plaintext;
+}
+
 [dir="ltr"] {
   direction: ltr;
   text-align: left;
@@ -71,9 +79,20 @@
   margin-left: 1rem !important;
 }
 
-[dir="rtl"] .nav-actions-group {
-  margin-left: 0 !important;
-  margin-right: auto !important;
+@media (max-width: 991.98px) {
+  [dir="rtl"] .brand-logo {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  [dir="rtl"] .nav-actions-group {
+    margin: 0 !important;
+    gap: 0.4rem !important;
+  }
+
+  [dir="rtl"] .main-navbar .navbar-toggler {
+    margin: 0 0.4rem 0 0 !important;
+  }
 }
 
 [dir="rtl"] .dropdown-menu {
@@ -169,4 +188,9 @@
 }
 [dir="rtl"] .bi-chevron-right::before {
   content: "\f284"; /* bi-chevron-left */
+}
+
+/* Quantity Stepper in RTL keeps standard - and + ordering */
+[dir="rtl"] .qty-stepper {
+  direction: ltr !important;
 }

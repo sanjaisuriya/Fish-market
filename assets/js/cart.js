@@ -9,7 +9,44 @@
 
   function getCart() {
     try {
-      return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+      const raw = localStorage.getItem(CART_KEY);
+      if (raw === null) {
+        const sampleCart = [
+          {
+            id: 'prod-salmon',
+            name: 'Norwegian Atlantic Salmon',
+            pricePerKg: 34.00,
+            image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg',
+            category: 'Fresh Fish',
+            quantity: 2,
+            weightKg: 1.0,
+            cutType: 'Skin-On Fillet'
+          },
+          {
+            id: 'prod-tiger-prawns',
+            name: 'Jumbo Tiger Prawns',
+            pricePerKg: 42.00,
+            image: 'assets/images/tiger_prawns_catch_1788765391401.jpg',
+            category: 'Prawns & Shrimp',
+            quantity: 1,
+            weightKg: 0.5,
+            cutType: 'Cleaned & Deveined'
+          },
+          {
+            id: 'prod-mud-crab',
+            name: 'Live Blue Swimmer Crab',
+            pricePerKg: 36.00,
+            image: 'assets/images/blue_swimmer_crab_1788781381393.jpg',
+            category: 'Crab & Shellfish',
+            quantity: 3,
+            weightKg: 1.0,
+            cutType: 'Whole Live'
+          }
+        ];
+        localStorage.setItem(CART_KEY, JSON.stringify(sampleCart));
+        return sampleCart;
+      }
+      return JSON.parse(raw) || [];
     } catch (e) {
       return [];
     }
@@ -21,40 +58,68 @@
     window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart } }));
   }
 
-  function addItem(productId, quantity = 1, weightKg = 1.0, cutType = 'Standard Cut') {
-    const product = window.SeafoodProducts?.getById(productId);
-    if (!product) return;
+  function addItem(productOrId, quantity = 1, weightKg = 1.0, cutType = 'Standard Cut') {
+    let id, name, price, image, category, qty, weight, cut;
+
+    if (typeof productOrId === 'object' && productOrId !== null) {
+      id = productOrId.id;
+      name = productOrId.name;
+      price = parseFloat(productOrId.pricePerKg || productOrId.price);
+      image = productOrId.image;
+      category = productOrId.category || productOrId.categoryLabel || productOrId.categoryName;
+      qty = parseInt(productOrId.quantity, 10) || 1;
+      weight = parseFloat(productOrId.weightKg) || 1.0;
+      cut = productOrId.cutType || 'Standard Cut';
+    } else {
+      id = productOrId;
+      qty = parseInt(quantity, 10) || 1;
+      weight = parseFloat(weightKg) || 1.0;
+      cut = cutType || 'Standard Cut';
+    }
+
+    if (!id) return;
+
+    const lookup = window.SeafoodProducts?.getById ? window.SeafoodProducts.getById(id) : null;
+    const resolvedName = name && name !== 'Fresh Seafood Item' ? name : (lookup?.name || id);
+    const resolvedPrice = (!isNaN(price) && price > 0) ? price : (parseFloat(lookup?.price || lookup?.pricePerKg) || 28.00);
+    const resolvedImage = (image && !image.includes('premium_photo') && !image.includes('photo-1534939561126-855b8675edd7')) ? image : (lookup?.image || 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg');
+    const resolvedCategory = category || lookup?.categoryLabel || lookup?.categoryName || lookup?.category || 'Fresh Seafood';
 
     let cart = getCart();
     const existingIndex = cart.findIndex(
-      item => item.id === productId && item.weightKg === weightKg && item.cutType === cutType
+      item => item.id === id && parseFloat(item.weightKg) === weight && item.cutType === cut
     );
 
     if (existingIndex > -1) {
-      cart[existingIndex].quantity += quantity;
+      cart[existingIndex].quantity += qty;
+      if ((!cart[existingIndex].image || cart[existingIndex].image.includes('premium_photo') || cart[existingIndex].image.includes('photo-1534939561126-855b8675edd7')) && lookup?.image) {
+        cart[existingIndex].image = lookup.image;
+        cart[existingIndex].name = lookup.name;
+      }
     } else {
       cart.push({
-        id: product.id,
-        name: product.name,
-        pricePerKg: parseFloat(product.pricePerKg || product.price) || 28.00,
-        image: product.image,
-        category: product.categoryLabel || product.categoryName || product.category || 'Fresh Seafood',
-        quantity: quantity,
-        weightKg: weightKg,
-        cutType: cutType
+        id: id,
+        name: resolvedName,
+        pricePerKg: resolvedPrice,
+        image: resolvedImage,
+        category: resolvedCategory,
+        quantity: qty,
+        weightKg: weight,
+        cutType: cut
       });
     }
 
     saveCart(cart);
     if (window.showToast) {
-      window.showToast(`Added ${quantity}x ${product.name} (${weightKg} kg) to cart!`, 'success');
+      window.showToast(`Added ${qty}x ${resolvedName} (${weight} kg - ${cut}) to cart!`, 'success');
     }
   }
 
   function updateQuantity(productId, weightKg, cutType, newQty) {
     let cart = getCart();
+    const targetWeight = weightKg !== undefined ? parseFloat(weightKg) : undefined;
     const index = cart.findIndex(
-      item => item.id === productId && item.weightKg === weightKg && item.cutType === cutType
+      item => item.id === productId && (targetWeight === undefined || parseFloat(item.weightKg) === targetWeight) && (cutType === undefined || item.cutType === cutType)
     );
 
     if (index > -1) {
@@ -62,7 +127,21 @@
         cart.splice(index, 1);
         if (window.showToast) window.showToast('Item removed from cart', 'info');
       } else {
-        cart[index].quantity = newQty;
+        cart[index].quantity = parseInt(newQty, 10) || 1;
+      }
+      saveCart(cart);
+    }
+  }
+
+  function updateQuantityByIndex(index, newQty) {
+    let cart = getCart();
+    const idx = parseInt(index, 10);
+    if (idx >= 0 && idx < cart.length) {
+      if (newQty <= 0) {
+        cart.splice(idx, 1);
+        if (window.showToast) window.showToast('Item removed from cart', 'info');
+      } else {
+        cart[idx].quantity = parseInt(newQty, 10) || 1;
       }
       saveCart(cart);
     }
@@ -70,11 +149,22 @@
 
   function removeItem(productId, weightKg, cutType) {
     let cart = getCart();
+    const targetWeight = weightKg !== undefined ? parseFloat(weightKg) : undefined;
     cart = cart.filter(
-      item => !(item.id === productId && item.weightKg === weightKg && item.cutType === cutType)
+      item => !(item.id === productId && (targetWeight === undefined || parseFloat(item.weightKg) === targetWeight) && (cutType === undefined || item.cutType === cutType))
     );
     saveCart(cart);
     if (window.showToast) window.showToast('Item removed from cart', 'info');
+  }
+
+  function removeItemByIndex(index) {
+    let cart = getCart();
+    const idx = parseInt(index, 10);
+    if (idx >= 0 && idx < cart.length) {
+      cart.splice(idx, 1);
+      saveCart(cart);
+      if (window.showToast) window.showToast('Item removed from cart', 'info');
+    }
   }
 
   function clearCart() {
@@ -159,10 +249,12 @@
     if (formatted === 'FRESH20') {
       localStorage.setItem(COUPON_KEY, 'FRESH20');
       if (window.showToast) window.showToast('Coupon FRESH20 applied: 20% discount!', 'success');
+      window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: getCart() } }));
       return { success: true, message: 'Coupon FRESH20 applied!' };
     } else if (formatted === 'WELCOME50') {
       localStorage.setItem(COUPON_KEY, 'WELCOME50');
       if (window.showToast) window.showToast('Coupon WELCOME50 applied: ₹50 OFF!', 'success');
+      window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: getCart() } }));
       return { success: true, message: 'Coupon WELCOME50 applied!' };
     } else {
       if (window.showToast) window.showToast('Invalid or expired coupon code', 'warning');
@@ -173,19 +265,39 @@
   function removeCoupon() {
     localStorage.removeItem(COUPON_KEY);
     if (window.showToast) window.showToast('Coupon removed', 'info');
+    window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: getCart() } }));
   }
 
   // Quick Direct Add Helper for buttons
-  window.addToCartDirect = function (productId) {
-    addItem(productId, 1, 1.0, 'Standard Cut');
+  window.addToCartDirect = function (productId, name, price, image, category, qty = 1, weightKg = 1.0, cutType = 'Standard Cut') {
+    if (name || price || image || category) {
+      addItem({
+        id: productId,
+        name: name,
+        pricePerKg: price,
+        image: image,
+        category: category,
+        quantity: qty,
+        weightKg: weightKg,
+        cutType: cutType
+      });
+    } else {
+      addItem(productId, qty, weightKg, cutType);
+    }
   };
 
   window.CartManager = {
     get: getCart,
     add: addItem,
+    addItem: addItem,
     updateQty: updateQuantity,
+    updateQuantity: updateQuantity,
+    updateQtyByIndex: updateQuantityByIndex,
     remove: removeItem,
+    removeItem: removeItem,
+    removeByIndex: removeItemByIndex,
     clear: clearCart,
+    clearCart: clearCart,
     getCalculations: getCalculations,
     updateCount: updateCartCount,
     applyCoupon: applyCoupon,

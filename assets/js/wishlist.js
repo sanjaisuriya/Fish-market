@@ -8,7 +8,13 @@
 
   function getWishlist() {
     try {
-      return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
+      const stored = localStorage.getItem(WISHLIST_KEY);
+      if (stored === null) {
+        const initialWishlist = ['prod-salmon', 'prod-tiger-prawns'];
+        localStorage.setItem(WISHLIST_KEY, JSON.stringify(initialWishlist));
+        return initialWishlist;
+      }
+      return JSON.parse(stored) || [];
     } catch (e) {
       return [];
     }

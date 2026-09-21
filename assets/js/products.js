@@ -9,7 +9,7 @@ const SEAFOOD_PRODUCTS = [
     name: 'Norwegian Atlantic Salmon',
     category: 'fish',
     categoryLabel: 'Fresh Fish',
-    price: 34.50,
+    price: 34.00,
     rating: 4.9,
     reviews: 128,
     badge: 'Fresh Catch',
@@ -105,7 +105,7 @@ const SEAFOOD_PRODUCTS = [
     name: 'Coastal White Prawns',
     category: 'prawns',
     categoryLabel: 'Prawns & Shrimp',
-    price: 24.50,
+    price: 24.00,
     rating: 4.7,
     reviews: 88,
     badge: 'Fresh Catch',
@@ -235,7 +235,7 @@ const SEAFOOD_PRODUCTS = [
     if (priceSlider && priceDisplay) {
       priceSlider.addEventListener('input', (e) => {
         maxPrice = parseFloat(e.target.value);
-        priceDisplay.textContent = `$${maxPrice.toFixed(2)}`;
+        priceDisplay.textContent = `₹${maxPrice.toFixed(2)}`;
         renderProducts();
       });
     }
@@ -364,34 +364,36 @@ const SEAFOOD_PRODUCTS = [
       container.className = 'row g-4';
       container.innerHTML = filtered.map(p => `
         <div class="col-sm-6 col-lg-4">
-          <div class="product-card">
+          <div class="product-card h-100">
             <div class="product-thumb">
               <img src="${p.image}" alt="${p.name}" loading="lazy">
               <div class="product-badge-group">
                 <span class="${p.badgeClass}">${p.badge}</span>
               </div>
             </div>
-            <div class="product-body">
+            <div class="product-body d-flex flex-column">
               <span class="product-category">${p.categoryLabel}</span>
               <h5 class="product-title">
                 <a href="product-details.html?id=${p.id}">${p.name}</a>
               </h5>
               <p class="product-desc">${p.desc}</p>
-              <div class="product-footer d-flex justify-content-between align-items-center">
-                <div class="product-price">
-                  $${p.price.toFixed(2)} <small>/ kg</small>
+              <div class="product-footer mt-auto pt-3 border-top">
+                <div class="product-footer-top d-flex justify-content-between align-items-center mb-2">
+                  <div class="product-price">
+                    ₹${p.price.toFixed(2)} <small>/ kg</small>
+                  </div>
+                  <div class="d-flex gap-1">
+                    <button type="button" class="btn btn-sm btn-outline-ocean quick-view-btn px-2" data-id="${p.id}" title="Quick View & Cuts" aria-label="Quick View ${p.name}">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <a href="product-details.html?id=${p.id}" class="btn btn-sm btn-outline-secondary px-2" title="View Full Details" aria-label="View Details of ${p.name}">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="d-flex gap-2">
-                  <button class="btn btn-sm btn-outline-ocean quick-view-btn" data-id="${p.id}" title="Quick View & Cuts">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <button class="btn btn-sm btn-ocean add-to-cart-btn" data-id="${p.id}" title="Add 1kg to Cart">
-                    <i class="bi bi-cart-plus-fill me-1"></i> Add
-                  </button>
-                  <a href="product-details.html?id=${p.id}" class="btn btn-sm btn-outline-secondary" title="View Full Details">
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
+                <button type="button" class="btn btn-ocean w-100 add-to-cart-btn py-2" data-id="${p.id}" aria-label="Add ${p.name} to Cart">
+                  <i class="bi bi-cart-plus-fill me-2"></i> Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -409,29 +411,31 @@ const SEAFOOD_PRODUCTS = [
                 <span class="${p.badgeClass}">${p.badge}</span>
               </div>
             </div>
-            <div class="product-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <div>
-                  <span class="product-category">${p.categoryLabel}</span>
-                  <h5 class="product-title mb-1">
-                    <a href="product-details.html?id=${p.id}">${p.name}</a>
-                  </h5>
-                  <div class="rating-stars mb-2">
-                    ${renderStars(p.rating)} <span class="text-muted small">(${p.reviews} reviews)</span>
+            <div class="product-body d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-start gap-2">
+                  <div>
+                    <span class="product-category">${p.categoryLabel}</span>
+                    <h5 class="product-title mb-1">
+                      <a href="product-details.html?id=${p.id}">${p.name}</a>
+                    </h5>
+                    <div class="rating-stars mb-2">
+                      ${renderStars(p.rating)} <span class="text-muted small">(${p.reviews} reviews)</span>
+                    </div>
+                  </div>
+                  <div class="product-price text-end text-nowrap">
+                    ₹${p.price.toFixed(2)} <small class="d-block">/ kg</small>
                   </div>
                 </div>
-                <div class="product-price text-end">
-                  $${p.price.toFixed(2)} <small class="d-block">/ kg</small>
-                </div>
+                <p class="product-desc my-2">${p.desc}</p>
               </div>
-              <p class="product-desc my-2">${p.desc}</p>
-              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
-                <small class="text-muted"><i class="bi bi-geo-alt-fill text-primary"></i> ${p.origin}</small>
-                <div class="d-flex gap-2">
-                  <button class="btn btn-sm btn-outline-ocean quick-view-btn" data-id="${p.id}">
-                    <i class="bi bi-eye"></i> Quick View
+              <div class="d-flex flex-wrap justify-content-between align-items-center mt-3 pt-2 border-top gap-2">
+                <small class="text-muted"><i class="bi bi-geo-alt-fill text-primary me-1"></i> ${p.origin}</small>
+                <div class="d-flex flex-wrap gap-2">
+                  <button type="button" class="btn btn-sm btn-outline-ocean quick-view-btn" data-id="${p.id}">
+                    <i class="bi bi-eye me-1"></i> Quick View
                   </button>
-                  <button class="btn btn-sm btn-ocean add-to-cart-btn" data-id="${p.id}">
+                  <button type="button" class="btn btn-sm btn-ocean add-to-cart-btn" data-id="${p.id}">
                     <i class="bi bi-cart-plus-fill me-1"></i> Add to Cart
                   </button>
                   <a href="product-details.html?id=${p.id}" class="btn btn-sm btn-outline-secondary">
@@ -494,7 +498,7 @@ const SEAFOOD_PRODUCTS = [
     modalEl.querySelector('.modal-product-img').src = product.image;
     modalEl.querySelector('.modal-product-title').textContent = product.name;
     modalEl.querySelector('.modal-product-category').textContent = product.categoryLabel;
-    modalEl.querySelector('.modal-product-price').textContent = `$${product.price.toFixed(2)} / kg`;
+    modalEl.querySelector('.modal-product-price').textContent = `₹${product.price.toFixed(2)} / kg`;
     modalEl.querySelector('.modal-product-origin').textContent = product.origin;
     modalEl.querySelector('.modal-product-desc').textContent = product.desc;
     
@@ -590,7 +594,7 @@ const SEAFOOD_PRODUCTS = [
     const priceDisplay = document.getElementById('price-range-val');
     if (priceSlider && priceDisplay) {
       priceSlider.value = 80;
-      priceDisplay.textContent = '$80.00';
+      priceDisplay.textContent = '₹80.00';
     }
 
     const sortSelect = document.getElementById('product-sort-select');

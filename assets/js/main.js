@@ -21,6 +21,11 @@
      0. Mobile Navbar Collapse Fallback Handler
      ------------------------------------------------------------------------ */
   function initMobileNavbarToggle() {
+    // Ensure navbar dropdowns use static positioning so Popper doesn't displace them offscreen on mobile
+    document.querySelectorAll('.main-navbar .dropdown-toggle').forEach(function (toggle) {
+      toggle.setAttribute('data-bs-display', 'static');
+    });
+
     const toggler = document.querySelector('.navbar-toggler');
     if (!toggler) return;
 
@@ -296,7 +301,44 @@
 
   function getCart() {
     try {
-      return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+      const raw = localStorage.getItem(CART_KEY);
+      if (raw === null) {
+        const sampleCart = [
+          {
+            id: 'prod-salmon',
+            name: 'Norwegian Atlantic Salmon',
+            pricePerKg: 34.00,
+            image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg',
+            category: 'Fresh Fish',
+            quantity: 2,
+            weightKg: 1.0,
+            cutType: 'Skin-On Fillet'
+          },
+          {
+            id: 'prod-tiger-prawns',
+            name: 'Jumbo Tiger Prawns',
+            pricePerKg: 42.00,
+            image: 'assets/images/tiger_prawns_catch_1788765391401.jpg',
+            category: 'Prawns & Shrimp',
+            quantity: 1,
+            weightKg: 0.5,
+            cutType: 'Cleaned & Deveined'
+          },
+          {
+            id: 'prod-mud-crab',
+            name: 'Live Blue Swimmer Crab',
+            pricePerKg: 36.00,
+            image: 'assets/images/blue_swimmer_crab_1788781381393.jpg',
+            category: 'Crab & Shellfish',
+            quantity: 3,
+            weightKg: 1.0,
+            cutType: 'Whole Live'
+          }
+        ];
+        localStorage.setItem(CART_KEY, JSON.stringify(sampleCart));
+        return sampleCart;
+      }
+      return JSON.parse(raw) || [];
     } catch(e) {
       return [];
     }
@@ -348,7 +390,7 @@
     'prod-salmon': {
       id: 'prod-salmon',
       name: 'Norwegian Atlantic Salmon',
-      price: 34.50,
+      price: 34.00,
       category: 'Fresh Fish',
       categoryLabel: 'Fresh Fish',
       image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg'
@@ -388,7 +430,7 @@
     'prod-white-prawns': {
       id: 'prod-white-prawns',
       name: 'Coastal White Prawns',
-      price: 24.50,
+      price: 24.00,
       category: 'Prawns & Shrimp',
       categoryLabel: 'Prawns & Shrimp',
       image: 'assets/images/coastal_white_prawns_1788781343200.jpg'
@@ -416,6 +458,38 @@
       category: 'Crab & Shellfish',
       categoryLabel: 'Crab & Shellfish',
       image: 'assets/images/spiny_rock_lobster_1788781406447.jpg'
+    },
+    'prod-halibut': {
+      id: 'prod-halibut',
+      name: 'Center-Cut Halibut & Herb Butter',
+      price: 39.50,
+      category: 'Fresh Fish',
+      categoryLabel: 'Chef Signature',
+      image: 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=1000&q=85'
+    },
+    'prod-crab-kit': {
+      id: 'prod-crab-kit',
+      name: 'Garlic-Herb King Crab Cluster',
+      price: 44.00,
+      category: 'Crab & Shellfish',
+      categoryLabel: 'Ready-to-Cook Kit',
+      image: 'assets/images/garlic_herb_king_crab_cluster.jpg'
+    },
+    'prod-salmon-kit': {
+      id: 'prod-salmon-kit',
+      name: 'Citrus & Dill Norwegian Salmon',
+      price: 34.00,
+      category: 'Fresh Fish',
+      categoryLabel: 'Ready-to-Cook Kit',
+      image: 'https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&fit=crop&w=800&q=80'
+    },
+    'prod-prawn-skewer': {
+      id: 'prod-prawn-skewer',
+      name: 'Spiced Tiger Prawn Skewers (8pc)',
+      price: 32.00,
+      category: 'Prawns & Shrimp',
+      categoryLabel: 'Ready-to-Cook Kit',
+      image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80'
     }
   };
 
@@ -435,47 +509,62 @@
     }
   };
 
-  function addItem(item) {
-    if (!item || !item.id) return;
+  function addItem(productOrId, quantity = 1, weightKg = 1.0, cutType = 'Standard Cut') {
+    let id, name, price, image, category, qty, weight, cut;
+
+    if (typeof productOrId === 'object' && productOrId !== null) {
+      id = productOrId.id;
+      name = productOrId.name;
+      price = parseFloat(productOrId.pricePerKg || productOrId.price);
+      image = productOrId.image;
+      category = productOrId.category || productOrId.categoryLabel || productOrId.categoryName;
+      qty = parseInt(productOrId.quantity, 10) || 1;
+      weight = parseFloat(productOrId.weightKg) || 1.0;
+      cut = productOrId.cutType || 'Standard Cut';
+    } else {
+      id = productOrId;
+      qty = parseInt(quantity, 10) || 1;
+      weight = parseFloat(weightKg) || 1.0;
+      cut = cutType || 'Standard Cut';
+    }
+
+    if (!id) return;
     let cart = getCart();
-    const weightKg = parseFloat(item.weightKg) || 1.0;
-    const cutType = item.cutType || 'Standard Cut';
-    const quantity = parseInt(item.quantity, 10) || 1;
 
     // Resolve exact product details if missing or placeholder
-    const lookup = window.SeafoodProducts.getById(item.id);
-    const resolvedName = item.name && item.name !== 'Fresh Seafood Item' ? item.name : (lookup?.name || 'Fresh Seafood Item');
-    const resolvedPrice = parseFloat(item.pricePerKg || item.price || lookup?.price) || 28.00;
-    const resolvedImage = (item.image && !item.image.includes('images.unsplash.com/photo-1534939561126-855b8675edd7')) ? item.image : (lookup?.image || item.image || 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg');
-    const resolvedCategory = item.category || lookup?.categoryLabel || lookup?.category || 'Fresh Seafood';
+    const lookup = window.SeafoodProducts?.getById ? window.SeafoodProducts.getById(id) : null;
+    const resolvedName = name && name !== 'Fresh Seafood Item' ? name : (lookup?.name || 'Fresh Seafood Item');
+    const resolvedPrice = (!isNaN(price) && price > 0) ? price : (parseFloat(lookup?.price || lookup?.pricePerKg) || 28.00);
+    const resolvedImage = (image && !image.includes('premium_photo') && !image.includes('photo-1534939561126-855b8675edd7')) ? image : (lookup?.image || 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg');
+    const resolvedCategory = category || lookup?.categoryLabel || lookup?.category || 'Fresh Seafood';
 
     const existingIndex = cart.findIndex(
-      i => i.id === item.id && (parseFloat(i.weightKg) === weightKg) && (i.cutType === cutType)
+      i => i.id === id && (parseFloat(i.weightKg) === weight) && (i.cutType === cut)
     );
 
     if (existingIndex > -1) {
-      cart[existingIndex].quantity += quantity;
+      cart[existingIndex].quantity += qty;
       // Also update image and name if it was previously a placeholder
-      if (cart[existingIndex].image.includes('images.unsplash.com/photo-1534939561126-855b8675edd7') && lookup?.image) {
+      if ((!cart[existingIndex].image || cart[existingIndex].image.includes('premium_photo') || cart[existingIndex].image.includes('photo-1534939561126-855b8675edd7')) && lookup?.image) {
         cart[existingIndex].image = lookup.image;
         cart[existingIndex].name = lookup.name;
       }
     } else {
       cart.push({
-        id: item.id,
+        id: id,
         name: resolvedName,
         pricePerKg: resolvedPrice,
         image: resolvedImage,
         category: resolvedCategory,
-        quantity: quantity,
-        weightKg: weightKg,
-        cutType: cutType
+        quantity: qty,
+        weightKg: weight,
+        cutType: cut
       });
     }
 
     saveCart(cart);
     if (window.showToast) {
-      window.showToast(`Added ${quantity}x ${resolvedName} (${weightKg} kg - ${cutType}) to Cart!`, 'success');
+      window.showToast(`Added ${qty}x ${resolvedName} (${weight} kg - ${cut}) to Cart!`, 'success');
     }
   }
 
@@ -549,10 +638,12 @@
     const formatted = (code || '').trim().toUpperCase();
     if (formatted === 'FRESH20') {
       localStorage.setItem(COUPON_KEY, 'FRESH20');
+      window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: getCart() } }));
       if (window.showToast) window.showToast('Coupon FRESH20 applied: 20% discount!', 'success');
       return { success: true, message: 'Coupon FRESH20 applied!' };
     } else if (formatted === 'WELCOME50') {
       localStorage.setItem(COUPON_KEY, 'WELCOME50');
+      window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: getCart() } }));
       if (window.showToast) window.showToast('Coupon WELCOME50 applied: ₹50 OFF!', 'success');
       return { success: true, message: 'Coupon WELCOME50 applied!' };
     } else {
@@ -563,18 +654,43 @@
 
   function removeCoupon() {
     localStorage.removeItem(COUPON_KEY);
+    window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: getCart() } }));
     if (window.showToast) window.showToast('Coupon removed', 'info');
   }
 
+  function updateQtyByIndex(index, newQty) {
+    let cart = getCart();
+    const idx = parseInt(index, 10);
+    if (idx >= 0 && idx < cart.length) {
+      if (newQty <= 0) {
+        cart.splice(idx, 1);
+        if (window.showToast) window.showToast('Item removed from cart', 'info');
+      } else {
+        cart[idx].quantity = parseInt(newQty, 10) || 1;
+      }
+      saveCart(cart);
+    }
+  }
+
+  function removeByIndex(index) {
+    let cart = getCart();
+    const idx = parseInt(index, 10);
+    if (idx >= 0 && idx < cart.length) {
+      cart.splice(idx, 1);
+      saveCart(cart);
+      if (window.showToast) window.showToast('Item removed from cart', 'info');
+    }
+  }
+
   window.addToCartDirect = function(productId, name, price, image, category, qty = 1, weightKg = 1.0, cutType = 'Standard Cut') {
-    const productObj = window.SeafoodProducts.getById(productId);
+    const productObj = window.SeafoodProducts?.getById ? window.SeafoodProducts.getById(productId) : null;
     if (productObj) {
       addItem({
         id: productObj.id,
-        name: productObj.name,
-        pricePerKg: productObj.price || productObj.pricePerKg,
-        image: productObj.image,
-        category: productObj.categoryLabel || productObj.category || 'Fresh Seafood',
+        name: name || productObj.name,
+        pricePerKg: (!isNaN(parseFloat(price)) && parseFloat(price) > 0) ? parseFloat(price) : (productObj.price || productObj.pricePerKg),
+        image: image || productObj.image,
+        category: category || productObj.categoryLabel || productObj.category || 'Fresh Seafood',
         quantity: qty,
         weightKg: weightKg,
         cutType: cutType
@@ -583,8 +699,8 @@
       addItem({
         id: productId,
         name: name || 'Fresh Seafood Item',
-        pricePerKg: price || 28.00,
-        image: image,
+        pricePerKg: (!isNaN(parseFloat(price)) && parseFloat(price) > 0) ? parseFloat(price) : 28.00,
+        image: image || 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg',
         category: category || 'Fresh Fish',
         quantity: qty,
         weightKg: weightKg,
@@ -596,14 +712,77 @@
   window.CartManager = {
     get: getCart,
     add: addItem,
+    addItem: addItem,
     updateQty: updateQty,
+    updateQuantity: updateQty,
+    updateQtyByIndex: updateQtyByIndex,
     remove: removeProduct,
+    removeItem: removeProduct,
+    removeByIndex: removeByIndex,
     clear: clearCart,
+    clearCart: clearCart,
     getCalculations: getCalculations,
     updateCount: updateCartCount,
     applyCoupon: applyCoupon,
     removeCoupon: removeCoupon
   };
+
+  /* ------------------------------------------------------------------------
+     Universal Auth Navbar Integration (Syncs all pages with logged-in user)
+     ------------------------------------------------------------------------ */
+  function updateGlobalAuthNavbar() {
+    let user = null;
+    try {
+      user = JSON.parse(localStorage.getItem('seafood_user'));
+    } catch (e) {
+      user = null;
+    }
+
+    const authTargets = document.querySelectorAll('.nav-login-btn, .nav-auth-btn');
+    authTargets.forEach(target => {
+      // Don't overwrite if it's already customized inside an auth-nav-container handled by auth.js
+      if (target.closest('.auth-nav-container')) return;
+
+      if (user) {
+        target.classList.remove('nav-auth-btn');
+        target.classList.add('btn', 'btn-outline-sea', 'btn-sm', 'd-inline-flex', 'align-items-center', 'gap-2');
+        target.href = 'dashboard.html';
+        target.title = 'My Account';
+        target.innerHTML = `<i class="bi bi-person-check-fill text-success fs-5"></i><span>${user.name ? user.name.split(' ')[0] : 'Account'}</span>`;
+      } else {
+        target.classList.add('nav-auth-btn');
+        target.classList.remove('btn', 'btn-outline-sea', 'btn-sm');
+        target.href = 'login.html';
+        target.title = 'Login / Register';
+        target.innerHTML = `<i class="bi bi-person-circle"></i><span>Login / Register</span>`;
+      }
+    });
+  }
+
+  // Ensure window.AuthManager exists even if auth.js is not loaded on this page
+  if (!window.AuthManager) {
+    window.AuthManager = {
+      getUser: function() {
+        try { return JSON.parse(localStorage.getItem('seafood_user')); } catch (e) { return null; }
+      },
+      setUser: function(user) {
+        localStorage.setItem('seafood_user', JSON.stringify(user));
+        updateGlobalAuthNavbar();
+        window.dispatchEvent(new CustomEvent('authChanged', { detail: { user } }));
+      },
+      logout: function() {
+        localStorage.removeItem('seafood_user');
+        updateGlobalAuthNavbar();
+        if (window.showToast) window.showToast('You have been logged out successfully', 'info');
+        setTimeout(() => { window.location.href = 'index.html'; }, 600);
+      },
+      updateNavbar: updateGlobalAuthNavbar
+    };
+  }
+
+  window.addEventListener('authChanged', () => {
+    updateGlobalAuthNavbar();
+  });
 
   document.addEventListener('DOMContentLoaded', () => {
     // Auto heal any previously stored carts with broken/placeholder images
@@ -611,7 +790,7 @@
     let modified = false;
     currentCart.forEach(item => {
       const prod = window.SeafoodProducts.getById(item.id);
-      if (prod && (item.image.includes('unsplash.com/photo-1534939561126-855b8675edd7') || item.name === 'Fresh Seafood Item')) {
+      if (prod && (!item.image || item.image.includes('photo-1599488615731-7e5c2823ff28') || item.image.includes('premium_photo') || item.image.includes('photo-1534939561126-855b8675edd7') || item.image.includes('assets/images/herb_grilled_salmon_recipe') || item.name === 'Fresh Seafood Item')) {
         item.image = prod.image;
         item.name = prod.name;
         item.pricePerKg = prod.price || prod.pricePerKg;
@@ -621,9 +800,11 @@
     });
     if (modified) {
       localStorage.setItem(CART_KEY, JSON.stringify(currentCart));
+      window.dispatchEvent(new CustomEvent('cartUpdated', { detail: { cart: currentCart } }));
     }
 
     updateCartCount();
+    updateGlobalAuthNavbar();
   });
 })();
 

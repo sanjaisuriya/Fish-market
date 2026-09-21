@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <p class="text-muted text-sm mb-2" style="max-width: 500px;">${p.description}</p>
                 </div>
                 <div class="text-end">
-                  <div class="product-price-tag">$${p.price.toFixed(2)} <span>/ ${p.unit}</span></div>
+                  <div class="product-price-tag">₹${p.price.toFixed(2)} <span>/ ${p.unit}</span></div>
                   <span class="badge bg-success-subtle text-success border border-success-subtle">${p.availability}</span>
                 </div>
               </div>
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               <p class="text-muted text-sm line-clamp-2 mb-3">${p.description}</p>
               <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top">
-                <div class="product-price-tag">$${p.price.toFixed(2)} <span>/ ${p.unit}</span></div>
+                <div class="product-price-tag">₹${p.price.toFixed(2)} <span>/ ${p.unit}</span></div>
                 <div class="d-flex gap-2">
                   <button onclick="openQuickViewModal('${p.id}')" class="btn btn-outline-custom btn-sm p-2" title="Quick View">
                     <i class="fas fa-eye"></i>
