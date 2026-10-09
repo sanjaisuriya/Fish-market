@@ -1140,8 +1140,39 @@
 [data-theme="dark"] .page-banner-contact,
 [data-bs-theme="dark"] .page-banner-contact,
 [data-theme="dark"] .page-banner-recipes,
-[data-bs-theme="dark"] .page-banner-recipes {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.45) !important;
+[data-bs-theme="dark"] .page-banner-recipes,
+[data-theme="dark"] .page-banner-cart,
+[data-bs-theme="dark"] .page-banner-cart,
+[data-theme="dark"] .page-banner-checkout,
+[data-bs-theme="dark"] .page-banner-checkout {
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+[data-theme="dark"] .page-banner::before,
+[data-bs-theme="dark"] .page-banner::before,
+[data-theme="dark"] .page-banner-about::before,
+[data-bs-theme="dark"] .page-banner-about::before,
+[data-theme="dark"] .page-banner-products::before,
+[data-bs-theme="dark"] .page-banner-products::before,
+[data-theme="dark"] .page-banner-services::before,
+[data-bs-theme="dark"] .page-banner-services::before,
+[data-theme="dark"] .page-banner-cleaning::before,
+[data-bs-theme="dark"] .page-banner-cleaning::before,
+[data-theme="dark"] .page-banner-blog::before,
+[data-bs-theme="dark"] .page-banner-blog::before,
+[data-theme="dark"] .page-banner-pricing::before,
+[data-bs-theme="dark"] .page-banner-pricing::before,
+[data-theme="dark"] .page-banner-contact::before,
+[data-bs-theme="dark"] .page-banner-contact::before,
+[data-theme="dark"] .page-banner-recipes::before,
+[data-bs-theme="dark"] .page-banner-recipes::before,
+[data-theme="dark"] .page-banner-cart::before,
+[data-bs-theme="dark"] .page-banner-cart::before,
+[data-theme="dark"] .page-banner-checkout::before,
+[data-bs-theme="dark"] .page-banner-checkout::before {
+  background: linear-gradient(180deg, rgba(8, 19, 34, 0.35) 0%, rgba(8, 19, 34, 0.15) 50%, rgba(8, 19, 34, 0.40) 100%) !important;
 }
 
 [data-theme="dark"] .toggle-btn:hover,

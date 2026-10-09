@@ -1361,6 +1361,25 @@ img {
   object-position: center top !important;
   display: block;
 }
+.guide-body {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.step-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-ocean, #0284c7);
+  background-color: rgba(2, 132, 199, 0.1);
+  border-radius: 50rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
 
 /* Testimonial Card */
 .testimonial-card {
