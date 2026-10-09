@@ -37,53 +37,26 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
-      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+      <!-- Mobile Quick Action Controls & Hamburger Toggle -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto align-items-center">
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge">3</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRecipeDetailCollapse" aria-controls="navbarRecipeDetailCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRecipeDetailCollapse" aria-controls="navbarRecipeDetailCollapse" aria-expanded="false" aria-label="Toggle navigation" style="height: 38px;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarRecipeDetailCollapse">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item py-2" href="index.html">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-water text-primary fs-5"></i>
-                    <div>
-                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
-                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li><hr class="dropdown-divider my-1 opacity-25"></li>
-              <li>
-                <a class="dropdown-item py-2" href="home-2.html">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-shop text-primary fs-5"></i>
-                    <div>
-                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
-                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -94,28 +67,26 @@
 
         <!-- Desktop Action Controls (Right Side of Navbar) -->
         <div class="d-none d-lg-flex align-items-center gap-2">
-          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
-            <i class="bi bi-cart3"></i>
-            <span>Cart</span>
-          </a>
           <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
             <i class="bi bi-moon-stars-fill"></i>
-            <span class="theme-text">Dark</span>
           </button>
           <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
             <i class="bi bi-text-right"></i>
-            <span class="rtl-text">RTL</span>
           </button>
-          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-            <i class="bi bi-person-circle"></i>
-            <span>Login / Register</span>
+          <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-count-badge">3</span>
+          </a>
+          <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i>
+            <span>Explore Fresh Catch</span>
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        <!-- Mobile Quick Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
           </a>
         </div>
       </div>
@@ -125,12 +96,12 @@
   <!-- Page Banner -->
   <section class="page-banner page-banner-recipes">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-9 text-start">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 text-center">
           <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Chef Recipe Guide</span>
           <h1 class="page-banner-title mb-2" id="r-title-banner">Herb &amp; Lemon Garlic Grilled Salmon</h1>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb-custom justify-content-start mb-0">
+            <ol class="breadcrumb-custom justify-content-center mb-0">
               <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
               <li><i class="bi bi-chevron-right small text-muted"></i></li>
               <li><a href="recipes.html">Recipes</a></li>

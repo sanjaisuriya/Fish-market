@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.0">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=4.0">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=4.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=4.0">
 </head>
 <body>
 
@@ -37,25 +37,25 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
-      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+      <!-- Mobile Quick Action Controls & Hamburger Toggle -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto align-items-center">
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge d-none">0</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarServicesCollapse" aria-controls="navbarServicesCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarServicesCollapse" aria-controls="navbarServicesCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarServicesCollapse">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
             <ul class="dropdown-menu">
@@ -74,10 +74,10 @@
               <li>
                 <a class="dropdown-item py-2" href="home-2.html">
                   <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-shop text-primary fs-5"></i>
+                    <i class="bi bi-building-gear text-primary fs-5"></i>
                     <div>
-                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
-                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
+                      <div class="fw-semibold small">Home 2 – Brand / Process / Business</div>
+                      <small class="text-muted d-block" style="font-size: 0.72rem;">Sourcing, Butchery &amp; B2B Supply</small>
                     </div>
                   </div>
                 </a>
@@ -90,32 +90,32 @@
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item d-none d-lg-flex align-items-center gap-3 ms-3 me-lg-2">
+            <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+            <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+            </button>
+            <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+              <i class="bi bi-cart3"></i>
+              <span class="cart-count-badge d-none">0</span>
+            </a>
+          </li>
         </ul>
 
         <!-- Desktop Action Controls (Right Side of Navbar) -->
-        <div class="d-none d-lg-flex align-items-center gap-2">
-          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
-            <i class="bi bi-cart3"></i>
-            <span>Cart</span>
-          </a>
-          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars-fill"></i>
-            <span class="theme-text">Dark</span>
-          </button>
-          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
-            <span class="rtl-text">RTL</span>
-          </button>
-          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-            <i class="bi bi-person-circle"></i>
-            <span>Login / Register</span>
+        <div class="d-none d-lg-flex align-items-center ms-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i>
+            <span>Explore Fresh Catch</span>
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        <!-- Mobile Quick Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
           </a>
         </div>
       </div>
@@ -125,13 +125,13 @@
   <!-- Page Banner -->
   <section class="page-banner page-banner-services">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-9 text-start">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 text-center">
           <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">What We Do</span>
           <h1 class="page-banner-title mb-2">Our Market Services</h1>
-          <p class="page-banner-desc ms-0 mb-3 text-start">Comprehensive marine solutions from family dinners to high-volume commercial catering.</p>
+          <p class="page-banner-desc mb-3 mx-auto">Comprehensive marine solutions from family dinners to high-volume commercial catering.</p>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb-custom justify-content-start mb-0">
+            <ol class="breadcrumb-custom justify-content-center mb-0">
               <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
               <li><i class="bi bi-chevron-right small text-muted"></i></li>
               <li class="active">Services</li>
@@ -143,7 +143,7 @@
   </section>
 
   <!-- ==========================================
-       Services 8 Grid
+       Services 6 Grid
        ========================================== -->
   <section class="py-5 bg-main">
     <div class="container py-4">
@@ -157,7 +157,9 @@
         <!-- Service 1: Fresh Seafood Supply -->
         <div class="col-md-6 col-lg-4">
           <div class="card rounded-4 border bg-card overflow-hidden h-100 shadow-sm transition-hover">
-            <img src="assets/images/team_liam_dock_buyer_1788779837481.jpg" alt="Daily Fresh Seafood Supply" class="w-100 object-fit-cover" style="height: 220px; object-position: center 25%;" loading="lazy">
+            <div class="overflow-hidden" style="height: 260px;">
+              <img src="../../brain/8f7988f4-9d59-4de6-9826-c32d129d5fa0/fresh_seafood_supply_1791433686021.jpg" alt="Daily Fresh Seafood Supply" class="w-100 h-100 object-fit-cover" style="object-position: center 25%; filter: contrast(1.05) brightness(1.02);" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=800&q=80';">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
               <div class="feature-icon-box mb-3"><i class="bi bi-water"></i></div>
               <h5 class="fw-bold text-secondary mb-2">1. Daily Fresh Seafood Supply</h5>
@@ -174,7 +176,9 @@
         <!-- Service 2: Seafood Cleaning -->
         <div class="col-md-6 col-lg-4">
           <div class="card rounded-4 border bg-card overflow-hidden h-100 shadow-sm transition-hover">
-            <img src="assets/images/service_cleaning_centered_1788845015413.jpg" alt="Hygienic Seafood Cleaning" class="w-100 object-fit-cover" style="height: 220px; object-position: center 20%;" loading="lazy">
+            <div class="overflow-hidden" style="height: 260px;">
+              <img src="assets/images/seafood_cleaning_process_banner_1788935826080.jpg" alt="Hygienic Seafood Cleaning & RO Sterilization" class="w-100 h-100 object-fit-cover" style="object-position: center 38%; filter: contrast(1.05) brightness(1.02);" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80';">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
               <div class="feature-icon-box mb-3"><i class="bi bi-droplet-half"></i></div>
               <h5 class="fw-bold text-secondary mb-2">2. Hygienic Seafood Cleaning</h5>
@@ -191,12 +195,14 @@
         <!-- Service 3: Custom Cutting -->
         <div class="col-md-6 col-lg-4">
           <div class="card rounded-4 border bg-card overflow-hidden h-100 shadow-sm transition-hover">
-            <img src="assets/images/service_cutting_centered_1788845902356.jpg" alt="Master Custom Cutting" class="w-100 object-fit-cover" style="height: 220px; object-position: center 25%;" loading="lazy">
+            <div class="overflow-hidden" style="height: 260px;">
+              <img src="assets/images/service_cutting_1788843003690.jpg" alt="Master Custom Cutting" class="w-100 h-100 object-fit-cover" style="object-position: center top; filter: contrast(1.05) brightness(1.02);" loading="lazy" onerror="this.onerror=null;this.src='assets/images/service_cutting_centered_1788845902356.jpg';">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
               <div class="feature-icon-box mb-3"><i class="bi bi-scissors"></i></div>
               <h5 class="fw-bold text-secondary mb-2">3. Master Custom Cutting</h5>
               <p class="text-muted small mb-4 flex-grow-1">
-                Tailored knife cuts for any recipe: skin-on fillets, 1-inch steaks, curry cut cubes, sashimi blocks, or whole butterfly split.
+                Tailored knife cuts for any recipe: skin-on fillets, 1-inch steaks, curry cut cubes, sashimi blocks, or whole butterfly split. Zero extra butchery fee.
               </p>
               <a href="cleaning-delivery.html#cutting" class="btn btn-outline-ocean btn-sm mt-auto align-self-start">
                 View Cutting Options <i class="bi bi-arrow-right ms-1"></i>
@@ -208,7 +214,9 @@
         <!-- Service 4: Home Delivery -->
         <div class="col-md-6 col-lg-4">
           <div class="card rounded-4 border bg-card overflow-hidden h-100 shadow-sm transition-hover">
-            <img src="assets/images/cold_chain_seafood_delivery_van_1788931165408.jpg" alt="Express Home Delivery" class="w-100 object-fit-cover" style="height: 220px; object-position: center 20%;" loading="lazy">
+            <div class="overflow-hidden" style="height: 260px;">
+              <img src="../../brain/8f7988f4-9d59-4de6-9826-c32d129d5fa0/express_home_deliver_1791433757974.jpg" alt="Express Home Delivery" class="w-100 h-100 object-fit-cover" style="object-position: center 30%; filter: contrast(1.05) brightness(1.02);" loading="lazy" onerror="this.onerror=null;this.src='assets/images/cold_chain_seafood_delivery_van_1788931165408.jpg';">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
               <div class="feature-icon-box mb-3"><i class="bi bi-truck"></i></div>
               <h5 class="fw-bold text-secondary mb-2">4. Express 0°C Home Delivery</h5>
@@ -225,12 +233,14 @@
         <!-- Service 5: Bulk Seafood Orders -->
         <div class="col-md-6 col-lg-4">
           <div class="card rounded-4 border bg-card overflow-hidden h-100 shadow-sm transition-hover">
-            <img src="assets/images/service_bulk_1788843079119.jpg" alt="Bulk Seafood Orders" class="w-100 object-fit-cover" style="height: 220px; object-position: center 25%;" loading="lazy">
+            <div class="overflow-hidden" style="height: 260px;">
+              <img src="../../brain/8f7988f4-9d59-4de6-9826-c32d129d5fa0/bulk_wholesale_order_1791433783422.jpg" alt="Bulk Seafood Orders" class="w-100 h-100 object-fit-cover" style="object-position: center 25%; filter: contrast(1.05) brightness(1.02);" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80';">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
               <div class="feature-icon-box mb-3"><i class="bi bi-boxes"></i></div>
               <h5 class="fw-bold text-secondary mb-2">5. Wholesale &amp; Event Bulk Orders</h5>
               <p class="text-muted small mb-4 flex-grow-1">
-                Economical volume packaging for weddings, barbecue parties, and large family celebrations with customized mixed boxes.
+                Economical volume packaging for weddings, barbecue parties, and large family celebrations with customized mixed fish and shellfish boxes.
               </p>
               <a href="pricing.html#packages" class="btn btn-outline-ocean btn-sm mt-auto align-self-start">
                 View Bulk Packages <i class="bi bi-arrow-right ms-1"></i>
@@ -242,7 +252,9 @@
         <!-- Service 6: Restaurant Supply -->
         <div class="col-md-6 col-lg-4">
           <div class="card rounded-4 border bg-card overflow-hidden h-100 shadow-sm transition-hover">
-            <img src="assets/images/service_wholesale_1788843122622.jpg" alt="Restaurant Wholesale Supply" class="w-100 object-fit-cover" style="height: 220px; object-position: center 20%;" loading="lazy">
+            <div class="overflow-hidden" style="height: 260px;">
+              <img src="../../brain/8f7988f4-9d59-4de6-9826-c32d129d5fa0/restaurant_b2b_suppl_1791433807882.jpg" alt="Restaurant Wholesale Supply" class="w-100 h-100 object-fit-cover" style="object-position: center 25%; filter: contrast(1.05) brightness(1.02);" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80';">
+            </div>
             <div class="card-body p-4 d-flex flex-column">
               <div class="feature-icon-box mb-3"><i class="bi bi-shop-window"></i></div>
               <h5 class="fw-bold text-secondary mb-2">6. Commercial B2B Restaurant Supply</h5>
@@ -259,16 +271,351 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-5 bg-alt text-center">
-    <div class="container py-3">
-      <h3 class="fw-bold text-secondary mb-2">Need a Customized Seafood Solution?</h3>
-      <p class="text-muted mx-auto mb-4" style="max-width: 550px;">
-        Speak directly with our dock manager for custom volume cuts or scheduled weekly household deliveries.
-      </p>
-      <a href="contact.html" class="btn-ocean">
-        <i class="bi bi-chat-text-fill"></i> Send Custom Service Enquiry
-      </a>
+  <!-- ==========================================
+       Visual Service Process: Cold-Chain & Delivery
+       ========================================== -->
+  <section class="py-5 bg-alt">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Guaranteed 0°–4°C Cold Chain</span>
+        <h2 class="section-title">How Our Express Delivery &amp; Butchery Works</h2>
+        <p class="section-desc">From harbor nets to doorstep within 3 hours — maximum ocean freshness with sterile handling.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div class="guide-img-box">
+              <img src="../../brain/4924db80-3181-4a13-9e56-5ee738987afd/dock_morning_intake_1791455504930.jpg" alt="5 AM Harbor Catch Ingestion" loading="lazy">
+              <span class="step-badge">Step 1</span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">5:00 AM Dock Intake</h5>
+              <p class="text-muted small mb-0">Direct intake from local day-boats. Chilled immediately in sterilized seawater ice flakes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div class="guide-img-box">
+              <img src="../../brain/4924db80-3181-4a13-9e56-5ee738987afd/ozone_ro_wash_1791455526866.jpg" alt="Ozone &amp; RO Sterilization" loading="lazy">
+              <span class="step-badge">Step 2</span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Ozone Wash &amp; Clean</h5>
+              <p class="text-muted small mb-0">Washed in RO purified water, descaled, degutted, and trimmed with zero chemical additives.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div class="guide-img-box">
+              <img src="file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/custom_chef_butchery_step3_1791482162555.jpg" alt="Custom Chef Butchery" loading="lazy" style="object-fit: cover; object-position: center top !important; width: 100%; height: 100%;" onerror="this.onerror=null; this.src='../brain/bf1369eb-fd76-4344-95ea-bc559a305abe/custom_chef_butchery_step3_1791482162555.jpg';">
+              <span class="step-badge">Step 3</span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Custom Chef Butchery</h5>
+              <p class="text-muted small mb-0">Portioned into steaks, fillets, curry cubes, or whole fish per your exact recipe instructions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="guide-card">
+            <div class="guide-img-box">
+              <img src="../../brain/4924db80-3181-4a13-9e56-5ee738987afd/seafood_ice_packaging_1791454824727.jpg" alt="0-4C Insulated Express Delivery" loading="lazy">
+              <span class="step-badge">Step 4</span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Chilled Doorstep Drop</h5>
+              <p class="text-muted small mb-0">Sealed in food-grade thermal boxes with ice packs and delivered in refrigerated vans.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-3 text-center">
+        <a href="products.html" class="btn btn-ocean me-sm-2 mb-2 mb-sm-0">
+          <i class="bi bi-cart3"></i> Order Fresh Catch Now
+        </a>
+        <a href="contact.html" class="btn-whatsapp mb-2 mb-sm-0">
+          <i class="bi bi-whatsapp"></i> WhatsApp Order Enquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Service Comparison Matrix
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">The Freshness Advantage</span>
+        <h2 class="section-title">How Our Dockside Service Compares</h2>
+        <p class="section-desc">See why seafood enthusiasts, Michelin-starred chefs, and home cooks trust our daily pier operations over conventional channels.</p>
+      </div>
+
+      <div class="card border rounded-4 overflow-hidden shadow-sm bg-card">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="bg-alt border-bottom">
+              <tr>
+                <th scope="col" class="py-3 px-4 text-secondary fw-bold" style="min-width: 200px;">Key Standard</th>
+                <th scope="col" class="py-3 px-4 text-primary fw-bold bg-primary-subtle" style="min-width: 220px;">
+                  <i class="bi bi-patch-check-fill text-primary me-2"></i>Fish Market (Dockside)
+                </th>
+                <th scope="col" class="py-3 px-4 text-secondary fw-bold" style="min-width: 200px;">Supermarket Counters</th>
+                <th scope="col" class="py-3 px-4 text-secondary fw-bold" style="min-width: 200px;">Roadside Wet Stalls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3 px-4 fw-semibold"><i class="bi bi-clock-history text-primary me-2"></i>Catch-to-Door Time</td>
+                <td class="py-3 px-4 bg-primary-subtle text-primary fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>Under 3 Hours (Day-Boats)</td>
+                <td class="py-3 px-4 text-muted">24 – 72 Hours (Central Warehouses)</td>
+                <td class="py-3 px-4 text-muted">Uncertain / Multi-Day Hold</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 fw-semibold"><i class="bi bi-shield-x text-primary me-2"></i>Chemical Preservatives</td>
+                <td class="py-3 px-4 bg-primary-subtle text-primary fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>100% Free (Pure Flake Ice Only)</td>
+                <td class="py-3 px-4 text-muted">Glazes &amp; Sodium Tripolyphosphate</td>
+                <td class="py-3 px-4 text-muted">Formalin / Chemical Preservative Risks</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 fw-semibold"><i class="bi bi-scissors text-primary me-2"></i>Custom Precision Butchery</td>
+                <td class="py-3 px-4 bg-primary-subtle text-primary fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>Free Surgical Knife Cuts</td>
+                <td class="py-3 px-4 text-muted">Pre-packaged / Limited Cuts</td>
+                <td class="py-3 px-4 text-muted">Basic Unsanitized Chopping</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 fw-semibold"><i class="bi bi-thermometer-snow text-primary me-2"></i>Cold-Chain Integrity</td>
+                <td class="py-3 px-4 bg-primary-subtle text-primary fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>Strict 0°C to 4°C Thermal Sealed</td>
+                <td class="py-3 px-4 text-muted">Open Chilled Counters (Fluctuating)</td>
+                <td class="py-3 px-4 text-muted">Melting Ice / Warm Ambient Air</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 fw-semibold"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Origin Transparency</td>
+                <td class="py-3 px-4 bg-primary-subtle text-primary fw-bold"><i class="bi bi-check-circle-fill text-success me-2"></i>Pier 44 Vessel &amp; Captain Log</td>
+                <td class="py-3 px-4 text-muted">Generic Country of Origin Only</td>
+                <td class="py-3 px-4 text-muted">No Catch Documentation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Our 3 Service Guarantees
+       ========================================== -->
+  <section class="py-5 bg-alt">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Uncompromising Quality</span>
+        <h2 class="section-title">Our Triple Service Guarantee</h2>
+        <p class="section-desc">We back every delivery and custom cut with our ironclad customer satisfaction commitments.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 bg-card border h-100 shadow-sm text-center">
+            <div class="feature-icon-box mx-auto mb-3" style="width: 58px; height: 58px;">
+              <i class="bi bi-award-fill text-primary fs-3"></i>
+            </div>
+            <h5 class="fw-bold text-secondary mb-2">100% Freshness Or Replaced</h5>
+            <p class="text-muted small mb-0">If your catch doesn't exhibit clear eyes, red gills, and firm spring-back flesh, we replace it instantly with zero friction.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 bg-card border h-100 shadow-sm text-center">
+            <div class="feature-icon-box mx-auto mb-3" style="width: 58px; height: 58px;">
+              <i class="bi bi-droplet-half text-primary fs-3"></i>
+            </div>
+            <h5 class="fw-bold text-secondary mb-2">Hospital-Grade Cleanroom Sanitation</h5>
+            <p class="text-muted small mb-0">Every fish is processed under UV-purified 2°C reverse-osmosis water in sterilized stainless steel chambers.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 bg-card border h-100 shadow-sm text-center">
+            <div class="feature-icon-box mx-auto mb-3" style="width: 58px; height: 58px;">
+              <i class="bi bi-snow2 text-primary fs-3"></i>
+            </div>
+            <h5 class="fw-bold text-secondary mb-2">0°C Unbroken Thermal Cold-Chain</h5>
+            <p class="text-muted small mb-0">Delivered in heavy-duty thermal insulated ice boxes with food-grade frozen gel packs ensuring 6 hours of porch protection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Service FAQs
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Common Inquiries</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Answers to common questions regarding butchery, delivery, catering, and restaurant supply.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="servicesFaqAccordion">
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-xs">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button fw-bold text-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Do you charge extra for custom descaling, gutting, and filleting?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#servicesFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  No. All cleaning, descaling, gutting, gill trimming, and precision chef cuts (fillets, 1-inch steaks, curry cubes, or butterfly) are completely complimentary with every order.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-xs">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button fw-bold text-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How long does seafood remain chilled inside the thermal delivery box?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#servicesFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Our triple-insulated corrugated boxes are packed with commercial dry-gel blankets that maintain sub-4°C internal temperature for up to 6 hours after doorstep drop-off, even in warm weather.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-xs">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button fw-bold text-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  How far in advance should we book Raw Bar &amp; Live Oyster Catering?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#servicesFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  For private parties, corporate receptions, and weddings, we recommend booking at least 48 to 72 hours in advance so our dock team can reserve the finest grade-A oysters, king prawns, and live shellfish directly from day-boat harvests.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-xs">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button fw-bold text-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Can restaurants schedule daily 6:00 AM priority dock deliveries?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#servicesFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Yes. Our B2B commercial accounts have access to daily early-morning priority delivery routes across the metropolitan area, ensuring fresh seafood reaches your kitchen before morning prep begins.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 overflow-hidden shadow-xs">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button fw-bold text-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Can I request specific steak thickness or bone-free portions for children?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#servicesFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Yes. You can add specific cutting instructions during online checkout or WhatsApp ordering (e.g. "pin-bone removed completely", "thin sashimi slices", or "thick 1.5-inch steaks"). Our master fishmongers fulfill each ticket by hand.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Interactive Custom Service Inquiry Form
+       ========================================== -->
+  <section class="py-5 bg-alt" id="service-inquiry">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2">Bespoke Solutions</span>
+          <h2 class="section-title mb-3">Request a Custom Service Quote</h2>
+          <p class="text-muted mb-4">
+            Need special bulk provisioning, scheduled corporate deliveries, or live oyster bar catering? Submit your requirements below and our Pier Operations Manager will respond within 30 minutes.
+          </p>
+
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-center gap-3 p-3 bg-card rounded-3 border">
+              <i class="bi bi-clock-history fs-3 text-primary"></i>
+              <div>
+                <strong class="d-block text-secondary">Rapid 30-Minute Response</strong>
+                <small class="text-muted">Direct line with our dockside logistics team</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 p-3 bg-card rounded-3 border">
+              <i class="bi bi-telephone-inbound-fill fs-3 text-primary"></i>
+              <div>
+                <strong class="d-block text-secondary">Direct Fishmonger Hotline</strong>
+                <small class="text-muted">+1 (800) 555-FISH (3474) – Available from 5:00 AM</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card p-4 p-md-5 rounded-4 border bg-card shadow-md">
+            <h4 class="fw-bold text-secondary mb-4">Service Request Form</h4>
+            <form id="customServiceForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="service-name" class="form-label small fw-bold">Your Full Name <span class="text-danger">*</span></label>
+                  <input type="text" id="service-name" name="name" class="form-control" placeholder="e.g. Chef Robert Vance" autocomplete="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="service-phone" class="form-label small fw-bold">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" id="service-phone" name="phone" inputmode="numeric" pattern="[0-9]{7,15}" maxlength="15" class="form-control" placeholder="e.g. 9876543210" autocomplete="tel" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="service-select" class="form-label small fw-bold">Select Service <span class="text-danger">*</span></label>
+                  <select id="service-select" name="service" class="form-select" required>
+                    <option value="" disabled selected>Choose a Service</option>
+                    <option value="Daily Fresh Supply">1. Daily Fresh Seafood Supply</option>
+                    <option value="Hygienic Cleaning">2. Hygienic Seafood Cleaning</option>
+                    <option value="Custom Cutting">3. Master Custom Knife Butchery</option>
+                    <option value="Express Delivery">4. Express 0°C Cold-Chain Home Delivery</option>
+                    <option value="Wholesale Bulk">5. Wholesale Event &amp; Family Bulk Order</option>
+                    <option value="Commercial Restaurant">6. Commercial B2B Restaurant Supply</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="service-qty" class="form-label small fw-bold">Estimated Quantity / Event Date <span class="text-danger">*</span></label>
+                  <input type="text" id="service-qty" name="quantity" class="form-control" placeholder="e.g. 25 kg or Oct 24 Party" required>
+                </div>
+                <div class="col-12">
+                  <label for="service-notes" class="form-label small fw-bold">Specific Fish Varieties &amp; Cutting Notes</label>
+                  <textarea id="service-notes" name="notes" class="form-control" rows="3" placeholder="Tell us which fish species you require (Salmon, Pomfret, Tiger Prawns, etc.) and specific cuts or event requirements..."></textarea>
+                </div>
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn btn-ocean w-100 py-3 fw-bold">
+                    <i class="bi bi-send-fill me-2"></i> Submit Service Request
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -364,5 +711,6 @@
   <script src="assets/js/rtl.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/forms.js"></script>
+  <script src="assets/js/validation.js"></script>
 </body>
 </html>

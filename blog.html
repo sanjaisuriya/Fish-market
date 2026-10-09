@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.0">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=4.0">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=4.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=4.0">
 </head>
 <body>
 
@@ -37,25 +37,25 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
-      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+      <!-- Mobile Quick Action Controls & Hamburger Toggle -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto align-items-center">
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge d-none">0</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlogCollapse" aria-controls="navbarBlogCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlogCollapse" aria-controls="navbarBlogCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarBlogCollapse">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
             <ul class="dropdown-menu">
@@ -90,32 +90,32 @@
           <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item d-none d-lg-flex align-items-center gap-3 ms-3 me-lg-2">
+            <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+            <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+            </button>
+            <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+              <i class="bi bi-cart3"></i>
+              <span class="cart-count-badge d-none">0</span>
+            </a>
+          </li>
         </ul>
 
         <!-- Desktop Action Controls (Right Side of Navbar) -->
-        <div class="d-none d-lg-flex align-items-center gap-2">
-          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
-            <i class="bi bi-cart3"></i>
-            <span>Cart</span>
-          </a>
-          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars-fill"></i>
-            <span class="theme-text">Dark</span>
-          </button>
-          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
-            <span class="rtl-text">RTL</span>
-          </button>
-          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-            <i class="bi bi-person-circle"></i>
-            <span>Login / Register</span>
+        <div class="d-none d-lg-flex align-items-center ms-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i>
+            <span>Explore Fresh Catch</span>
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        <!-- Mobile Quick Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
           </a>
         </div>
       </div>
@@ -125,13 +125,13 @@
   <!-- Page Banner -->
   <section class="page-banner page-banner-blog">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-9 text-start">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 text-center">
           <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Seafood Knowledge &amp; Stories</span>
           <h1 class="page-banner-title mb-2">Fresh Insights from the Fish Market</h1>
-          <p class="page-banner-desc ms-0 mb-3 text-start">Discover seafood buying tips, storage guides, recipe inspiration, and stories from the harbor to your table.</p>
+          <p class="page-banner-desc mb-3 mx-auto">Discover seafood buying tips, storage guides, recipe inspiration, and stories from the harbor to your table.</p>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb-custom justify-content-start mb-0">
+            <ol class="breadcrumb-custom justify-content-center mb-0">
               <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
               <li><i class="bi bi-chevron-right small text-muted"></i></li>
               <li class="active">Blog</li>
@@ -151,20 +151,21 @@
       <!-- Filter & Search Toolbar -->
       <div class="card p-4 rounded-4 border bg-card mb-5 shadow-sm">
         <div class="row g-3 align-items-center">
-          <div class="col-lg-6">
+          <div class="col-lg-5">
             <div class="input-group">
               <span class="input-group-text bg-light"><i class="bi bi-search text-muted"></i></span>
-              <input type="text" id="blog-search-input" class="form-control" placeholder="Search topics, freshness tips, cooking, storage, cold-chain...">
+              <input type="text" id="blog-search-input" class="form-control" placeholder="Search topics, freshness tips, cooking, storage...">
             </div>
           </div>
-          <div class="col-lg-6 d-flex flex-wrap gap-2 justify-content-lg-end">
-            <button class="btn btn-sm btn-ocean blog-cat-btn active" data-category="all">All Topics</button>
-            <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="guides">Buying Guides</button>
-            <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="cooking">Family Dinners</button>
-            <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="delivery">Cold-Chain</button>
-            <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="storage">Storage Guide</button>
-            <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="health">Health &amp; Nutrition</button>
-            <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="journey">Harbor Stories</button>
+          <div class="col-lg-7">
+            <div class="blog-cat-grid">
+              <button class="btn btn-sm btn-ocean blog-cat-btn active" data-category="all">All Topics</button>
+              <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="guides">Buying Guides</button>
+              <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="cooking">Family Dinners</button>
+              <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="storage">Storage &amp; Cold-Chain</button>
+              <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="health">Health &amp; Nutrition</button>
+              <button class="btn btn-sm btn-outline-ocean blog-cat-btn" data-category="journey">Harbor Stories</button>
+            </div>
           </div>
         </div>
       </div>

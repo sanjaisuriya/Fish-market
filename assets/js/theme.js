@@ -30,16 +30,17 @@
   function updateThemeToggleUI(theme) {
     const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
     toggleBtns.forEach((btn) => {
-      const icon = btn.querySelector('i');
       const text = btn.querySelector('.theme-text');
+      if (text) text.remove();
+      const icon = btn.querySelector('i');
       if (theme === 'dark') {
         if (icon) icon.className = 'bi bi-sun-fill text-warning';
-        if (text) text.textContent = 'Light';
         btn.setAttribute('aria-label', 'Switch to Light Mode');
+        btn.setAttribute('title', 'Switch to Light Mode');
       } else {
         if (icon) icon.className = 'bi bi-moon-stars-fill text-primary';
-        if (text) text.textContent = 'Dark';
         btn.setAttribute('aria-label', 'Switch to Dark Mode');
+        btn.setAttribute('title', 'Switch to Dark Mode');
       }
     });
   }

@@ -11,9 +11,28 @@
 
 
 
-  .hero-wrapper {
-    padding: 3.5rem 0 4.5rem;
+  .hero-wrapper,
+  .home2-hero {
+    padding: 3rem 1rem 3.5rem !important;
     text-align: center;
+  }
+
+  .home2-hero .text-start {
+    text-align: center !important;
+  }
+
+  .home2-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home2-showcase-card {
+    margin-top: 0.5rem;
+    padding: 1.15rem !important;
+  }
+
+  .home2-showcase-img-box {
+    height: 220px !important;
   }
 
   .hero-subtitle {
@@ -26,19 +45,25 @@
     display: none; /* Avoid overlap on very small screens */
   }
 
-  .btn-ocean, .btn-coral, .btn-outline-ocean {
-    width: 100%;
-    justify-content: center;
+  .btn-ocean, .btn-coral, .btn-outline-ocean, .btn-whatsapp, .btn-outline-whatsapp,
+  .hero-btn-primary, .hero-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   .hero-cta-group {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
   }
 
   .category-card {
     padding: 1.25rem 0.75rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem 1.25rem !important;
   }
 
   .category-icon-box {
@@ -72,9 +97,9 @@
     justify-content: center;
   }
 
-  .page-banner-about, .page-banner-products, .page-banner-services, .page-banner-cleaning, .page-banner-blog, .page-banner-pricing, .page-banner-contact, .page-banner-recipes {
-    min-height: 240px !important;
-    padding: 3.25rem 1rem !important;
+  .page-banner, .page-banner-about, .page-banner-products, .page-banner-services, .page-banner-cleaning, .page-banner-blog, .page-banner-pricing, .page-banner-contact, .page-banner-recipes, .page-banner-cart, .page-banner-checkout {
+    min-height: 280px !important;
+    padding: 3.75rem 1rem !important;
   }
 
   .page-banner-contact {
@@ -121,8 +146,7 @@
   }
 
   .page-banner-blog::after,
-  .page-banner-pricing::after,
-  .page-banner-contact::after {
+  .page-banner-pricing::after {
     width: 65% !important;
     opacity: 0.32 !important;
   }
@@ -227,17 +251,19 @@
     flex-shrink: 0 !important;
   }
 
-  /* Unified mobile buttons cluster (Theme, RTL, Hamburger in 1 line with even 0.4rem spacing) */
+  /* Unified mobile buttons cluster (Cart, Theme, RTL, Hamburger in 1 line with even 0.35rem spacing) */
   .nav-actions-group {
     display: inline-flex !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
-    gap: 0.4rem !important;
+    gap: 0.35rem !important;
     margin: 0 !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
   }
 
   .nav-actions-group .toggle-btn,
+  .nav-actions-group .nav-cart-btn,
   .main-navbar .navbar-toggler {
     width: 38px !important;
     height: 38px !important;
@@ -247,34 +273,37 @@
     max-height: 38px !important;
     padding: 0 !important;
     margin: 0 !important;
-    border-radius: 10px !important;
-    border: 1.5px solid var(--color-border, #e2e8f0) !important;
-    background-color: var(--color-bg-alt, #f8fafc) !important;
-    color: var(--color-text-main, #0f172a) !important;
+    border-radius: var(--radius-full) !important;
+    border: 1.5px solid rgba(2, 132, 199, 0.22) !important;
+    background-color: rgba(2, 132, 199, 0.05) !important;
+    color: var(--color-primary, #0284c7) !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     box-sizing: border-box !important;
     line-height: 1 !important;
     cursor: pointer !important;
-    transition: all 0.2s ease !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+    transform: none !important;
     flex-shrink: 0 !important;
   }
 
-  /* Light gap between RTL button and Hamburger toggler (matching 0.4rem gap) */
+  /* Uniform spacing inside mobile buttons cluster */
   .main-navbar .navbar-toggler {
-    margin: 0 0 0 0.4rem !important;
+    margin: 0 !important;
     flex-shrink: 0 !important;
   }
 
   [dir="rtl"] .main-navbar .navbar-toggler {
-    margin: 0 0.4rem 0 0 !important;
+    margin: 0 !important;
   }
 
-  .nav-actions-group .toggle-btn i {
+  .nav-actions-group .toggle-btn i,
+  .nav-actions-group .nav-cart-btn i {
     font-size: 1.05rem !important;
     margin: 0 !important;
     line-height: 1 !important;
+    transform: none !important;
   }
 
   .nav-actions-group .toggle-btn .theme-text,
@@ -290,14 +319,48 @@
   }
 
   .nav-actions-group .toggle-btn:hover,
+  .nav-actions-group .nav-cart-btn:hover,
   .main-navbar .navbar-toggler:hover {
-    background-color: rgba(2, 132, 199, 0.1) !important;
+    background-color: rgba(2, 132, 199, 0.14) !important;
     border-color: var(--color-primary) !important;
+    color: var(--color-primary-dark) !important;
+    transform: none !important;
   }
 
   .main-navbar .navbar-toggler:focus {
     box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25) !important;
     outline: none !important;
+  }
+
+  /* Compact tuning for 360px & extra-small mobile viewports */
+  @media (max-width: 420px) {
+    .brand-logo {
+      font-size: 1.12rem !important;
+      gap: 0.3rem !important;
+    }
+    .brand-logo svg.brand-fish-img {
+      width: 26px !important;
+      height: 26px !important;
+    }
+    .nav-actions-group {
+      gap: 0.25rem !important;
+    }
+    .nav-actions-group .toggle-btn,
+    .nav-actions-group .nav-cart-btn,
+    .main-navbar .navbar-toggler {
+      width: 35px !important;
+      height: 35px !important;
+      min-width: 35px !important;
+      min-height: 35px !important;
+      max-width: 35px !important;
+      max-height: 35px !important;
+    }
+    .main-navbar .navbar-toggler {
+      margin: 0 !important;
+    }
+    [dir="rtl"] .main-navbar .navbar-toggler {
+      margin: 0 !important;
+    }
   }
 
   /* Collapse Navigation — Closed: 0 space, Open: clean compact card */

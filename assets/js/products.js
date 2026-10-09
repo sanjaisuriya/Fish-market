@@ -519,8 +519,7 @@ const SEAFOOD_PRODUCTS = [
         if (window.addToCartDirect) {
           window.addToCartDirect(product.id);
         }
-        const bsModal = bootstrap.Modal.getInstance(modalEl);
-        if (bsModal) bsModal.hide();
+        closeQuickViewModal();
       };
     }
 
@@ -530,8 +529,39 @@ const SEAFOOD_PRODUCTS = [
       detailsLink.href = `product-details.html?id=${product.id}`;
     }
 
-    const modal = new bootstrap.Modal(modalEl);
+    const modal = (window.bootstrap && bootstrap.Modal.getOrCreateInstance)
+      ? bootstrap.Modal.getOrCreateInstance(modalEl)
+      : (window.bootstrap && bootstrap.Modal.getInstance ? bootstrap.Modal.getInstance(modalEl) : null) || new bootstrap.Modal(modalEl);
     modal.show();
+  }
+
+  function closeQuickViewModal() {
+    const modalEl = document.getElementById('quickViewModal');
+    if (!modalEl) return;
+
+    try {
+      if (window.bootstrap && bootstrap.Modal) {
+        const bsModal = (bootstrap.Modal.getInstance && bootstrap.Modal.getInstance(modalEl)) ||
+                        (bootstrap.Modal.getOrCreateInstance && bootstrap.Modal.getOrCreateInstance(modalEl));
+        if (bsModal) {
+          bsModal.hide();
+        }
+      }
+    } catch (err) {
+      console.warn('Bootstrap modal hide error:', err);
+    }
+
+    // Guaranteed fallback: instantly hide modal and cleanup backdrop even if Bootstrap event loops fail
+    setTimeout(() => {
+      modalEl.classList.remove('show');
+      modalEl.style.display = 'none';
+      modalEl.setAttribute('aria-hidden', 'true');
+      modalEl.removeAttribute('aria-modal');
+      document.body.classList.remove('modal-open');
+      document.body.style.removeProperty('overflow');
+      document.body.style.removeProperty('padding-right');
+      document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+    }, 150);
   }
 
   function initQuickViewModal() {
@@ -540,9 +570,9 @@ const SEAFOOD_PRODUCTS = [
       const modalMarkup = `
         <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0 shadow-xl overflow-hidden">
-              <div class="modal-header border-bottom-0 pb-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content rounded-4 border-0 shadow-xl overflow-hidden position-relative">
+              <div class="modal-header border-bottom-0 pb-0 justify-content-end position-relative" style="z-index: 1060; padding-top: 1.25rem; padding-right: 1.25rem;">
+                <button type="button" class="btn-close position-relative" data-bs-dismiss="modal" aria-label="Close" style="cursor: pointer; z-index: 1065; width: 1.5rem; height: 1.5rem; font-size: 1.1rem; opacity: 0.85;"></button>
               </div>
               <div class="modal-body p-4 pt-0">
                 <div class="row g-4 align-items-center">
@@ -579,6 +609,35 @@ const SEAFOOD_PRODUCTS = [
       `;
       document.body.insertAdjacentHTML('beforeend', modalMarkup);
     }
+
+    const modalEl = document.getElementById('quickViewModal');
+    if (modalEl) {
+      // Wire up direct click listeners on all close/dismiss elements
+      modalEl.querySelectorAll('.btn-close, [data-bs-dismiss="modal"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeQuickViewModal();
+        });
+      });
+
+      // Close when clicking modal backdrop outside modal-dialog
+      modalEl.addEventListener('click', function(e) {
+        if (e.target === modalEl) {
+          closeQuickViewModal();
+        }
+      });
+    }
+
+    // Escape key listener for quickViewModal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const m = document.getElementById('quickViewModal');
+        if (m && (m.classList.contains('show') || m.style.display === 'block')) {
+          closeQuickViewModal();
+        }
+      }
+    });
   }
 
   window.resetProductFilters = function () {

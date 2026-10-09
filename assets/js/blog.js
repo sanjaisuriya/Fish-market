@@ -129,7 +129,9 @@ const BLOG_ARTICLES = [
 
   function getFilteredBlog() {
     return BLOG_ARTICLES.filter(a => {
-      const matchCat = (currentCategory === 'all') || (a.category === currentCategory);
+      const matchCat = (currentCategory === 'all') ||
+                       (a.category === currentCategory) ||
+                       (currentCategory === 'storage' && (a.category === 'storage' || a.category === 'delivery'));
       const matchSearch = a.title.toLowerCase().includes(searchQuery) ||
                           a.summary.toLowerCase().includes(searchQuery) ||
                           a.categoryLabel.toLowerCase().includes(searchQuery);

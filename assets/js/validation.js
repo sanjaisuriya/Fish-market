@@ -10,7 +10,9 @@
     initContactValidation();
     initLoginValidation();
     initRegisterValidation();
+    initServiceFormValidation();
     initPasswordToggle();
+    initAutoApplyRestrictions();
   });
 
   /* ------------------------------------------------------------------------
@@ -23,27 +25,27 @@
     const whatsappBtn = document.getElementById('btn-submit-whatsapp');
     const storeWhatsAppNumber = '18005553474'; // Market WhatsApp Number
     const phoneInput = document.getElementById('contact-phone');
+    const nameInput = document.getElementById('contact-name');
 
     if (phoneInput) {
       setupNumericPhoneInput(phoneInput, 'Order enquiry phone number');
     }
+    if (nameInput) {
+      setupAlphaNameInput(nameInput, 'Full name');
+    }
 
     function validateFormData() {
       let isValid = true;
-      const nameInput = document.getElementById('contact-name');
       const emailInput = document.getElementById('contact-email');
       const seafoodSelect = document.getElementById('enquiry-seafood-type');
       const qtyInput = document.getElementById('enquiry-quantity');
       const dateInput = document.getElementById('enquiry-date');
       const notesInput = document.getElementById('enquiry-message');
 
-      // Full Name
+      // Full Name (Strict Letters Only)
       if (nameInput) {
-        if (nameInput.value.trim().length < 2) {
-          showInputError(nameInput, 'Please enter your full name (minimum 2 characters).');
+        if (!validateName(nameInput, 'Full name')) {
           isValid = false;
-        } else {
-          clearInputError(nameInput);
         }
       }
 
@@ -386,7 +388,73 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
   }
 
   /* ------------------------------------------------------------------------
-     4. Password Reveal Toggle
+     4. Service Request Form Validation (#customServiceForm)
+     ------------------------------------------------------------------------ */
+  function initServiceFormValidation() {
+    const serviceForm = document.getElementById('customServiceForm');
+    if (!serviceForm) return;
+
+    const nameInput = document.getElementById('service-name') || serviceForm.querySelector('input[placeholder*="Name"], input[type="text"]');
+    const phoneInput = document.getElementById('service-phone') || serviceForm.querySelector('input[type="tel"]');
+    const selectService = document.getElementById('service-select') || serviceForm.querySelector('select');
+    const qtyInput = document.getElementById('service-qty') || serviceForm.querySelectorAll('input[type="text"]')[1];
+
+    if (nameInput) {
+      setupAlphaNameInput(nameInput, 'Full name');
+    }
+    if (phoneInput) {
+      setupNumericPhoneInput(phoneInput, 'Phone number');
+    }
+
+    serviceForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      if (nameInput) {
+        if (!validateName(nameInput, 'Full name')) {
+          isValid = false;
+        }
+      }
+
+      if (phoneInput) {
+        if (!validatePhoneNumber(phoneInput, 'Phone number')) {
+          isValid = false;
+        }
+      }
+
+      if (selectService && selectService.hasAttribute('required')) {
+        if (!selectService.value || selectService.value === '') {
+          showInputError(selectService, 'Please select a service.');
+          isValid = false;
+        } else {
+          clearInputError(selectService);
+        }
+      }
+
+      if (qtyInput && qtyInput.hasAttribute('required')) {
+        if (!qtyInput.value.trim()) {
+          showInputError(qtyInput, 'Please enter quantity or event date.');
+          isValid = false;
+        } else {
+          clearInputError(qtyInput);
+        }
+      }
+
+      if (!isValid) {
+        if (window.showToast) window.showToast('Please fix the highlighted errors in the form.', 'error');
+        return;
+      }
+
+      if (window.showToast) {
+        window.showToast('Your service inquiry has been submitted! Our dock team will contact you shortly.', 'success');
+      }
+      serviceForm.reset();
+      serviceForm.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     5. Password Reveal Toggle
      ------------------------------------------------------------------------ */
   function initPasswordToggle() {
     const toggles = document.querySelectorAll('.toggle-password-btn');
@@ -408,10 +476,93 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
   }
 
   /* ------------------------------------------------------------------------
-     5. Phone Input & Numeric Validation Helpers
+     6. Alpha Name Input & Letter-Only Validation Helpers
+     ------------------------------------------------------------------------ */
+  function setupAlphaNameInput(nameInput, label = 'Full name') {
+    if (!nameInput || nameInput.dataset.alphaInitialized) return;
+    nameInput.dataset.alphaInitialized = 'true';
+
+    // Prevent number key presses (0-9)
+    nameInput.addEventListener('keypress', function (e) {
+      const charCode = (e.which !== undefined) ? e.which : e.keyCode;
+      // Block digits '0' (48) to '9' (57)
+      if (charCode >= 48 && charCode <= 57) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Handle beforeinput (e.g. modern mobile keyboards)
+    nameInput.addEventListener('beforeinput', function (e) {
+      if (e.data && /[0-9]/.test(e.data)) {
+        e.preventDefault();
+      }
+    });
+
+    // Real-time input sanitizer (strips digits instantly)
+    nameInput.addEventListener('input', function () {
+      const cleanVal = this.value.replace(/[0-9]/g, '');
+      if (this.value !== cleanVal) {
+        this.value = cleanVal;
+      }
+      if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+        validateName(this, label);
+      }
+    });
+
+    // Paste handler (cleans pasted content to remove numbers)
+    nameInput.addEventListener('paste', function (e) {
+      e.preventDefault();
+      const paste = (e.clipboardData || window.clipboardData).getData('text') || '';
+      const alphaPaste = paste.replace(/[0-9]/g, '');
+      const start = this.selectionStart || 0;
+      const end = this.selectionEnd || 0;
+      const currentVal = this.value || '';
+      const newVal = currentVal.substring(0, start) + alphaPaste + currentVal.substring(end);
+      this.value = newVal;
+      const newPos = Math.min(newVal.length, start + alphaPaste.length);
+      this.setSelectionRange(newPos, newPos);
+      if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+        validateName(this, label);
+      }
+    });
+
+    // On blur validation
+    nameInput.addEventListener('blur', function () {
+      if (this.value.trim().length > 0) {
+        validateName(this, label);
+      }
+    });
+  }
+
+  function validateName(input, label = 'Full name') {
+    const val = (input.value || '').trim();
+    if (!val) {
+      showInputError(input, `${label} is required.`);
+      return false;
+    }
+    if (/[0-9]/.test(val)) {
+      showInputError(input, `${label} must contain letters only (no numbers).`);
+      return false;
+    }
+    if (!/^[a-zA-Z\s.'-]+$/.test(val)) {
+      showInputError(input, `${label} must contain letters and spaces only.`);
+      return false;
+    }
+    if (val.length < 2) {
+      showInputError(input, `${label} must be at least 2 characters.`);
+      return false;
+    }
+    clearInputError(input);
+    return true;
+  }
+
+  /* ------------------------------------------------------------------------
+     7. Phone Input & Numeric Validation Helpers
      ------------------------------------------------------------------------ */
   function setupNumericPhoneInput(phoneInput, label = 'Phone number') {
-    if (!phoneInput) return;
+    if (!phoneInput || phoneInput.dataset.numericInitialized) return;
+    phoneInput.dataset.numericInitialized = 'true';
 
     // Prevent non-numeric key presses (A-Z, a-z, symbols, spaces, etc.)
     phoneInput.addEventListener('keypress', function (e) {
@@ -486,6 +637,21 @@ _Hi Dock Manager, please confirm live catch availability, cuts & price for my or
     }
     clearInputError(input);
     return true;
+  }
+
+  /* ------------------------------------------------------------------------
+     8. Auto-Apply Restriction Listener to All Forms
+     ------------------------------------------------------------------------ */
+  function initAutoApplyRestrictions() {
+    const nameInputs = document.querySelectorAll('input[id*="name"], input[name*="name"], input[placeholder*="Name"], input[placeholder*="name"]');
+    nameInputs.forEach(input => {
+      setupAlphaNameInput(input, 'Full name');
+    });
+
+    const phoneInputs = document.querySelectorAll('input[type="tel"], input[id*="phone"], input[name*="phone"], input[placeholder*="Phone"], input[placeholder*="555"]');
+    phoneInputs.forEach(input => {
+      setupNumericPhoneInput(input, 'Phone number');
+    });
   }
 
   /* Helper Functions */

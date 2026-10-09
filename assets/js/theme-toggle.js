@@ -24,11 +24,13 @@
     const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
     toggleBtns.forEach(btn => {
       if (theme === 'dark') {
-        btn.innerHTML = '<i class="bi bi-sun-fill text-warning me-1"></i> <span class="d-none d-md-inline">Light Mode</span>';
+        btn.innerHTML = '<i class="bi bi-sun-fill text-warning"></i>';
         btn.setAttribute('aria-label', 'Switch to Light Mode');
+        btn.setAttribute('title', 'Switch to Light Mode');
       } else {
-        btn.innerHTML = '<i class="bi bi-moon-stars-fill text-primary me-1"></i> <span class="d-none d-md-inline">Dark Mode</span>';
+        btn.innerHTML = '<i class="bi bi-moon-stars-fill text-primary"></i>';
         btn.setAttribute('aria-label', 'Switch to Dark Mode');
+        btn.setAttribute('title', 'Switch to Dark Mode');
       }
     });
   }

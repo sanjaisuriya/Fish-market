@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seafood Packages & Wholesale Pricing | Fish Market</title>
-  <meta name="description" content="Explore curated seafood boxes, family meal packages, premium gourmet crates, and wholesale restaurant bulk tiers with cold-chain delivery.">
-  <meta name="keywords" content="seafood box delivery, fish market pricing, wholesale fish supply, family seafood box, bulk prawn orders">
+  <title>Seafood Pricing, Catch Plans & Wholesale Rates | Fish Market</title>
+  <meta name="description" content="Transparent dockside seafood pricing: weekly fresh catch subscription plans, live per-kg pier rate board, interactive custom box builder, and restaurant wholesale tiers.">
+  <meta name="keywords" content="seafood pricing, fish market rates, fresh fish subscription, seafood boxes, wholesale fish prices, prawns price per kg">
 
   <!-- Favicon (Data URI SVG ensures instant display on Chrome Tab) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M52 32C44 20 26 18 10 32C26 46 44 44 52 32Z' fill='%230284c7'/%3E%3Cpath d='M10 32L2 22V42L10 32Z' fill='%230284c7'/%3E%3Ccircle cx='42' cy='30' r='3' fill='%23ffffff'/%3E%3Cpath d='M28 26C32 29 32 35 28 38' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -17,10 +17,57 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=9.0">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=9.0">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=9.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=9.0">
+
+  <style>
+    /* Pricing Page Specific Interactive Styles */
+    .pricing-switcher-wrap {
+      display: inline-flex;
+      background: var(--color-bg-alt, #e2e8f0);
+      padding: 5px;
+      border-radius: var(--radius-full, 9999px);
+      border: 1px solid var(--color-border, #cbd5e1);
+      margin-bottom: 2.5rem;
+    }
+    .pricing-switcher-btn {
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-full, 9999px);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      background: transparent;
+      color: var(--color-text-muted, #475569);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .pricing-switcher-btn.active {
+      background: var(--color-primary, #0284c7);
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+    .calculator-card {
+      background: var(--color-bg-card, #ffffff);
+      border: 1.5px solid var(--color-border, #cbd5e1);
+      border-radius: var(--radius-xl, 1rem);
+      box-shadow: var(--shadow-lg, 0 10px 25px rgba(0,0,0,0.08));
+    }
+    .price-display-box {
+      background: linear-gradient(135deg, #071527 0%, #0b2545 100%);
+      border-radius: var(--radius-lg, 0.75rem);
+      color: #ffffff;
+      padding: 2rem;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .market-badge-status {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,25 +84,25 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
-      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+      <!-- Mobile Quick Action Controls & Hamburger Toggle -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto align-items-center">
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge d-none">0</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPricingCollapse" aria-controls="navbarPricingCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPricingCollapse" aria-controls="navbarPricingCollapse" aria-expanded="false" aria-label="Toggle navigation" style="height: 38px;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarPricingCollapse">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
             <ul class="dropdown-menu">
@@ -90,32 +137,32 @@
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item d-none d-lg-flex align-items-center gap-3 ms-3 me-lg-2">
+            <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+            <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+            </button>
+            <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+              <i class="bi bi-cart3"></i>
+              <span class="cart-count-badge d-none">0</span>
+            </a>
+          </li>
         </ul>
 
         <!-- Desktop Action Controls (Right Side of Navbar) -->
-        <div class="d-none d-lg-flex align-items-center gap-2">
-          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
-            <i class="bi bi-cart3"></i>
-            <span>Cart</span>
-          </a>
-          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars-fill"></i>
-            <span class="theme-text">Dark</span>
-          </button>
-          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
-            <span class="rtl-text">RTL</span>
-          </button>
-          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-            <i class="bi bi-person-circle"></i>
-            <span>Login / Register</span>
+        <div class="d-none d-lg-flex align-items-center ms-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i>
+            <span>Explore Fresh Catch</span>
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        <!-- Mobile Quick Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
           </a>
         </div>
       </div>
@@ -125,13 +172,13 @@
   <!-- Page Banner -->
   <section class="page-banner page-banner-pricing">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-9 text-start">
-          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Curated Boxes &amp; Wholesale</span>
-          <h1 class="page-banner-title mb-2">Seafood Packages &amp; Pricing</h1>
-          <p class="page-banner-desc ms-0 mb-3 text-start">Explore our transparent pricing tiers for retail bundles, weekly family boxes, and bulk commercial wholesale.</p>
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 text-center">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Transparent Harbor Pricing</span>
+          <h1 class="page-banner-title mb-2">Seafood Catch Plans &amp; Live Rates</h1>
+          <p class="page-banner-desc mb-3 mx-auto">100% chemical-free dockside pricing with zero retail markups. Choose weekly curated family boxes, build custom assortments, or order bulk wholesale.</p>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb-custom justify-content-start mb-0">
+            <ol class="breadcrumb-custom justify-content-center mb-0">
               <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
               <li><i class="bi bi-chevron-right small text-muted"></i></li>
               <li class="active">Pricing</li>
@@ -143,107 +190,141 @@
   </section>
 
   <!-- ==========================================
-       Seafood Packages (4 Tiers)
+       Pricing Value Pillars (Why Dockside Pricing)
        ========================================== -->
-  <section class="py-5 bg-main" id="packages">
-    <div class="container py-4">
-      <div class="section-header text-center">
-        <span class="section-subtitle">Transparent Value</span>
-        <h2 class="section-title">Curated Seafood Boxes</h2>
-        <p class="section-desc">Save up to 25% compared to individual retail cuts. Cleaned, portioned, and vacuum-sealed.</p>
+  <section class="py-4 bg-alt border-bottom">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-card rounded-3 border h-100 shadow-sm">
+            <i class="bi bi-water text-primary fs-3 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Direct Pier Intake</h6>
+            <small class="text-muted">Fresh morning day-boat catch without auction markups</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-card rounded-3 border h-100 shadow-sm">
+            <i class="bi bi-scissors text-primary fs-3 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">Complimentary Butchery</h6>
+            <small class="text-muted">Free descaling, filleting, and recipe-ready cubing</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-card rounded-3 border h-100 shadow-sm">
+            <i class="bi bi-truck text-primary fs-3 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">0°C Refrigerated Delivery</h6>
+            <small class="text-muted">Free express doorstep delivery on orders over ₹500</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-card rounded-3 border h-100 shadow-sm">
+            <i class="bi bi-shield-check text-primary fs-3 mb-2 d-block"></i>
+            <h6 class="fw-bold mb-1">100% Freshness Guarantee</h6>
+            <small class="text-muted">Instant replacement or full refund if quality falls short</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Catch Plans (One-Time vs Weekly Subscription)
+       ========================================== -->
+  <section class="py-5 bg-main" id="catch-plans">
+    <div class="container py-4 text-center">
+      <div class="section-header text-center mb-4">
+        <span class="section-subtitle">Curated Fresh Catch Bundles</span>
+        <h2 class="section-title">Choose Your Seafood Catch Plan</h2>
+        <p class="section-desc">Handpicked every morning by our master fishmongers. Cleaned with UV-treated RO water and vacuum-sealed for maximum oceanic flavor.</p>
       </div>
 
-      <div class="row g-4 align-items-stretch">
+      <!-- Pricing Switcher -->
+      <div class="pricing-switcher-wrap" role="group" aria-label="Pricing duration toggle">
+        <button type="button" class="pricing-switcher-btn active" id="btnOneTime" onclick="switchPricing('onetime')">
+          One-Time Box Order
+        </button>
+        <button type="button" class="pricing-switcher-btn" id="btnSubscription" onclick="switchPricing('subscription')">
+          Weekly Catch Plan <span class="badge bg-success ms-1">Save 15%</span>
+        </button>
+      </div>
+
+      <div class="row g-4 align-items-stretch text-start">
         
-        <!-- Package 1: Fresh Catch -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card pricing-box-card rounded-4 border bg-card p-4 h-100 shadow-sm d-flex flex-column">
-            <span class="badge bg-light text-primary border align-self-start mb-3 px-3 py-2 fw-bold">Regular Cooks</span>
-            <h4 class="fw-bold pricing-title mb-1">Fresh Catch Box</h4>
-            <p class="pricing-desc small mb-3">Ideal for couples & regular weekday seafood dinners.</p>
+        <!-- Plan 1: Ocean Essential Plan -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card pricing-box-card rounded-4 border bg-card p-3 p-xl-4 h-100 shadow-sm d-flex flex-column">
+            <div class="pricing-thumb-wrap mb-3 overflow-hidden rounded-3" style="height: 180px;">
+              <img src="file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/ocean_essential_seafood_box_1791485257302.jpg" alt="Ocean Essential Catch Box" class="w-100 h-100 object-fit-cover" loading="lazy" onerror="this.onerror=null;this.src='../../../../brain/bf1369eb-fd76-4344-95ea-bc559a305abe/ocean_essential_seafood_box_1791485257302.jpg';">
+            </div>
+            <span class="badge bg-light text-primary border align-self-start mb-2 px-3 py-1 fw-bold">1–2 Person Household</span>
+            <h4 class="fw-bold pricing-title mb-1">Ocean Essential Box</h4>
+            <p class="pricing-desc small mb-3">Perfect for regular weekday seafood dinners, soups, and healthy pan-sears.</p>
             <div class="mb-3">
-              <span class="fs-2 fw-bold pricing-amount">₹599.00</span>
-              <small class="pricing-unit d-block">Approx. 2.5 kg net catch</small>
+              <span class="fs-2 fw-bold pricing-amount plan-price" data-onetime="₹499.00" data-sub="₹424.00">₹499.00</span>
+              <small class="pricing-unit d-block plan-unit">approx. 2.2 kg net cleaned weight</small>
             </div>
             <ul class="list-unstyled small d-flex flex-column gap-2 mb-4 flex-grow-1 pricing-features">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 kg Mediterranean Sea Bass (Curry Cut)</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 kg Coastal White Prawns (Cleaned)</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 500 g Calamari Squid Rings</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Free RO Water Descaling</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Insulated Thermal Packaging</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.0 kg Mediterranean Sea Bass (Curry Cut)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 600 g Coastal White Prawns (Cleaned &amp; Deveined)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 600 g Calamari Squid Rings (Zero Ink)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Free UV-Treated Water Descaling &amp; Trimming</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Insulated Thermal Box with Dry Ice Gel</li>
             </ul>
-            <button class="btn btn-outline-ocean w-100 select-package-btn mt-auto" data-package="Fresh Catch Box (₹599)">
-              Order Fresh Catch Box
+            <button class="btn btn-outline-ocean w-100 select-package-btn mt-auto" onclick="window.addToCartDirect('pkg-essential', 'Ocean Essential Box', 499.00, 'file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/ocean_essential_seafood_box_1791485257302.jpg', 'Catch Plan', 1, 2.2, 'Curry Cut')">
+              <i class="bi bi-cart-plus me-1"></i> Select Essential Box
             </button>
           </div>
         </div>
 
-        <!-- Package 2: Family Seafood Box (Popular) -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card pricing-box-card rounded-4 border border-2 border-primary bg-card p-4 h-100 shadow-xl d-flex flex-column position-relative">
-            <span class="badge bg-primary text-white position-absolute top-0 end-0 m-3 px-3 py-1 fw-bold">MOST POPULAR</span>
-            <span class="badge bg-primary-subtle text-primary align-self-start mb-3 px-3 py-2 fw-bold">Family Menus</span>
-            <h4 class="fw-bold pricing-title mb-1">Family Seafood Box</h4>
-            <p class="pricing-desc small mb-3">Complete variety box for weekend family gatherings & curries.</p>
+        <!-- Plan 2: Signature Fishmonger Box (Most Popular) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card pricing-box-card rounded-4 border border-2 border-primary bg-card p-3 p-xl-4 h-100 shadow-xl d-flex flex-column position-relative">
+            <span class="badge bg-primary text-white position-absolute top-0 end-0 m-3 px-3 py-1 fw-bold shadow-sm" style="z-index: 2;">MOST POPULAR</span>
+            <div class="pricing-thumb-wrap mb-3 overflow-hidden rounded-3" style="height: 180px;">
+              <img src="file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/signature_family_seafood_box_1791485320431.jpg" alt="Signature Fishmonger Catch Box" class="w-100 h-100 object-fit-cover" loading="lazy" onerror="this.onerror=null;this.src='../../../../brain/bf1369eb-fd76-4344-95ea-bc559a305abe/signature_family_seafood_box_1791485320431.jpg';">
+            </div>
+            <span class="badge bg-primary-subtle text-primary align-self-start mb-2 px-3 py-1 fw-bold">4–6 Persons Family Feast</span>
+            <h4 class="fw-bold pricing-title mb-1">Signature Family Box</h4>
+            <p class="pricing-desc small mb-3">Our best-selling assortment for rich weekend curries, grills, and family banquets.</p>
             <div class="mb-3">
-              <span class="fs-2 fw-bold text-primary">₹999.00</span>
-              <small class="pricing-unit d-block">Approx. 4.5 kg net catch</small>
+              <span class="fs-2 fw-bold text-primary plan-price" data-onetime="₹899.00" data-sub="₹764.00">₹899.00</span>
+              <small class="pricing-unit d-block plan-unit">approx. 4.2 kg net cleaned weight</small>
             </div>
             <ul class="list-unstyled small d-flex flex-column gap-2 mb-4 flex-grow-1 pricing-features">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.5 kg Atlantic Salmon (Fillets)</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 kg Jumbo Tiger Prawns (Deveined)</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 kg Silver Pomfret (Fry Cut)</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 kg Cleaned Blue Crabs</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Free Same-Day Express Delivery</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.2 kg Norwegian Salmon (Center Fillets)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.0 kg Jumbo Tiger Prawns (15–20 Count)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.0 kg Silver Pomfret (Scored Fry Cut)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.0 kg Live Blue Swimmer Crabs (Halved)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Free Same-Day 0°C Priority Doorstep Delivery</li>
             </ul>
-            <button class="btn btn-ocean w-100 select-package-btn mt-auto" data-package="Family Seafood Box (₹999)">
-              Order Family Seafood Box
+            <button class="btn btn-ocean w-100 select-package-btn mt-auto" onclick="window.addToCartDirect('pkg-family', 'Signature Family Box', 899.00, 'file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/signature_family_seafood_box_1791485320431.jpg', 'Catch Plan', 1, 4.2, 'Mixed Chef Cut')">
+              <i class="bi bi-cart-plus me-1"></i> Select Signature Box
             </button>
           </div>
         </div>
 
-        <!-- Package 3: Premium Gourmet Box -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card pricing-box-card rounded-4 border bg-card p-4 h-100 shadow-sm d-flex flex-column">
-            <span class="badge bg-coral bg-opacity-10 text-danger border border-danger align-self-start mb-3 px-3 py-2 fw-bold">Chef Gourmet</span>
-            <h4 class="fw-bold pricing-title mb-1">Premium Reserve Box</h4>
-            <p class="pricing-desc small mb-3">Exquisite wild seafood for luxury culinary hosting & raw bars.</p>
+        <!-- Plan 3: Captain's Gourmet Vault -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card pricing-box-card rounded-4 border bg-card p-3 p-xl-4 h-100 shadow-sm d-flex flex-column">
+            <div class="pricing-thumb-wrap mb-3 overflow-hidden rounded-3" style="height: 180px;">
+              <img src="file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/captains_gourmet_seafood_vault_1791485348903.jpg" alt="Captain's Gourmet Seafood Vault" class="w-100 h-100 object-fit-cover" loading="lazy" onerror="this.onerror=null;this.src='../../../../brain/bf1369eb-fd76-4344-95ea-bc559a305abe/captains_gourmet_seafood_vault_1791485348903.jpg';">
+            </div>
+            <span class="badge bg-coral bg-opacity-10 text-danger border border-danger align-self-start mb-2 px-3 py-1 fw-bold">Chef Luxury &amp; Raw Bar</span>
+            <h4 class="fw-bold pricing-title mb-1">Captain's Gourmet Vault</h4>
+            <p class="pricing-desc small mb-3">Premium wild delicacies for luxury entertaining, sashimi dinners, and oyster bars.</p>
             <div class="mb-3">
-              <span class="fs-2 fw-bold pricing-amount">₹1,599.00</span>
-              <small class="pricing-unit d-block">Approx. 5.5 kg gourmet catch</small>
+              <span class="fs-2 fw-bold pricing-amount plan-price" data-onetime="₹1,499.00" data-sub="₹1,274.00">₹1,499.00</span>
+              <small class="pricing-unit d-block plan-unit">approx. 5.5 kg luxury catch</small>
             </div>
             <ul class="list-unstyled small d-flex flex-column gap-2 mb-4 flex-grow-1 pricing-features">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 2x Rock Spiny Lobster Tails</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.5 kg Yellowfin Tuna Sashimi Block</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.5 kg Norwegian Salmon Center Fillet</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 Dozen Live Shucked Oysters</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Masterchef Herb Marinade Kit</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 2x Fresh Spiny Lobster Tails</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.2 kg Yellowfin Tuna (Sashimi Grade Loin)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1.5 kg Norwegian Salmon (Thick Steaks)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 12x Live Shucked Pacific Rock Oysters</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Masterchef Citrus Herb Rub &amp; Marinade Kit</li>
             </ul>
-            <button class="btn btn-outline-ocean w-100 select-package-btn mt-auto" data-package="Premium Reserve Box (₹1,599)">
-              Order Premium Box
-            </button>
-          </div>
-        </div>
-
-        <!-- Package 4: Bulk Commercial -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card pricing-box-card pricing-wholesale-card rounded-4 border p-4 h-100 shadow-lg d-flex flex-column">
-            <span class="badge bg-white text-primary border border-info align-self-start mb-3 px-3 py-2 fw-bold shadow-sm">Wholesale Tier</span>
-            <h4 class="fw-bold text-white mb-1">Bulk & Restaurant</h4>
-            <p class="wholesale-desc small mb-3">Custom high-volume wholesale for restaurants & caterers.</p>
-            <div class="mb-3">
-              <span class="fs-2 fw-bold text-white">Custom</span>
-              <small class="wholesale-unit d-block">Starting from 10 kg+</small>
-            </div>
-            <ul class="list-unstyled small d-flex flex-column gap-2 mb-4 flex-grow-1 wholesale-features">
-              <li><i class="bi bi-check-circle-fill wholesale-icon me-2"></i> Direct Pier Wholesale Rate Schedule</li>
-              <li><i class="bi bi-check-circle-fill wholesale-icon me-2"></i> Daily 6:00 AM Priority Van Route</li>
-              <li><i class="bi bi-check-circle-fill wholesale-icon me-2"></i> Dedicated Account Fishmonger</li>
-              <li><i class="bi bi-check-circle-fill wholesale-icon me-2"></i> Custom Weight & Spec Slicing</li>
-              <li><i class="bi bi-check-circle-fill wholesale-icon me-2"></i> Weekly Net-30 Billing Terms</li>
-            </ul>
-            <button class="btn btn-coral w-100 select-package-btn mt-auto shadow" data-package="Wholesale Bulk Tier">
-              Request B2B Quote
+            <button class="btn btn-outline-ocean w-100 select-package-btn mt-auto" onclick="window.addToCartDirect('pkg-gourmet', 'Captain Gourmet Vault', 1499.00, 'file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/captains_gourmet_seafood_vault_1791485348903.jpg', 'Gourmet Vault', 1, 5.5, 'Sashimi & Steaks')">
+              <i class="bi bi-cart-plus me-1"></i> Select Gourmet Vault
             </button>
           </div>
         </div>
@@ -253,74 +334,378 @@
   </section>
 
   <!-- ==========================================
-       Comparison Table Matrix
+       Daily Live Pier Market Price Board (Live Rate Tracker)
        ========================================== -->
-  <section class="py-5 bg-alt">
+  <section class="py-5 bg-alt" id="price-board">
     <div class="container py-4">
       <div class="section-header text-center">
-        <span class="section-subtitle">Detailed Breakdown</span>
-        <h2 class="section-title">Package Comparison Matrix</h2>
-        <p class="section-desc">Compare all seafood inclusion options, cuts, and delivery perks side-by-side.</p>
+        <span class="section-subtitle">Real-Time Dock Intake</span>
+        <h2 class="section-title">Today's Live Harbor Price Board</h2>
+        <p class="section-desc">Prices refreshed every morning at 5:00 AM IST based on coastal pier landings. Sourced chemical-free and chilled in flake ice.</p>
       </div>
 
-      <div class="card rounded-4 border bg-card shadow-sm overflow-hidden">
+      <div class="card rounded-4 border bg-card shadow-sm overflow-hidden mb-4">
         <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0 text-center" style="min-width: 760px;">
+          <table class="table table-hover align-middle mb-0" style="min-width: 760px;">
             <thead class="bg-alt text-secondary">
               <tr>
-                <th class="text-start p-3 ps-4" style="min-width: 180px;">Features & Specs</th>
-                <th class="p-3" style="min-width: 135px;">Fresh Catch Box (₹599)</th>
-                <th class="p-3 bg-primary-subtle text-primary fw-bold" style="min-width: 145px;">Family Seafood Box (₹999)</th>
-                <th class="p-3" style="min-width: 135px;">Premium Reserve Box (₹1,599)</th>
-                <th class="p-3 pe-4" style="min-width: 145px;">Bulk Wholesale</th>
+                <th class="ps-4 py-3">Species &amp; Grade</th>
+                <th class="py-3">Intake Origin</th>
+                <th class="py-3">Available Knife Cuts</th>
+                <th class="py-3 text-center">Live Per-KG Rate</th>
+                <th class="py-3 text-center">Daily Trend</th>
+                <th class="pe-4 py-3 text-end">Quick Order</th>
               </tr>
             </thead>
             <tbody class="small">
               <tr>
-                <td class="text-start fw-bold ps-4 text-secondary">Estimated Net Catch Weight</td>
-                <td>2.5 kg</td>
-                <td class="fw-bold text-primary">4.5 kg</td>
-                <td>5.5 kg</td>
-                <td class="pe-4">10 kg - 100 kg+</td>
+                <td class="ps-4 fw-bold text-secondary">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div>Norwegian Atlantic Salmon</div>
+                      <small class="text-muted">Sashimi Grade Prime Loin</small>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light text-secondary border">Cold Ocean Wild</span></td>
+                <td>Fillet (Skin-On) / Steaks / Sashimi</td>
+                <td class="text-center fw-bold fs-6 text-primary">₹34.00 <small class="text-muted">/ kg</small></td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success"><i class="bi bi-arrow-down-short"></i> -₹2.00 vs Yesterday</span></td>
+                <td class="pe-4 text-end">
+                  <button class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-salmon', 'Norwegian Atlantic Salmon', 34.00)">
+                    <i class="bi bi-cart-plus me-1"></i> Add 1kg
+                  </button>
+                </td>
               </tr>
+
               <tr>
-                <td class="text-start fw-bold ps-4 text-secondary">Fresh Fish Inclusions</td>
-                <td>Sea Bass</td>
-                <td>Salmon & Pomfret</td>
-                <td>Salmon & Yellowfin Tuna</td>
-                <td class="pe-4">Custom Species</td>
+                <td class="ps-4 fw-bold text-secondary">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div>Yellowfin Tuna Loin</div>
+                      <small class="text-muted">AAA Grade Ruby Red</small>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light text-secondary border">Deep Sea Longline</span></td>
+                <td>Sashimi Block / Pan-Sear Steaks</td>
+                <td class="text-center fw-bold fs-6 text-primary">₹38.00 <small class="text-muted">/ kg</small></td>
+                <td class="text-center"><span class="badge bg-secondary-subtle text-secondary"><i class="bi bi-dash"></i> Stable</span></td>
+                <td class="pe-4 text-end">
+                  <button class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-tuna', 'Yellowfin Tuna Loin', 38.00)">
+                    <i class="bi bi-cart-plus me-1"></i> Add 1kg
+                  </button>
+                </td>
               </tr>
+
               <tr>
-                <td class="text-start fw-bold ps-4 text-secondary">Prawns & Shrimp</td>
-                <td>White Prawns (1 kg)</td>
-                <td>Jumbo Tiger (1 kg)</td>
-                <td>King Prawns (1.5 kg)</td>
-                <td class="pe-4">Graded Count Boxes</td>
+                <td class="ps-4 fw-bold text-secondary">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div>Jumbo Tiger Prawns</div>
+                      <small class="text-muted">15–20 Count / kg</small>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light text-secondary border">Coastal Day-Boat</span></td>
+                <td>Whole Head-On / Cleaned &amp; Deveined</td>
+                <td class="text-center fw-bold fs-6 text-primary">₹42.00 <small class="text-muted">/ kg</small></td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success"><i class="bi bi-arrow-down-short"></i> Best Price</span></td>
+                <td class="pe-4 text-end">
+                  <button class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-tiger-prawns', 'Jumbo Tiger Prawns', 42.00)">
+                    <i class="bi bi-cart-plus me-1"></i> Add 1kg
+                  </button>
+                </td>
               </tr>
+
               <tr>
-                <td class="text-start fw-bold ps-4 text-secondary">Crustaceans & Shellfish</td>
-                <td>Squid Rings</td>
-                <td>Live Blue Crabs</td>
-                <td>Rock Lobsters & Oysters</td>
-                <td class="pe-4">Bulk Crabs / Lobsters</td>
+                <td class="ps-4 fw-bold text-secondary">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div>Mediterranean Sea Bass</div>
+                      <small class="text-muted">800g–1.2kg Size</small>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light text-secondary border">Coastal Ingestion</span></td>
+                <td>Butterfly Split / Curry Cut / Whole Gutted</td>
+                <td class="text-center fw-bold fs-6 text-primary">₹28.00 <small class="text-muted">/ kg</small></td>
+                <td class="text-center"><span class="badge bg-secondary-subtle text-secondary"><i class="bi bi-dash"></i> Stable</span></td>
+                <td class="pe-4 text-end">
+                  <button class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-seabass', 'Mediterranean Sea Bass', 28.00)">
+                    <i class="bi bi-cart-plus me-1"></i> Add 1kg
+                  </button>
+                </td>
               </tr>
+
               <tr>
-                <td class="text-start fw-bold ps-4 text-secondary">Custom Cutting Styles</td>
-                <td>Standard Curry/Fry</td>
-                <td>Any 2 Custom Styles</td>
-                <td>Unlimited Chef Specs</td>
-                <td class="pe-4">Commercial Precision</td>
+                <td class="ps-4 fw-bold text-secondary">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div>Silver Pomfret (Large)</div>
+                      <small class="text-muted">Prime White Meat</small>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light text-secondary border">Harbor Pier Catch</span></td>
+                <td>Scored Whole Fry / Tandoor Cut</td>
+                <td class="text-center fw-bold fs-6 text-primary">₹32.00 <small class="text-muted">/ kg</small></td>
+                <td class="text-center"><span class="badge bg-danger-subtle text-danger"><i class="bi bi-arrow-up-short"></i> High Demand</span></td>
+                <td class="pe-4 text-end">
+                  <button class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-pomfret', 'Silver Pomfret', 32.00)">
+                    <i class="bi bi-cart-plus me-1"></i> Add 1kg
+                  </button>
+                </td>
               </tr>
+
               <tr>
-                <td class="text-start fw-bold ps-4 text-secondary">Delivery Fee</td>
-                <td>Standard (₹49)</td>
-                <td><span class="badge bg-success bg-opacity-10 text-success">FREE Express</span></td>
-                <td><span class="badge bg-success bg-opacity-10 text-success">FREE Express</span></td>
-                <td class="pe-4">Priority Fleet Free</td>
+                <td class="ps-4 fw-bold text-secondary">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-water text-primary fs-5"></i>
+                    <div>
+                      <div>Live Blue Swimmer Crabs</div>
+                      <small class="text-muted">Full-Meat Coastal Catch</small>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge bg-light text-secondary border">Seawater Tank Kept</span></td>
+                <td>Live Whole / Cleaned Halves &amp; Claws</td>
+                <td class="text-center fw-bold fs-6 text-primary">₹26.00 <small class="text-muted">/ kg</small></td>
+                <td class="text-center"><span class="badge bg-success-subtle text-success"><i class="bi bi-arrow-down-short"></i> -₹1.50</span></td>
+                <td class="pe-4 text-end">
+                  <button class="btn btn-sm btn-ocean" onclick="window.addToCartDirect('prod-crabs', 'Blue Swimmer Crabs', 26.00)">
+                    <i class="bi bi-cart-plus me-1"></i> Add 1kg
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <small class="text-muted"><i class="bi bi-clock-history me-1"></i> Rates updated daily at 5:00 AM IST. Free descaling and cutting included with every kilogram.</small>
+        <a href="products.html" class="btn btn-outline-ocean btn-sm">
+          <i class="bi bi-grid-3x3-gap-fill me-1"></i> View All Available Catch (20+ Items)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Commercial B2B & Wholesale Tier Section
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="position-relative rounded-4 overflow-hidden border shadow-lg" style="height: 420px;">
+            <img src="file:///C:/Users/Sanjai/.gemini/antigravity/brain/bf1369eb-fd76-4344-95ea-bc559a305abe/commercial_b2b_wholesale_people_heads_visible_1791485776280.jpg" alt="Commercial Supply for Bistros, Hotels &amp; Event Caterers" class="w-100 h-100" loading="lazy" style="object-fit: cover !important; object-position: center top !important;" onerror="this.onerror=null;this.src='../../../../brain/bf1369eb-fd76-4344-95ea-bc559a305abe/commercial_b2b_wholesale_people_heads_visible_1791485776280.jpg';">
+            <div class="position-absolute bottom-0 start-0 m-3 p-2 px-3 rounded-3 b2b-overlay-badge d-flex align-items-center gap-2 flex-wrap" style="z-index: 3;">
+              <span class="badge bg-primary text-white"><i class="bi bi-building me-1"></i> Commercial B2B</span>
+              <span class="small b2b-badge-text">Early 6:00 AM Priority Dock Deliveries</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <span class="section-subtitle">High-Volume Wholesale</span>
+          <h2 class="fw-bold text-secondary mb-3">Commercial Supply for Bistros, Hotels &amp; Event Caterers</h2>
+          <p class="text-muted mb-4">
+            Managing a seafood restaurant or planning a grand wedding celebration? Benefit from tiered volume discounts, dedicated dock account managers, and guaranteed cold-chain logistics.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="p-3 bg-card rounded-3 border d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="d-block text-secondary">Tier 1: 5 kg – 15 kg Orders</strong>
+                <small class="text-muted">Family celebrations, birthday parties &amp; weekend BBQs</small>
+              </div>
+              <span class="badge bg-success fs-6 px-3 py-2">Save 10% Off</span>
+            </div>
+
+            <div class="p-3 bg-card rounded-3 border d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="d-block text-secondary">Tier 2: 15 kg – 50 kg Orders</strong>
+                <small class="text-muted">Wedding catering, banquets &amp; community events</small>
+              </div>
+              <span class="badge bg-success fs-6 px-3 py-2">Save 18% Off</span>
+            </div>
+
+            <div class="p-3 bg-card rounded-3 border d-flex justify-content-between align-items-center">
+              <div>
+                <strong class="d-block text-secondary">Tier 3: 50 kg+ Commercial Contracts</strong>
+                <small class="text-muted">Daily restaurant supply with custom cuts &amp; weekly Net-30 terms</small>
+              </div>
+              <span class="badge bg-primary fs-6 px-3 py-2">Save 25% Off</span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="contact.html?package=Wholesale%20Commercial%20Tier" class="btn btn-ocean">
+              <i class="bi bi-file-earmark-text-fill me-1"></i> Request B2B Wholesale Rate Sheet
+            </a>
+            <a href="tel:+18005553474" class="btn btn-outline-ocean">
+              <i class="bi bi-telephone-fill me-1"></i> Speak with Dock Manager
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Packaging & Cold-Chain Integrity Assurance
+       ========================================== -->
+  <section class="py-5 bg-alt">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Zero Quality Loss Guarantee</span>
+        <h2 class="section-title">How Every Seafood Box Arrives Chilled</h2>
+        <p class="section-desc">Hospital-grade cleanroom processing, high-density thermal ice packaging, and 0°–4°C temperature integrity.</p>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="position-relative rounded-4 overflow-hidden border shadow-lg" style="height: 380px;">
+            <img src="assets/images/blog_seafood_home_storage_1788860482469.jpg" alt="Vacuum Sealed Fresh Seafood 1C Cold Zone Storage Packaging" class="w-100 h-100 object-fit-cover" loading="lazy" style="object-position: center center !important;">
+            <div class="position-absolute bottom-0 start-0 m-3 p-2 px-3 rounded-3 b2b-overlay-badge d-flex align-items-center gap-2 flex-wrap" style="z-index: 3;">
+              <span class="badge bg-primary text-white"><i class="bi bi-snow me-1"></i> Cold Chain</span>
+              <span class="small b2b-badge-text">Chilled Fresh for 6+ Hours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 order-lg-1">
+          <div class="d-flex flex-column gap-3">
+            <div class="p-3 bg-card rounded-3 border d-flex gap-3 align-items-start">
+              <div class="feature-icon-box m-0 flex-shrink-0"><i class="bi bi-box2-heart"></i></div>
+              <div>
+                <h6 class="fw-bold text-secondary mb-1">Double-Insulated Food Grade Boxes</h6>
+                <p class="text-muted small mb-0">High-density thermal foam liners keep whole fish, fillets, and prawns perfectly refrigerated without warm spots.</p>
+              </div>
+            </div>
+
+            <div class="p-3 bg-card rounded-3 border d-flex gap-3 align-items-start">
+              <div class="feature-icon-box m-0 flex-shrink-0"><i class="bi bi-snow2"></i></div>
+              <div>
+                <h6 class="fw-bold text-secondary mb-1">Dry-Ice &amp; Seawater Gel Packs</h6>
+                <p class="text-muted small mb-0">No melting water touches the seafood — preventing sogginess and locking in natural ocean sweetness and springy texture.</p>
+              </div>
+            </div>
+
+            <div class="p-3 bg-card rounded-3 border d-flex gap-3 align-items-start">
+              <div class="feature-icon-box m-0 flex-shrink-0"><i class="bi bi-scissors"></i></div>
+              <div>
+                <h6 class="fw-bold text-secondary mb-1">Individually Vacuum-Sealed &amp; Labeled</h6>
+                <p class="text-muted small mb-0">Every fish and prawn portion is cleanly packed and labeled with harvest date, net weight, and recommended cooking style.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-3">
+            <a href="cleaning-delivery.html#cleaning" class="btn btn-outline-ocean">
+              <i class="bi bi-droplet-half me-1"></i> View Cleaning Process
+            </a>
+            <a href="cleaning-delivery.html#delivery" class="btn btn-outline-ocean">
+              <i class="bi bi-truck me-1"></i> Delivery Schedule &amp; Slots
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Pricing FAQ Accordion Section
+       ========================================== -->
+  <section class="py-5 bg-main">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Got Questions?</span>
+        <h2 class="section-title">Pricing &amp; Packaging FAQ</h2>
+        <p class="section-desc">Clear answers about weight measurements, custom cutting fees, and delivery policies.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion accordion-custom" id="pricingFAQ">
+            <div class="accordion-item mb-3 rounded-3 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Are prices calculated on gross whole fish weight or net cleaned weight?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+                <div class="accordion-body small text-muted">
+                  We weigh every whole fish <strong>before descaling and gutting</strong> (gross catch weight), and our package labels state both the gross catch weight and net yield weight. All our curated value boxes are priced on <strong>guaranteed net cleaned weight</strong> so you receive exact edible meat portions without waste.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 rounded-3 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Do you charge extra for custom filleting, steaking, or descaling?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                <div class="accordion-body small text-muted">
+                  <strong>No extra charge!</strong> All UV-treated water descaling, gutting, gill trimming, curry cut cubing, steak slicing, and sashimi filleting are 100% complimentary on every order.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 rounded-3 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What is the minimum order for free doorstep express delivery?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                <div class="accordion-body small text-muted">
+                  All orders of <strong>₹500 and above</strong> receive completely free express same-day delivery in our 0°–4°C temperature-controlled refrigerated vans. Orders below ₹500 have a nominal delivery fee of ₹49.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 rounded-3 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  How do restaurant and commercial B2B credit accounts work?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                <div class="accordion-body small text-muted">
+                  Registered restaurants and catering partners qualify for our wholesale rate sheet, early 6:00 AM priority dock delivery, and weekly Net-30 credit invoicing after a quick trade verification with our dock manager.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-alt text-center">
+    <div class="container py-3">
+      <h3 class="fw-bold text-secondary mb-2">Need a Custom Seafood Package or Wholesale Quote?</h3>
+      <p class="text-muted mx-auto mb-4" style="max-width: 580px;">
+        Connect directly with our dock sales desk for tailored volume cuts, seasonal arrivals, and customized weekly household meal deliveries.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn-ocean">
+          <i class="bi bi-chat-text-fill me-1"></i> Send Custom Price Enquiry
+        </a>
+        <a href="products.html" class="btn btn-outline-ocean">
+          <i class="bi bi-compass me-1"></i> Explore Catch Catalog
+        </a>
       </div>
     </div>
   </section>
@@ -411,6 +796,36 @@
 
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Interactive Switcher Script -->
+  <script>
+    function switchPricing(mode) {
+      const btnOneTime = document.getElementById('btnOneTime');
+      const btnSub = document.getElementById('btnSubscription');
+      const prices = document.querySelectorAll('.plan-price');
+      const units = document.querySelectorAll('.plan-unit');
+
+      if (mode === 'subscription') {
+        btnOneTime.classList.remove('active');
+        btnSub.classList.add('active');
+        prices.forEach(el => {
+          el.textContent = el.getAttribute('data-sub');
+        });
+        units.forEach(el => {
+          el.innerHTML = '<span class="text-success fw-bold">Weekly recurring delivery (Billed weekly)</span>';
+        });
+      } else {
+        btnSub.classList.remove('active');
+        btnOneTime.classList.add('active');
+        prices.forEach(el => {
+          el.textContent = el.getAttribute('data-onetime');
+        });
+        units.forEach(el => {
+          el.textContent = 'one-time catch box delivery';
+        });
+      }
+    }
+  </script>
 
   <!-- Core Scripts -->
   <script src="assets/js/theme.js"></script>

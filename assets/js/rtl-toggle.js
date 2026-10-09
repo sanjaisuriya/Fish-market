@@ -27,15 +27,14 @@
     const toggleBtns = document.querySelectorAll('.rtl-toggle-btn');
     toggleBtns.forEach(btn => {
       const text = btn.querySelector('.rtl-text');
+      if (text) text.remove();
       const icon = btn.querySelector('i');
       if (dir === 'rtl') {
-        if (text) text.textContent = 'LTR';
-        if (icon) icon.className = 'bi bi-text-left text-primary';
+        if (icon) icon.className = 'bi bi-arrow-left-right text-primary';
         btn.setAttribute('aria-label', 'Switch to Left-to-Right Layout');
         btn.setAttribute('title', 'Switch to LTR Layout');
       } else {
-        if (text) text.textContent = 'RTL';
-        if (icon) icon.className = 'bi bi-text-right text-primary';
+        if (icon) icon.className = 'bi bi-arrow-left-right text-primary';
         btn.setAttribute('aria-label', 'Switch to Right-to-Left Layout');
         btn.setAttribute('title', 'Switch to RTL Layout');
       }

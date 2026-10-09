@@ -11,40 +11,9 @@
     try {
       const raw = localStorage.getItem(CART_KEY);
       if (raw === null) {
-        const sampleCart = [
-          {
-            id: 'prod-salmon',
-            name: 'Norwegian Atlantic Salmon',
-            pricePerKg: 34.00,
-            image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg',
-            category: 'Fresh Fish',
-            quantity: 2,
-            weightKg: 1.0,
-            cutType: 'Skin-On Fillet'
-          },
-          {
-            id: 'prod-tiger-prawns',
-            name: 'Jumbo Tiger Prawns',
-            pricePerKg: 42.00,
-            image: 'assets/images/tiger_prawns_catch_1788765391401.jpg',
-            category: 'Prawns & Shrimp',
-            quantity: 1,
-            weightKg: 0.5,
-            cutType: 'Cleaned & Deveined'
-          },
-          {
-            id: 'prod-mud-crab',
-            name: 'Live Blue Swimmer Crab',
-            pricePerKg: 36.00,
-            image: 'assets/images/blue_swimmer_crab_1788781381393.jpg',
-            category: 'Crab & Shellfish',
-            quantity: 3,
-            weightKg: 1.0,
-            cutType: 'Whole Live'
-          }
-        ];
-        localStorage.setItem(CART_KEY, JSON.stringify(sampleCart));
-        return sampleCart;
+        const initialCart = [];
+        localStorage.setItem(CART_KEY, JSON.stringify(initialCart));
+        return initialCart;
       }
       return JSON.parse(raw) || [];
     } catch (e) {
@@ -220,7 +189,7 @@
       let badge = btn.querySelector('.cart-count-badge');
       if (!badge) {
         badge = document.createElement('span');
-        badge.className = 'cart-count-badge badge rounded-pill bg-danger ms-1';
+        badge.className = 'cart-count-badge badge rounded-pill bg-danger';
         btn.appendChild(badge);
       }
       badge.textContent = totalItems;

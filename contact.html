@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/dark-mode.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/rtl.css?v=3.1">
-  <link rel="stylesheet" href="assets/css/responsive.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=6.1">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=6.1">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=6.1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=6.1">
 </head>
 <body>
 
@@ -37,25 +37,25 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
-      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+      <!-- Mobile Quick Action Controls & Hamburger Toggle -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto align-items-center">
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge d-none">0</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContactCollapse" aria-controls="navbarContactCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContactCollapse" aria-controls="navbarContactCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarContactCollapse">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
             <ul class="dropdown-menu">
@@ -89,33 +89,33 @@
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-          <li class="nav-item active"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item d-none d-lg-flex align-items-center gap-3 ms-3 me-lg-2">
+            <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+            <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+            </button>
+            <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+              <i class="bi bi-cart3"></i>
+              <span class="cart-count-badge d-none">0</span>
+            </a>
+          </li>
         </ul>
 
         <!-- Desktop Action Controls (Right Side of Navbar) -->
-        <div class="d-none d-lg-flex align-items-center gap-2">
-          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
-            <i class="bi bi-cart3"></i>
-            <span>Cart</span>
-          </a>
-          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars-fill"></i>
-            <span class="theme-text">Dark</span>
-          </button>
-          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
-            <span class="rtl-text">RTL</span>
-          </button>
-          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-            <i class="bi bi-person-circle"></i>
-            <span>Login / Register</span>
+        <div class="d-none d-lg-flex align-items-center ms-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i>
+            <span>Explore Fresh Catch</span>
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        <!-- Mobile Quick Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
           </a>
         </div>
       </div>
@@ -125,13 +125,13 @@
   <!-- Page Banner -->
   <section class="page-banner page-banner-contact">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-9 text-start">
-          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm">Get in Touch</span>
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 text-center">
+          <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm rounded-pill"><i class="bi bi-telephone-fill me-1"></i> Phone &amp; Order Support</span>
           <h1 class="page-banner-title mb-2">Contact &amp; Order Enquiry</h1>
-          <p class="page-banner-desc ms-0 mb-3 text-start">Reach out for custom cuts, wholesale rates, party bulk orders, or instant WhatsApp enquiries.</p>
+          <p class="page-banner-desc mb-3 mx-auto">Reach out for custom cuts, wholesale rates, party bulk orders, or instant WhatsApp enquiries.</p>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb-custom justify-content-start mb-0">
+            <ol class="breadcrumb-custom justify-content-center mb-0">
               <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
               <li><i class="bi bi-chevron-right small text-muted"></i></li>
               <li class="active">Contact</li>
@@ -219,16 +219,18 @@
                   <textarea class="form-control" id="enquiry-message" rows="4" placeholder="Specify your desired cutting (e.g. skin-on fillets, 1-inch steaks, curry cut cubes) or delivery address instructions..."></textarea>
                 </div>
 
-                <!-- Dual Submit Actions -->
-                <div class="col-12 mt-4 d-flex flex-column gap-2">
-                  <button type="button" id="btn-submit-whatsapp" class="btn btn-success w-100 py-3 justify-content-center fs-6 fw-bold shadow-sm" style="background-color: #25D366; border-color: #25D366;">
-                    <i class="bi bi-whatsapp me-2 fs-5"></i> Send Enquiry via WhatsApp (Instant)
+                <!-- Dual Submit Actions (Same Width, Height, Radius & Styling) -->
+                <div class="col-12 mt-4 d-flex flex-column flex-sm-row gap-3">
+                  <button type="button" id="btn-submit-whatsapp" class="btn btn-whatsapp flex-fill py-3 justify-content-center fw-bold shadow-sm">
+                    <i class="bi bi-whatsapp me-2 fs-5"></i> Send Enquiry via WhatsApp
                   </button>
-                  <button type="submit" id="btn-submit-email" class="btn btn-outline-ocean w-100 py-2 justify-content-center fs-6">
-                    <i class="bi bi-envelope-fill me-2"></i> Submit via Email Form
+                  <button type="submit" id="btn-submit-email" class="btn btn-ocean flex-fill py-3 justify-content-center fw-bold shadow-sm">
+                    <i class="bi bi-envelope-fill me-2 fs-5"></i> Submit via Email Form
                   </button>
-                  <small class="text-muted text-center d-block mt-1">
-                    <i class="bi bi-shield-check text-success me-1"></i> No upfront payment. Our dock manager confirms live weight, cuts & exact price within 30 mins.
+                </div>
+                <div class="col-12 text-center mt-1">
+                  <small class="text-muted">
+                    <i class="bi bi-shield-check text-success me-1"></i> No upfront payment. Our dock manager confirms live weight, cuts &amp; exact price within 30 mins.
                   </small>
                 </div>
 
@@ -240,8 +242,15 @@
         <!-- Right: Business Info, Hours & Map Card -->
         <div class="col-lg-5">
           <!-- Business Details Card -->
-          <div class="card p-4 rounded-4 border bg-card mb-4 shadow-sm">
-            <h5 class="fw-bold text-secondary mb-3"><i class="bi bi-building text-primary me-2"></i>Pier Market Headquarters</h5>
+          <div class="card rounded-4 border bg-card mb-4 shadow-sm overflow-hidden">
+            <div style="height: 230px; overflow: hidden; position: relative;">
+              <img src="assets/images/service_fresh_supply_1788842904206.jpg" alt="Pier 44 Harbor Market Headquarters & Fresh Intake Dock Facility" class="w-100 h-100 object-fit-cover" style="object-position: center 25%;" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80';">
+              <div class="position-absolute bottom-0 start-0 m-2 px-2 py-1 bg-dark bg-opacity-75 rounded text-white small fw-bold shadow-sm">
+                <i class="bi bi-geo-alt-fill text-primary me-1"></i> Pier 44 Dock Facility
+              </div>
+            </div>
+            <div class="p-4">
+              <h5 class="fw-bold text-secondary mb-3"><i class="bi bi-building text-primary me-2"></i>Pier Market Headquarters</h5>
             
             <div class="d-flex flex-column gap-3 small">
               <div class="d-flex gap-3">

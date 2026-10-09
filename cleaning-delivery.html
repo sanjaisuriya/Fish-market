@@ -89,85 +89,58 @@
         <span>Fish <span class="accent">Market</span></span>
       </a>
 
-      <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-      <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+      <!-- Mobile Quick Action Controls & Hamburger Toggle -->
+      <div class="nav-actions-group d-flex d-lg-none ms-auto align-items-center">
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text d-none d-sm-inline">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text d-none d-sm-inline">RTL</span>
+        </button>
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count-badge d-none">0</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCleaningCollapse" aria-controls="navbarCleaningCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCleaningCollapse" aria-controls="navbarCleaningCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarCleaningCollapse">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item py-2" href="index.html">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-water text-primary fs-5"></i>
-                    <div>
-                      <div class="fw-semibold small">Home 1 – Fresh Catch Landing</div>
-                      <small class="text-muted d-block" style="font-size: 0.72rem;">Dockside Supply & Wholesale</small>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li><hr class="dropdown-divider my-1 opacity-25"></li>
-              <li>
-                <a class="dropdown-item py-2" href="home-2.html">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-shop text-primary fs-5"></i>
-                    <div>
-                      <div class="fw-semibold small">Home 2 – Daily Fish Market</div>
-                      <small class="text-muted d-block" style="font-size: 0.72rem;">Retail Store & Daily Specials</small>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </li>
+        <ul class="navbar-nav ms-lg-3 mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item d-none d-lg-flex align-items-center gap-3 ms-3 me-lg-2">
+            <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+            <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
+              <i class="bi bi-text-right"></i>
+            </button>
+            <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+              <i class="bi bi-cart3"></i>
+              <span class="cart-count-badge d-none">0</span>
+            </a>
+          </li>
         </ul>
 
         <!-- Desktop Action Controls (Right Side of Navbar) -->
-        <div class="d-none d-lg-flex align-items-center gap-2">
-          <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
-            <i class="bi bi-cart3"></i>
-            <span>Cart</span>
-          </a>
-          <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars-fill"></i>
-            <span class="theme-text">Dark</span>
-          </button>
-          <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
-            <i class="bi bi-text-right"></i>
-            <span class="rtl-text">RTL</span>
-          </button>
-          <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-            <i class="bi bi-person-circle"></i>
-            <span>Login / Register</span>
+        <div class="d-none d-lg-flex align-items-center ms-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i>
+            <span>Explore Fresh Catch</span>
           </a>
         </div>
 
-        <!-- Mobile Login Action (Inside Collapse) -->
-        <div class="d-lg-none mt-3 pt-3 border-top">
-          <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-            <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+        <!-- Mobile Quick Actions (Inside Collapse) -->
+        <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+          <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+            <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
           </a>
         </div>
       </div>
@@ -177,13 +150,13 @@
   <!-- Page Banner -->
   <section class="page-banner page-banner-cleaning" id="cleaning-page-banner">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-8 text-start" style="position: relative; z-index: 2;">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 text-center" style="position: relative; z-index: 2;">
           <span class="badge bg-primary text-white text-uppercase fw-bold mb-2 px-3 py-2 shadow-sm" id="cleaning-banner-badge">Hygiene &amp; Logistics</span>
           <h1 class="page-banner-title mb-2" id="cleaning-banner-title">Cleaning Standards &amp; Express Delivery</h1>
-          <p class="page-banner-desc ms-0 mb-3 text-start" id="cleaning-banner-desc">Explore our 4-stage ozone sterilization, precision chef cuts, cold-chain preservation, and doorstep delivery.</p>
+          <p class="page-banner-desc mb-3 mx-auto" id="cleaning-banner-desc">Explore our 4-stage ozone sterilization, precision chef cuts, cold-chain preservation, and doorstep delivery.</p>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb-custom justify-content-start mb-0">
+            <ol class="breadcrumb-custom justify-content-center mb-0">
               <li><a href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
               <li><i class="bi bi-chevron-right small text-muted"></i></li>
               <li><a href="services.html">Services</a></li>
@@ -232,39 +205,73 @@
       </div>
 
       <div class="row g-4">
+        <!-- Step 1 -->
         <div class="col-md-6 col-lg">
-          <div class="card p-4 rounded-4 border bg-card text-center h-100 shadow-sm">
-            <div class="step-number">1</div>
-            <h5 class="fw-bold mb-2">1. Catch Selection</h5>
-            <p class="text-muted small mb-0">Harvested from harbor boats and hand-sorted on ice beds within 30 minutes of landing.</p>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 130px; overflow: hidden;">
+              <img src="assets/images/fisherman_harbor_sunrise_1788776805226.jpg" alt="Catch Selection" class="w-100 h-100 object-fit-cover">
+            </div>
+            <div class="p-3 text-center d-flex flex-column flex-grow-1">
+              <div class="step-number mx-auto mb-2" style="width: 32px; height: 32px; font-size: 0.9rem;">1</div>
+              <h6 class="fw-bold text-secondary mb-1">1. Catch Selection</h6>
+              <p class="text-muted small mb-0">Harvested from harbor boats and hand-sorted on ice beds within 30 minutes.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Step 2 -->
         <div class="col-md-6 col-lg">
-          <div class="card p-4 rounded-4 border bg-card text-center h-100 shadow-sm">
-            <div class="step-number">2</div>
-            <h5 class="fw-bold mb-2">2. Inspection</h5>
-            <p class="text-muted small mb-0">3-point check: eye clarity, gill coloration, and flesh elasticity testing.</p>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 130px; overflow: hidden;">
+              <img src="assets/images/blog_how_to_choose_fresh_fish_1788859736684.jpg" alt="Quality Inspection" class="w-100 h-100 object-fit-cover">
+            </div>
+            <div class="p-3 text-center d-flex flex-column flex-grow-1">
+              <div class="step-number mx-auto mb-2" style="width: 32px; height: 32px; font-size: 0.9rem;">2</div>
+              <h6 class="fw-bold text-secondary mb-1">2. Inspection</h6>
+              <p class="text-muted small mb-0">3-point check: eye clarity, bright gill coloration, and flesh elasticity.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Step 3 -->
         <div class="col-md-6 col-lg">
-          <div class="card p-4 rounded-4 border bg-card text-center h-100 shadow-sm">
-            <div class="step-number">3</div>
-            <h5 class="fw-bold mb-2">3. RO Water Wash</h5>
-            <p class="text-muted small mb-0">Thoroughly rinsed in UV-purified RO water at 2°C to remove scales and natural residues.</p>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 130px; overflow: hidden;">
+              <img src="assets/images/service_cleaning_centered_1788845015413.jpg" alt="RO Water Wash" class="w-100 h-100 object-fit-cover" style="object-position: center 20%;">
+            </div>
+            <div class="p-3 text-center d-flex flex-column flex-grow-1">
+              <div class="step-number mx-auto mb-2" style="width: 32px; height: 32px; font-size: 0.9rem;">3</div>
+              <h6 class="fw-bold text-secondary mb-1">3. RO Water Wash</h6>
+              <p class="text-muted small mb-0">Rinsed in UV-purified RO water at 2°C to remove scales and natural residues.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Step 4 -->
         <div class="col-md-6 col-lg">
-          <div class="card p-4 rounded-4 border bg-card text-center h-100 shadow-sm">
-            <div class="step-number">4</div>
-            <h5 class="fw-bold mb-2">4. Precision Cutting</h5>
-            <p class="text-muted small mb-0">Cut to your exact culinary specifications using sterilized surgical steel knives.</p>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 130px; overflow: hidden;">
+              <img src="assets/images/service_cutting_centered_1788845902356.jpg" alt="Precision Cutting" class="w-100 h-100 object-fit-cover" style="object-position: center 25%;">
+            </div>
+            <div class="p-3 text-center d-flex flex-column flex-grow-1">
+              <div class="step-number mx-auto mb-2" style="width: 32px; height: 32px; font-size: 0.9rem;">4</div>
+              <h6 class="fw-bold text-secondary mb-1">4. Precision Cut</h6>
+              <p class="text-muted small mb-0">Portioned to your culinary specifications using sterilized steel knives.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Step 5 -->
         <div class="col-md-6 col-lg">
-          <div class="card p-4 rounded-4 border bg-card text-center h-100 shadow-sm">
-            <div class="step-number">5</div>
-            <h5 class="fw-bold mb-2">5. Vacuum Seal</h5>
-            <p class="text-muted small mb-0">Hermetically sealed in leak-proof food trays packed with dry gel ice blankets.</p>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 130px; overflow: hidden;">
+              <img src="../../brain/4924db80-3181-4a13-9e56-5ee738987afd/seafood_ice_packaging_1791454824727.jpg" alt="Vacuum Seal & Thermal Ice Box Packaging" class="w-100 h-100 object-fit-cover" loading="lazy">
+            </div>
+            <div class="p-3 text-center d-flex flex-column flex-grow-1">
+              <div class="step-number mx-auto mb-2" style="width: 32px; height: 32px; font-size: 0.9rem;">5</div>
+              <h6 class="fw-bold text-secondary mb-1">5. Vacuum Seal</h6>
+              <p class="text-muted small mb-0">Hermetically sealed in leak-proof food trays packed with dry gel ice blankets.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -283,57 +290,87 @@
       </div>
 
       <div class="row g-4">
+        <!-- Cut 1: Whole Scaled & Gutted -->
         <div class="col-md-6 col-lg-4">
-          <div class="card rounded-4 border bg-card p-4 h-100 shadow-sm">
-            <div class="feature-icon-box"><i class="bi bi-water"></i></div>
-            <h5 class="fw-bold text-secondary mb-2">Whole Scaled & Gutted</h5>
-            <p class="text-muted small mb-3">Head and tail intact, descaled, gills and innards completely cleared. Perfect for whole oven baking, salt crusting, or charcoal barbecuing.</p>
-            <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Whole Roasts & Tandoor</span>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 180px; overflow: hidden;">
+              <img src="assets/images/service_cleaning_centered_1788845015413.jpg" alt="Whole Scaled & Gutted Fish" class="w-100 h-100 object-fit-cover" style="object-position: center 25%;">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Whole Scaled &amp; Gutted</h5>
+              <p class="text-muted small mb-3 flex-grow-1">Head and tail intact, descaled, gills and innards completely cleared. Perfect for whole oven baking, salt crusting, or charcoal barbecuing.</p>
+              <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Whole Roasts &amp; Tandoor</span>
+            </div>
           </div>
         </div>
 
+        <!-- Cut 2: Curry Cut -->
         <div class="col-md-6 col-lg-4">
-          <div class="card rounded-4 border bg-card p-4 h-100 shadow-sm">
-            <div class="feature-icon-box"><i class="bi bi-grid"></i></div>
-            <h5 class="fw-bold text-secondary mb-2">Curry Cut (Bone-In Cubes)</h5>
-            <p class="text-muted small mb-3">Evenly portioned bone-in chunks that retain natural juices and enrich traditional coastal curries and broths.</p>
-            <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Coconut Stews & Curries</span>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 180px; overflow: hidden;">
+              <img src="assets/images/blog_family_seafood_dinner_spread_1788931530653.jpg" alt="Curry Cut Bone-In Cubes" class="w-100 h-100 object-fit-cover" style="object-position: center 40%;">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Curry Cut (Bone-In Cubes)</h5>
+              <p class="text-muted small mb-3 flex-grow-1">Evenly portioned bone-in chunks that retain natural juices and enrich traditional coastal curries, stews, and broths.</p>
+              <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Coconut Stews &amp; Curries</span>
+            </div>
           </div>
         </div>
 
+        <!-- Cut 3: Fry Cut -->
         <div class="col-md-6 col-lg-4">
-          <div class="card rounded-4 border bg-card p-4 h-100 shadow-sm">
-            <div class="feature-icon-box"><i class="bi bi-slash-lg"></i></div>
-            <h5 class="fw-bold text-secondary mb-2">Fry Cut (Slit Incisions)</h5>
-            <p class="text-muted small mb-3">Diagonal incisions along the body allow spice marinades to penetrate deep into the flesh for crispy shallow frying.</p>
-            <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Tawa Fry & Crispy Semolina</span>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 180px; overflow: hidden;">
+              <img src="assets/images/blog_how_to_choose_fresh_fish_1788859736684.jpg" alt="Fry Cut Slit Incisions" class="w-100 h-100 object-fit-cover" style="object-position: center 30%;">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Fry Cut (Slit Incisions)</h5>
+              <p class="text-muted small mb-3 flex-grow-1">Diagonal incisions along the body allow spice marinades to penetrate deep into the flesh for crispy shallow frying.</p>
+              <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Tawa Fry &amp; Crispy Rava</span>
+            </div>
           </div>
         </div>
 
+        <!-- Cut 4: Fillet Cut -->
         <div class="col-md-6 col-lg-4">
-          <div class="card rounded-4 border bg-card p-4 h-100 shadow-sm">
-            <div class="feature-icon-box"><i class="bi bi-slash-square"></i></div>
-            <h5 class="fw-bold text-secondary mb-2">Boneless Skin-On Fillet</h5>
-            <p class="text-muted small mb-3">Pin-bones removed, pristine skin intact for a crispy sear in butter, olive oil, or delicate citrus reductions.</p>
-            <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Pan-Searing & Steaming</span>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 180px; overflow: hidden;">
+              <img src="assets/images/seafood_recipes_center_banner_1788864403046.jpg" alt="Boneless Skin-On Fillet" class="w-100 h-100 object-fit-cover" style="object-position: center 40%;">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Boneless Skin-On Fillet</h5>
+              <p class="text-muted small mb-3 flex-grow-1">Pin-bones removed, pristine skin intact for a crispy sear in butter, olive oil, or delicate citrus reductions.</p>
+              <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Pan-Searing &amp; Steaming</span>
+            </div>
           </div>
         </div>
 
+        <!-- Cut 5: Steak Cut -->
         <div class="col-md-6 col-lg-4">
-          <div class="card rounded-4 border bg-card p-4 h-100 shadow-sm">
-            <div class="feature-icon-box"><i class="bi bi-circle"></i></div>
-            <h5 class="fw-bold text-secondary mb-2">Steak Cut (Cross-Sections)</h5>
-            <p class="text-muted small mb-3">Thick circular cuts through the central bone (ideal for Salmon, King Mackerel, Surmai, and Tuna).</p>
-            <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Grilling & Fish Steaks</span>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 180px; overflow: hidden;">
+              <img src="assets/images/yellowfin_tuna_loin_catch_1788765304353.jpg" alt="Steak Cut Cross-Sections" class="w-100 h-100 object-fit-cover" style="object-position: center 35%;">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Steak Cut (Cross-Sections)</h5>
+              <p class="text-muted small mb-3 flex-grow-1">Thick circular cuts through the central bone (ideal for Salmon, King Mackerel, Surmai, and Yellowfin Tuna).</p>
+              <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Grilling &amp; Fish Steaks</span>
+            </div>
           </div>
         </div>
 
+        <!-- Cut 6: Custom Chef Cut -->
         <div class="col-md-6 col-lg-4">
-          <div class="card rounded-4 border bg-card p-4 h-100 shadow-sm">
-            <div class="feature-icon-box"><i class="bi bi-scissors"></i></div>
-            <h5 class="fw-bold text-secondary mb-2">Custom Chef Cut</h5>
-            <p class="text-muted small mb-3">Butterfly tail, sashimi blocks, headless deveined prawns, or cracked crab claws. Specify during order checkout.</p>
-            <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Gourmet Chefs</span>
+          <div class="card rounded-4 border overflow-hidden bg-card h-100 shadow-sm transition-hover">
+            <div style="height: 180px; overflow: hidden;">
+              <img src="assets/images/service_cutting_centered_1788845902356.jpg" alt="Custom Chef Cut" class="w-100 h-100 object-fit-cover" style="object-position: center 20%;">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-secondary mb-2">Custom Chef Cut</h5>
+              <p class="text-muted small mb-3 flex-grow-1">Butterfly tail, sashimi blocks, headless deveined prawns, or cracked crab claws. Specify during order checkout.</p>
+              <span class="badge bg-primary-subtle text-primary align-self-start">Best for: Gourmet Recipes</span>
+            </div>
           </div>
         </div>
       </div>

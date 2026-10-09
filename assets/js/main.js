@@ -49,26 +49,10 @@
   }
 
   /* ------------------------------------------------------------------------
-     0. Auth Hash Tab Controller
+     0. Auth Hash Tab Controller (Disabled)
      ------------------------------------------------------------------------ */
   function initAuthTabs() {
-    if (window.location.hash === '#register' || window.location.hash === '#signup') {
-      const regTab = document.getElementById('register-tab');
-      if (regTab && window.bootstrap) {
-        const tabTrigger = new bootstrap.Tab(regTab);
-        tabTrigger.show();
-      } else if (regTab) {
-        regTab.click();
-      }
-    } else if (window.location.hash === '#login' || window.location.hash === '#signin') {
-      const loginTab = document.getElementById('signin-tab');
-      if (loginTab && window.bootstrap) {
-        const tabTrigger = new bootstrap.Tab(loginTab);
-        tabTrigger.show();
-      } else if (loginTab) {
-        loginTab.click();
-      }
-    }
+    // Authentication removed per specification
   }
 
   /* ------------------------------------------------------------------------
@@ -254,12 +238,27 @@
      ------------------------------------------------------------------------ */
   function initGlobalSearchModal() {
     const searchBtns = document.querySelectorAll('.global-search-trigger');
+    const searchModalEl = document.getElementById('globalSearchModal');
+
+    if (searchModalEl) {
+      searchModalEl.querySelectorAll('.btn-close, [data-bs-dismiss="modal"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.bootstrap && bootstrap.Modal) {
+            const inst = bootstrap.Modal.getInstance(searchModalEl) || bootstrap.Modal.getOrCreateInstance(searchModalEl);
+            if (inst) inst.hide();
+          }
+        });
+      });
+    }
+
     searchBtns.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const searchModalEl = document.getElementById('globalSearchModal');
         if (searchModalEl && window.bootstrap) {
-          const modal = new bootstrap.Modal(searchModalEl);
+          const modal = (bootstrap.Modal.getOrCreateInstance)
+            ? bootstrap.Modal.getOrCreateInstance(searchModalEl)
+            : new bootstrap.Modal(searchModalEl);
           modal.show();
           setTimeout(() => {
             const input = searchModalEl.querySelector('input');
@@ -303,40 +302,9 @@
     try {
       const raw = localStorage.getItem(CART_KEY);
       if (raw === null) {
-        const sampleCart = [
-          {
-            id: 'prod-salmon',
-            name: 'Norwegian Atlantic Salmon',
-            pricePerKg: 34.00,
-            image: 'assets/images/raw_norwegian_salmon_fillet_1788766533557.jpg',
-            category: 'Fresh Fish',
-            quantity: 2,
-            weightKg: 1.0,
-            cutType: 'Skin-On Fillet'
-          },
-          {
-            id: 'prod-tiger-prawns',
-            name: 'Jumbo Tiger Prawns',
-            pricePerKg: 42.00,
-            image: 'assets/images/tiger_prawns_catch_1788765391401.jpg',
-            category: 'Prawns & Shrimp',
-            quantity: 1,
-            weightKg: 0.5,
-            cutType: 'Cleaned & Deveined'
-          },
-          {
-            id: 'prod-mud-crab',
-            name: 'Live Blue Swimmer Crab',
-            pricePerKg: 36.00,
-            image: 'assets/images/blue_swimmer_crab_1788781381393.jpg',
-            category: 'Crab & Shellfish',
-            quantity: 3,
-            weightKg: 1.0,
-            cutType: 'Whole Live'
-          }
-        ];
-        localStorage.setItem(CART_KEY, JSON.stringify(sampleCart));
-        return sampleCart;
+        const initialCart = [];
+        localStorage.setItem(CART_KEY, JSON.stringify(initialCart));
+        return initialCart;
       }
       return JSON.parse(raw) || [];
     } catch(e) {
@@ -365,22 +333,24 @@
       }
       badge.textContent = totalItems;
       if (totalItems > 0) {
-        badge.style.display = 'inline-flex';
+        badge.style.setProperty('display', 'flex', 'important');
         badge.classList.remove('d-none');
       } else {
-        badge.style.display = 'none';
+        badge.style.setProperty('display', 'none', 'important');
+        badge.classList.add('d-none');
       }
     });
 
     // Also update any standalone .cart-count-badge elements
-    const standaloneBadges = document.querySelectorAll('.cart-count-badge:not(.nav-cart-btn .cart-count-badge)');
+    const standaloneBadges = document.querySelectorAll('.cart-count-badge');
     standaloneBadges.forEach(badge => {
       badge.textContent = totalItems;
       if (totalItems > 0) {
-        badge.style.display = 'inline-flex';
+        badge.style.setProperty('display', 'flex', 'important');
         badge.classList.remove('d-none');
       } else {
-        badge.style.display = 'none';
+        badge.style.setProperty('display', 'none', 'important');
+        badge.classList.add('d-none');
       }
     });
   }

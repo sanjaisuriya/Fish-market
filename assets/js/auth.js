@@ -29,56 +29,8 @@
   }
 
   function updateAuthNavbar() {
-    const user = getUser();
-    const authLinksContainers = document.querySelectorAll('.auth-nav-container');
-
-    authLinksContainers.forEach(container => {
-      container.classList.add('d-inline-flex', 'align-items-center', 'flex-nowrap');
-      if (user) {
-        container.innerHTML = `
-          <div class="dropdown">
-            <button class="btn btn-outline-sea btn-sm dropdown-toggle d-flex align-items-center gap-2 text-nowrap" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-user-circle fs-5"></i>
-              <span>${user.name ? user.name.split(' ')[0] : 'Account'}</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-              <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-columns me-2 text-primary"></i>Dashboard</a></li>
-              <li><a class="dropdown-item" href="orders.html"><i class="fas fa-box-open me-2 text-primary"></i>My Orders</a></li>
-              <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart me-2 text-danger"></i>My Wishlist</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><button class="dropdown-item text-danger" onclick="window.AuthManager.logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li>
-            </ul>
-          </div>
-        `;
-      } else {
-        container.innerHTML = `
-          <a href="login.html" class="btn btn-outline-sea btn-sm text-nowrap">
-            <i class="fas fa-sign-in-alt me-1"></i> Login
-          </a>
-          <a href="register.html" class="btn btn-primary-sea btn-sm text-nowrap d-inline-flex">
-            <i class="fas fa-user-plus me-1"></i> Register
-          </a>
-        `;
-      }
-    });
-
-    const individualAuthBtns = document.querySelectorAll('.nav-login-btn, .nav-auth-btn');
-    individualAuthBtns.forEach(btn => {
-      if (btn.closest('.auth-nav-container')) return;
-      if (user) {
-        btn.classList.remove('nav-auth-btn');
-        btn.classList.add('btn', 'btn-outline-sea', 'btn-sm', 'd-inline-flex', 'align-items-center', 'gap-2');
-        btn.href = 'dashboard.html';
-        btn.title = 'My Account';
-        btn.innerHTML = `<i class="bi bi-person-check-fill text-success fs-5"></i><span>${user.name ? user.name.split(' ')[0] : 'Account'}</span>`;
-      } else {
-        btn.classList.add('nav-auth-btn');
-        btn.classList.remove('btn', 'btn-outline-sea', 'btn-sm');
-        btn.href = 'login.html';
-        btn.title = 'Login / Register';
-        btn.innerHTML = `<i class="bi bi-person-circle"></i><span>Login / Register</span>`;
-      }
-    });
+    // Authentication & Dashboard removed per specification
+    // No login, sign up, or dashboard links will be injected
   }
 
   // Password Visibility Toggle Utility

@@ -16,14 +16,16 @@
     </a>
 
     <!-- Mobile Quick Action Controls (Visible on mobile/tablet before hamburger toggler) -->
-    <div class="nav-actions-group d-flex d-lg-none ms-auto me-2">
+    <div class="nav-actions-group d-flex d-lg-none ms-auto me-2 align-items-center">
+      <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
+        <i class="bi bi-cart3"></i>
+        <span class="cart-count-badge">3</span>
+      </a>
       <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
         <i class="bi bi-moon-stars-fill"></i>
-        <span class="theme-text d-none d-sm-inline">Dark</span>
       </button>
       <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
         <i class="bi bi-text-right"></i>
-        <span class="rtl-text d-none d-sm-inline">RTL</span>
       </button>
     </div>
 
@@ -89,28 +91,26 @@
 
       <!-- Desktop Action Controls (Right Side of Navbar) -->
       <div class="d-none d-lg-flex align-items-center gap-2">
-        <a href="cart.html" class="nav-cart-btn" title="View Cart" aria-label="Cart">
+        <a href="cart.html" class="nav-cart-btn" title="Shopping Cart" aria-label="Shopping Cart">
           <i class="bi bi-cart3"></i>
-          <span>Cart</span>
+          <span class="cart-count-badge">3</span>
         </a>
         <button type="button" class="toggle-btn theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
           <i class="bi bi-moon-stars-fill"></i>
-          <span class="theme-text">Dark</span>
         </button>
         <button type="button" class="toggle-btn rtl-toggle-btn" title="Toggle RTL/LTR" aria-label="Toggle Direction">
           <i class="bi bi-text-right"></i>
-          <span class="rtl-text">RTL</span>
         </button>
-        <a href="login.html" class="nav-auth-btn nav-login-btn" title="Login / Register">
-          <i class="bi bi-person-circle"></i>
-          <span>Login / Register</span>
+        <a href="products.html" class="btn-ocean nav-cta-btn" title="Explore Fresh Catch">
+          <i class="bi bi-compass"></i>
+          <span>Explore Fresh Catch</span>
         </a>
       </div>
 
-      <!-- Mobile Login Action (Inside Collapse) -->
-      <div class="d-lg-none mt-3 pt-3 border-top">
-        <a href="login.html" class="nav-auth-btn nav-login-btn w-100 justify-content-center" title="Login / Register">
-          <i class="bi bi-person-circle"></i> <span>Login / Register</span>
+      <!-- Mobile Quick Actions (Inside Collapse) -->
+      <div class="d-lg-none mt-3 pt-3 border-top d-flex flex-column gap-2">
+        <a href="products.html" class="btn-ocean nav-cta-btn w-100 justify-content-center" title="Explore Fresh Catch">
+          <i class="bi bi-compass"></i> <span>Explore Fresh Catch</span>
         </a>
       </div>
     </div>
