@@ -1147,7 +1147,6 @@
 [data-bs-theme="dark"] .page-banner-checkout {
   border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
   background-size: cover !important;
-  background-position: center !important;
 }
 
 [data-theme="dark"] .page-banner::before,
@@ -1172,7 +1171,7 @@
 [data-bs-theme="dark"] .page-banner-cart::before,
 [data-theme="dark"] .page-banner-checkout::before,
 [data-bs-theme="dark"] .page-banner-checkout::before {
-  background: linear-gradient(180deg, rgba(8, 19, 34, 0.35) 0%, rgba(8, 19, 34, 0.15) 50%, rgba(8, 19, 34, 0.40) 100%) !important;
+  background: linear-gradient(180deg, rgba(8, 19, 34, 0.25) 0%, rgba(8, 19, 34, 0.10) 50%, rgba(8, 19, 34, 0.30) 100%) !important;
 }
 
 [data-theme="dark"] .toggle-btn:hover,

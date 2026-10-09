@@ -725,13 +725,6 @@
 
 /* Large Devices (Laptops, 992px - 1199.98px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .page-banner-cleaning {
-    min-height: 400px !important;
-    padding: 4.25rem 0 !important;
-  }
-  .page-banner-cleaning::after {
-    width: 62% !important;
-  }
   .workflow-tab-btn {
     font-size: 0.88rem !important;
     padding: 0.5rem 1.05rem !important;

@@ -15,7 +15,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '35 min',
     servings: '4–6 Servings',
     calories: '490 kcal',
-    image: 'https://images.unsplash.com/photo-1515443961218-a51367888e4b?auto=format&fit=crop&w=1000&q=80',
+    image: 'assets/images/blog_family_seafood_dinner_dish_closeup_1788862492244.jpg',
     desc: 'Fragrant saffron rice simmered in rich ocean broth loaded with jumbo king prawns, mussels, and squid.'
   },
   {
@@ -29,7 +29,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '8 min',
     servings: '2–3 Servings',
     calories: '290 kcal',
-    image: 'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=1000&q=80',
+    image: 'assets/images/jumbo_tiger_prawns_1788781319176.jpg',
     desc: 'Plump king prawns tossed in foaming butter, crushed garlic, and fresh Italian parsley.'
   },
   {
@@ -43,7 +43,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '30 min',
     servings: '4 Servings',
     calories: '450 kcal',
-    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1000&q=80',
+    image: 'assets/images/garlic_herb_king_crab_cluster.jpg',
     desc: 'Authentic coastal blue swimmer crab simmered in a velvety gravy of roasted spices and coconut milk.'
   },
   {
@@ -57,7 +57,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '12 min',
     servings: '4 Servings',
     calories: '380 kcal',
-    image: 'assets/images/recipe_grilled_salmon_1788864962069.jpg',
+    image: 'assets/images/herb_grilled_salmon_recipe_1788761308064.jpg',
     desc: 'Succulent Atlantic salmon steak seared with rosemary, fresh thyme, minced garlic, and charred lemon wedges.'
   },
 
@@ -72,7 +72,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '15 min',
     servings: '2 Servings',
     calories: '410 kcal',
-    image: 'https://images.unsplash.com/photo-1687144171995-e5d148fdfbad?auto=format&fit=crop&w=700&q=80',
+    image: 'assets/images/spiny_rock_lobster_1788781406447.jpg',
     desc: 'Succulent whole Maine lobster gently poached in garlic butter broth, served with fresh lemon wedges and sea salt.'
   },
   {
@@ -86,7 +86,7 @@ const SEAFOOD_RECIPES = [
     cookTime: '8 min',
     servings: '3–4 Servings',
     calories: '340 kcal',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80',
+    image: 'assets/images/cleaned_calamari_squid_fresh_1788766184966.jpg',
     desc: 'Tender ocean squid rings flash-fried in light seasoned batter, served with homemade herb tartar dip.'
   }
 ];
@@ -176,7 +176,7 @@ const SEAFOOD_RECIPES = [
       <div class="col-md-6 col-lg-4">
         <div class="recipe-card">
           <div class="recipe-thumb">
-            <img src="${r.image}" alt="${r.title}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=700&q=80';">
+            <img src="${r.image}" alt="${r.title}" loading="lazy">
             <div class="recipe-meta-pill">
               <i class="bi bi-clock"></i> ${r.prepTime} prep • ${r.cookTime} cook
             </div>
