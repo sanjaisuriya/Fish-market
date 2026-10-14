@@ -106,6 +106,31 @@
   padding-left: 0;
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  [dir="rtl"] .main-navbar .navbar-nav {
+    margin-right: 0.45rem !important;
+    margin-left: 0 !important;
+  }
+
+  [dir="rtl"] .main-navbar .navbar-nav .nav-item.d-lg-flex,
+  [dir="rtl"] .main-navbar .navbar-nav .nav-desktop-actions-item {
+    margin-right: 0.35rem !important;
+    margin-left: 0.25rem !important;
+  }
+
+  [dir="rtl"] .main-navbar .navbar-collapse > .d-lg-flex.ms-2,
+  [dir="rtl"] .main-navbar .navbar-collapse > .d-lg-flex,
+  [dir="rtl"] .main-navbar .navbar-collapse > div.d-none.d-lg-flex {
+    margin-right: 0.35rem !important;
+    margin-left: 0 !important;
+  }
+
+  [dir="rtl"] .main-navbar .nav-cart-btn .cart-count-badge {
+    right: auto !important;
+    left: -3px !important;
+  }
+}
+
 /* Badges on Cards */
 [dir="rtl"] .product-badge-group {
   left: auto;
