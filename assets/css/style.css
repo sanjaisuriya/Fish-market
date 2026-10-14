@@ -639,6 +639,25 @@ img {
   color: #ffffff !important;
 }
 
+/* Quick Actions Cluster in Navbar (Theme, RTL, Cart) */
+.nav-desktop-actions-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+}
+
+.nav-actions-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .nav-actions-group {
+    display: none !important;
+  }
+}
+
 /* Control Action Buttons (Dark Mode, RTL, Cart, Primary CTA) - 42x42 Small Circle Buttons */
 .toggle-btn {
   height: 42px !important;
