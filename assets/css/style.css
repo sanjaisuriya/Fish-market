@@ -366,20 +366,43 @@ img {
   color: var(--color-primary-dark) !important;
 }
 
-@media (min-width: 992px) and (max-width: 1320px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .main-navbar .navbar-nav {
-    gap: 0.15rem;
+    gap: 0 !important;
+    margin-left: 0.4rem !important;
   }
   .nav-link {
-    padding: 0.45rem 0.6rem !important;
-    font-size: 0.88rem;
+    padding: 0.35rem 0.32rem 0.4rem 0.32rem !important;
+    font-size: 0.75rem !important;
   }
   .brand-logo {
-    font-size: 1.3rem;
+    font-size: 1.15rem !important;
   }
-  .main-navbar .btn-ocean {
-    padding: 0.5rem 1rem;
-    font-size: 0.88rem;
+  .main-navbar .btn-ocean,
+  .main-navbar .nav-cta-btn {
+    padding: 0 0.75rem !important;
+    font-size: 0.76rem !important;
+    height: 34px !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1320px) {
+  .main-navbar .navbar-nav {
+    gap: 0.15rem;
+    margin-left: 0.75rem !important;
+  }
+  .nav-link {
+    padding: 0.4rem 0.55rem !important;
+    font-size: 0.82rem;
+  }
+  .brand-logo {
+    font-size: 1.25rem;
+  }
+  .main-navbar .btn-ocean,
+  .main-navbar .nav-cta-btn {
+    padding: 0 1rem !important;
+    font-size: 0.84rem;
+    height: 38px !important;
   }
 }
 
